@@ -14,6 +14,7 @@ module.exports = {
 		["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
 		["meta", { name: "apple-mobile-web-app-status-bar-style", content: "black" }],
 		["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" }],
+    ["link", { rel: "icon", type: "image/png", href: "/assets/images/hhicon.png" }],
 	],
 
 	/**
