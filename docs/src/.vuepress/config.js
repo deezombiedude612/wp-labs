@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'ITS30605',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -18,7 +18,8 @@ module.exports = {
   head: [
     // ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" }],
   ],
 
   /**
@@ -42,7 +43,7 @@ module.exports = {
     editLinks: false,
     docsDir: '',
     editLinkText: '',
-    lastUpdated: false,
+    lastUpdated: true,
     nav: [
       { text: "WP", link: "/" },
       { text: "OOP", link: "https://deezombiedude612.github.io/oop-labs" },
@@ -89,7 +90,7 @@ module.exports = {
       },
     ],
   },
-  lastUpdated: "Last Updated",
+  // lastUpdated: "Last Updated",
   markdown: {
     lineNumbers: true,
   },
