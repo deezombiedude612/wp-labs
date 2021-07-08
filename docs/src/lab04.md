@@ -1,5 +1,5 @@
 ---
-title: "Practical 04: JavaScript Intro"
+title: "Practical 04"
 editlink: true
 navbar: true
 ---

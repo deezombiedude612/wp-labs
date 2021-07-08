@@ -1,5 +1,5 @@
 ---
-title: "Practical 08: PHP Program Control Structure"
+title: "Practical 08"
 editlink: true
 navbar: true
 ---

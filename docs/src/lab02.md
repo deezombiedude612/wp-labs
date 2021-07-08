@@ -1,5 +1,5 @@
 ---
-title: "Practical 02: Applying CSS"
+title: "Practical 02"
 editlink: true
 navbar: true
 ---

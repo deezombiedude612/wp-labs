@@ -1,5 +1,5 @@
 ---
-title: "Practical 11: PHP Code-Along Series (Part 2)"
+title: "Practical 11"
 editlink: true
 navbar: true
 ---

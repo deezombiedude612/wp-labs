@@ -1,5 +1,5 @@
 ---
-title: "Practical 09: PHP Forms and Sessions"
+title: "Practical 09"
 editlink: true
 navbar: true
 ---

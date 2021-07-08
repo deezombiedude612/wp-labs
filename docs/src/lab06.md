@@ -1,10 +1,10 @@
 ---
-title: "Practical 06: JavaScript Functions & HTML DOM Manipulation"
+title: "Practical 06"
 editlink: true
 navbar: true
 ---
 
-# Practical 06: JavaScript Functions and HTML DOM Manipulation
+# Practical 06: JavaScript Functions & HTML DOM Manipulation
 
 This rather challenging practical activity exposes how functions can be used within JavaScript, and how it can interact with web elements in the HTML Document Object Model (DOM).
 

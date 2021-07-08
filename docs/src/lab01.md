@@ -1,5 +1,5 @@
 ---
-title: "Practical 01: Getting Started with HTML"
+title: "Practical 01"
 editlink: true
 navbar: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Practical 07: PHP and LAMP Intro"
+title: "Practical 07"
 editlink: true
 navbar: true
 ---

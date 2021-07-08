@@ -4,7 +4,7 @@ editlink: true
 navbar: true
 ---
 
-# Practical 05: JavaScript Program Control Structure
+# Practical 05: JavaScript Program Control Structure & Arrays
 
 This practical activity explores program control structures that can be used to implement logic into web sites.
 

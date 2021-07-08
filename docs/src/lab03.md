@@ -1,5 +1,5 @@
 ---
-title: "Practical 03: HTML Forms"
+title: "Practical 03"
 editlink: true
 navbar: true
 ---
