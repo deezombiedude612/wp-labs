@@ -5,8 +5,6 @@ tagline: Web Programming
 editlink: true
 navbar: true
 # sidebar: false
-timelineItem:
-  [{ title: "Practical 1", link: "./lab01", date: "Week 2" }, { title: "Practical 2", link: "./lab02", date: "Week 3" }]
 ---
 
 **This site hosts the practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College.**
@@ -17,21 +15,22 @@ The aim of these practical lab exercises is to guide the students in mastering t
 
 ## Schedule (subject to change)
 
-| Week | Lecture                         | Practical Lab                          |
-| :--: | ------------------------------- | -------------------------------------- |
-|  1   | Introduction to Web Programming | [Practical Preparation](lab00.md)      |
-|  2   | HTML Part 1                     | [Practical 1](lab01.md)                |
-|  3   | HTML Part 2                     | [Practical 2](lab02.md)                |
-|  4   | HTML Part 3                     | [Practical 3](lab03.md)                |
-|  5   | JavaScript Part 1               | [Practical 4](lab04.md)                |
-|  6   | JavaScript Part 2               | [Practical 5](lab05.md)                |
-|  7   | JavaScript Part 3               | [Practical 6](lab06.md)                |
-|  8   | Introduction to PHP and LAMP    | [Practical 7](lab07.md)                |
-|  9   | PHP Part 1                      | [Practical 8](lab08.md)                |
-|  10  | PHP Part 2                      | [Practical 9](lab09.md)                |
-|  11  | Databases Part 1                | [Code-Along Series (Part 1)](lab10.md) |
-|  12  | Databases Part 2                | [Code-Along Series (Part 2)](lab11.md) |
-|  13  |                                 | [Code-Along Series (Part 3)](lab12.md) |
+|             Week             | Lecture                         | Practical Lab                                              |
+| :--------------------------: | ------------------------------- | ---------------------------------------------------------- |
+|  **1** <br> 23 Aug - 27 Aug  | Introduction to Web Programming | [Practical Preparation](lab00.md)                          |
+|  **2** <br> 30 Aug - 3 Sept  | HTML Part 1                     | [Practical 1](lab01.md)                                    |
+| **3** <br> 6 Sept - 10 Sept  | HTML Part 2                     | [Practical 2](lab02.md)                                    |
+| **4** <br> 13 Sept - 17 Sept | HTML Part 3                     | [Practical 3](lab03.md)                                    |
+| **5** <br> 20 Sept - 24 Sept | JavaScript Part 1               | [Practical 4](lab04.md)                                    |
+|  **6** <br> 27 Sept - 1 Oct  | JavaScript Part 2               | [Practical 5](lab05.md)                                    |
+|   **7** <br> 4 Oct - 8 Oct   | JavaScript Part 3               | [Practical 6](lab06.md)                                    |
+|  **8** <br> 11 Oct - 15 Oct  | Introduction to PHP and LAMP    | Practical Test 1<br>[Practical 7](lab07.md)                |
+|  **9** <br> 18 Oct - 22 Oct  | PHP Part 1                      | [Practical 8](lab08.md)                                    |
+| **10** <br> 25 Oct - 29 Oct  | PHP Part 2                      | Practical Test 2<br>[Practical 9](lab09.md)                |
+|  **11** <br> 1 Nov - 5 Nov   | Databases Part 1                | [Code-Along Series (Part 1)](lab10.md)                     |
+|  **12** <br> 8 Nov - 12 Nov  | Databases Part 2                | [Code-Along Series (Part 2)](lab11.md)                     |
+| **13** <br> 15 Nov - 19 Nov  |                                 | Practical Test 3<br>[Code-Along Series (Part 3)](lab12.md) |
+| **14** <br> 22 Nov - 26 Nov  | Wrap-up Lecture                 |                                                            |
 
 ::: warning NOTE
 The practical work is arranged such that it complements the respective weeks' lectures.

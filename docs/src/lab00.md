@@ -49,9 +49,7 @@ After that, copy and paste the following into your web page:
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-			Testing HTML
-		</title>
+		<title>Testing HTML</title>
 	</head>
 	<body>
 		<h1>It works!</h1>

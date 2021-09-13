@@ -41,5 +41,3 @@ You may use your browser's inspector tool to simulate viewing the web page from 
 <!-- ::: warning SUBMISSION
 **Complete the given practical and submit it as your lecture attendance for Week 4.**
 ::: -->
-
-## Getting Started

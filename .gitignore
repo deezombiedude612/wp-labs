@@ -1,3 +1,6 @@
 .DS_Store
 node_modules
 dist
+.DS_Store
+docs/.DS_Store
+docs/src/.DS_Store
