@@ -8,6 +8,16 @@ navbar: true
 
 This week's practical activity explores some more features including those in HTML forms and intermediate CSS.
 
+## Optional Activity
+
+Create a form as close as the image given below:
+
+![Lab 03 Activity](./images/lab03_activity.png)
+
+Image assets are given below:
+
+[Lab 03 Activity Assets](https://deezombiedude612.github.io/class-assets/wp-lab03-props/lab03_resources.zip)
+
 ## Tasks
 
 ### Task 1
@@ -32,11 +42,11 @@ Web developers or designers make use of the following meta tag in the `<head>` s
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-This will set the viewport of the web page, which will give the browser instructions on how to control the page's dimensions and scaling.
+This will set the viewport of the webpage, which will give the browser instructions on how to control the page's dimensions and scaling.
 
 Apart from that, media queries were used to cater for different screen sizes.
 Look up media queries online and try to incorporate it into your web form.
-You may use your browser's inspector tool to simulate viewing the web page from a mobile device of your own choosing.
+You may use your browser's inspector tool to simulate viewing the webpage from a mobile device of your own choosing.
 
 <!-- ::: warning SUBMISSION
 **Complete the given practical and submit it as your lecture attendance for Week 4.**

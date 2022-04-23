@@ -11,26 +11,26 @@ navbar: true
 
 ## Aim
 
-The aim of these practical lab exercises is to guide the students in mastering the fundamentals behind web development to develop visually appealing web sites or applications.
+The aim of these practical lab exercises is to guide students in mastering the fundamentals behind web development to develop visually appealing websites or applications.
 
 ## Schedule (subject to change)
 
-|             Week             | Lecture                         | Practical Lab                                              |
-| :--------------------------: | ------------------------------- | ---------------------------------------------------------- |
-|  **1** <br> 23 Aug - 27 Aug  | Introduction to Web Programming | [Practical Preparation](lab00.md)                          |
-|  **2** <br> 30 Aug - 3 Sept  | HTML Part 1                     | [Practical 1](lab01.md)                                    |
-| **3** <br> 6 Sept - 10 Sept  | HTML Part 2                     | [Practical 2](lab02.md)                                    |
-| **4** <br> 13 Sept - 17 Sept | HTML Part 3                     | [Practical 3](lab03.md)                                    |
-| **5** <br> 20 Sept - 24 Sept | JavaScript Part 1               | [Practical 4](lab04.md)                                    |
-|  **6** <br> 27 Sept - 1 Oct  | JavaScript Part 2               | [Practical 5](lab05.md)                                    |
-|   **7** <br> 4 Oct - 8 Oct   | JavaScript Part 3               | [Practical 6](lab06.md)                                    |
-|  **8** <br> 11 Oct - 15 Oct  | Introduction to PHP and LAMP    | Practical Test 1<br>[Practical 7](lab07.md)                |
-|  **9** <br> 18 Oct - 22 Oct  | PHP Part 1                      | [Practical 8](lab08.md)                                    |
-| **10** <br> 25 Oct - 29 Oct  | PHP Part 2                      | Practical Test 2<br>[Practical 9](lab09.md)                |
-|  **11** <br> 1 Nov - 5 Nov   | Databases Part 1                | [Code-Along Series (Part 1)](lab10.md)                     |
-|  **12** <br> 8 Nov - 12 Nov  | Databases Part 2                | [Code-Along Series (Part 2)](lab11.md)                     |
-| **13** <br> 15 Nov - 19 Nov  |                                 | Practical Test 3<br>[Code-Along Series (Part 3)](lab12.md) |
-| **14** <br> 22 Nov - 26 Nov  | Wrap-up Lecture                 |                                                            |
+|             Week              | Lecture                                      | Practical Lab                                                            |
+| :---------------------------: | -------------------------------------------- | ------------------------------------------------------------------------ |
+|  **1** <br> 18 Apr - 22 Apr   | Introduction to Web Programming              | [Practical Preparation](lab00.md)                                        |
+|  **2** <br> 25 Apr - 29 Apr   | HTML Part 1                                  | [Practical 1](lab01.md)                                                  |
+|   **3** <br> 2 May - 6 May    | **Independent Learning Week**<br>HTML Part 2 | [Practical 2](lab02.md)                                                  |
+|   **4** <br> 9 May - 13 May   | HTML Part 3                                  | [Practical 3](lab03.md)                                                  |
+|  **5** <br> 16 May - 20 May   | JavaScript Part 1                            | [Practical 4](lab04.md)                                                  |
+|  **6** <br> 23 May - 27 May   | JavaScript Part 2                            | [Practical 5](lab05.md)                                                  |
+|  **7** <br> 30 May - 3 June   | JavaScript Part 3                            | [Practical 6](lab06.md)                                                  |
+|  **8** <br> 6 June - 10 June  | Introduction to PHP and LAMP<br>PHP Part 1   | _Practical Test 1_<br>[Practical 7](lab07.md)<br>[Practical 8](lab08.md) |
+| **9** <br> 13 June - 17 June  | PHP Part 2                                   | [Practical 9](lab09.md)                                                  |
+| **10** <br> 20 June - 24 June | Databases Part 1                             | _Practical Test 2_<br>[Practical 10](lab10.md)                           |
+| **11** <br> 27 June - 1 July  | Databases Part 2                             | [Code-Along Series (Part 1)](lab11.md)                                   |
+|  **12** <br> 4 July - 8 July  | [Code-Along Series (Part 2)](lab12.md)       | [Code-Along Series (Part 3)](lab13.md)                                   |
+| **13** <br> 11 July - 15 July |                                              | _Practical Test 3_                                                       |
+| **14** <br> 18 July - 22 July | Wrap-up Lecture                              |                                                                          |
 
 ::: warning NOTE
 The practical work is arranged such that it complements the respective weeks' lectures.
@@ -46,5 +46,5 @@ It is encouraged that you ensure that you're familiar with the lecture content b
 ---
 
 <div style="padding: 3rem 0 1rem; text-align: center;">
-	@2021 Henry Heng
+	@2022 Henry Heng
 </div>

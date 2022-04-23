@@ -38,18 +38,19 @@ module.exports = {
 		editLinks: false,
 		docsDir: "",
 		editLinkText: "",
-		lastUpdated: true,
+		// lastUpdated: "上次更新",
+		lastUpdated: false,
 		nav: [
 			{ text: "WP", link: "/" },
 			{ text: "OOP", link: "https://deezombiedude612.github.io/oop-labs" },
-			{ text: "OOAD", link: "https://deezombiedude612.github.io/ooad-labs" },
+			// { text: "OOAD", link: "https://deezombiedude612.github.io/ooad-labs" },
 		],
 		sidebar: [
 			"/",
 			"/lamp_macos.md",
-			// "/asgn3_202108.md",
+			"/asgn3_202204.md",
 			{
-				title: "2021 August",
+				title: "2022 April",
 				collapsable: false,
 				children: [
 					"/lab00",
@@ -65,12 +66,34 @@ module.exports = {
 					// "/lab10",
 					// "/lab11",
 					// "/lab12",
+					// "/lab13",
 				],
 			},
 			{
 				title: "Archive",
 				collapsible: true,
 				children: [
+					{
+						title: "2021 August",
+						collapsable: true,
+						children: [
+							"/archive/202108/asgn3_202108",
+							"/archive/202108/lab00.md",
+							"/archive/202108/lab01.md",
+							"/archive/202108/lab02.md",
+							"/archive/202108/lab03.md",
+							"/archive/202108/lab04.md",
+							"/archive/202108/lab05.md",
+							"/archive/202108/lab06.md",
+							"/archive/202108/lab07.md",
+							"/archive/202108/lab08.md",
+							"/archive/202108/lab09.md",
+							"/archive/202108/lab10.md",
+							"/archive/202108/lab11.md",
+							"/archive/202108/lab12.md",
+							"/archive/202108/lab13.md",
+						],
+					},
 					{
 						title: "2021 April",
 						collapsable: true,
@@ -92,5 +115,5 @@ module.exports = {
 	/**
 	 * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
 	 */
-	plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
+	plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom", "@vuepress/last-updated"],
 };

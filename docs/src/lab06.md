@@ -7,19 +7,20 @@ navbar: true
 # Practical 06: JavaScript Functions & HTML DOM Manipulation
 
 This rather challenging practical activity exposes how functions can be used within JavaScript, and how it can interact with web elements in the HTML Document Object Model (DOM).
+Should you require more guidance, there are plenty of online tutorials detailing multiple solutions - it's best if you can explore and test them out to the best of your ability.
 
 ## Tasks
 
 ### Task 1
 
 Drivers who are 16 years of age and older can apply for driving a license online.
-The government web page code requires applicants to enter their age and then checks if they are old enough to apply.
+The government webpage code requires applicants to enter their age and then checks if they are old enough to apply.
 
 The following code captures the applicant’s age. When the applicant clicks the 'Check now' button the age is first checked to ensure that it is numeric.
 The age is then checked to see if the applicant is old enough.
 Suitable messages are displayed as a result of the checks.
 
-**Part 1:** Create an empty web page with the following HTML scripts inside the `<body>` section.
+**Part 1:** Create an empty webpage with the following HTML scripts inside the `<body>` section.
 
 ```html{11-13}
 <p>You can apply for a license to drive when you are 16 years old.</p>
