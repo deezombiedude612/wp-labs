@@ -77,7 +77,7 @@ At the end of it, classes on designing a website using HTML and CSS is something
 
 ::: tip REFERENCE
 
-- Dennis, A., Wixom, B. H. & Tegarden, D. (2016). _Systems Analysis and Design: An Object-Oriented Approach with UML_ (5th Edition). Wiley.
+- Dennis, A., Wixom, B. H. & Tegarden, D. (2020). _Systems Analysis and Design: An Object-Oriented Approach with UML_ (6th Edition). Wiley.
 
 :::
 

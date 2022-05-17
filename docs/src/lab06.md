@@ -9,6 +9,88 @@ navbar: true
 This rather challenging practical activity exposes how functions can be used within JavaScript, and how it can interact with web elements in the HTML Document Object Model (DOM).
 Should you require more guidance, there are plenty of online tutorials detailing multiple solutions - it's best if you can explore and test them out to the best of your ability.
 
+## Getting Started
+
+Functions can be tricky to understand in JavaScript, as unlike some languages like Java or C++, the urgency as to when a function needs to return a value or not is never explicitly stated.
+
+Function declarations in JavaScript follow the given syntax:
+
+```javascript
+function functionNameHere(param_1, param_2, ..., param_n) {
+
+}
+```
+
+The items you include in the round parentheses are referred to as parameters.
+Sometimes, parameters are required to carry out a function's intended purpose(s).
+For example, the following function makes use of two number values with intentions to produce the sum after totalling them up.
+
+```javascript
+function addition(number1, number2) {
+	// number addition logic here
+}
+```
+
+The following function, however, does not require any parameter values to display a greeting message, and thus has no parameters associated with it.
+
+```javascript
+function greeting() {
+	console.log("Hello World!");
+}
+```
+
+It is imperative to know that there is no such rule that states how many parameters EVERY function needs to have.
+The number of parameters any function should contain solely lies on any need to depend on any external value(s) to properly carry out its.. well, function.
+
+Sometimes, functions can also be used to return values as the last step in completing their purpose(s).
+In such cases, a `return` statement is invoked from the function (not necesarily at the end all the time, but merely a traditional thing).
+For instance, let's refer to the addition function from earlier again.
+Upon calculating the sum of the two numbers, depending on how you are to present your output, you can choose to have the function just print the sum out or return it out of the function as a form of output at the line that spawned its use.
+
+Here's how it will look like if the main idea is to solely print out the sum of the two numbers from within the function:
+
+```javascript
+function addition(number1, number2) {
+	let sum = number1 + number2;
+
+	console.log(`The sum of the two numbers is ${sum}.`);
+}
+```
+
+Here's another variation of the same function, with the main difference being that it returns the sum at the end.
+
+```javascript
+function addition(number1, number2) {
+	let sum = number1 + number2;
+
+	return sum; // return statement
+}
+```
+
+Admittedly, this may seem relatively confusing as compared to implementing functions in other programming languages like C or Java where one can tell if a function is to return a value or not.
+For instance, in these two languages the data type of the intended return value is to be explicitly stated in the function declaration itself, or `void` if it's supposed to not return anything at all.
+However, just by knowing how you want to craft your function based on the set requirements should be able to provide enough information to keep you going here.
+
+### Warm-up
+
+For each of the following purposes, determine if the function to be created to simulate such should make use of any parameters or not.
+If so, name them and describe how they will be used in your supposed function.
+As practice, you may also consider developing these functions with these plans in mind to be used with a HTML page.
+You may name your parameter(s) and/or function(s) as you please, but preferably with respect to their meaningfulness.
+
+1. This function delivers a greeting based on a selected language from a list of available languages.
+2. This function prints out the first 20 numbers in a sequence dictated by an already preset Maclaurin series expression.
+
+   For testing purposes, you can use the common Maclaurin function:
+
+   $$ \frac{1}{1-x} = 1 + x + x^2 + x^3 + x^4 + ... $$
+
+   Use `x = 1` to `x = 20` in this function.
+
+3. This function gathers two strings to check if the first letter in each one match regardless of case.
+4. This function retrieves the user input from a HTML `<input>` field to prepare an array of distinct characters used in said input.
+5. This function calculates the age of a person, place, or object by using its year of origin/date of birth/etc. and the current year during use.
+
 ## Tasks
 
 ### Task 1
@@ -158,10 +240,6 @@ Create a HTML file that uses external JavaScript to carry out the following. You
 **Part 2:** Use the for-in loop to iterate through the `movie` object's attributes, printing them each time.
 
 **Part 3:** In the same for/in loop, implement a check such that only the attributes containing string values are printed in the console.
-
-## Getting Started
-
-Functions can be tricky to understand in JavaScript, as unlike some languages like Java or C++, the urgency as to when a function needs to return a value or not is never explicitly stated.
 
 <!-- ::: warning SUBMISSION
 **Complete the given practical and submit it as your lecture attendance for Week 7.**

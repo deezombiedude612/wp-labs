@@ -14,6 +14,8 @@ module.exports = {
 		["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
 		["meta", { name: "apple-mobile-web-app-status-bar-style", content: "black" }],
 		["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" }],
+		["link", { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css" }],
+		["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css" }],
 		["link", { rel: "icon", type: "image/png", href: "/assets/images/hhicon.png" }],
 	],
 
@@ -38,11 +40,43 @@ module.exports = {
 		editLinks: false,
 		docsDir: "",
 		editLinkText: "",
-		// lastUpdated: "上次更新",
-		lastUpdated: false,
+		lastUpdated: true,
+		sidebarDepth: 4,
 		nav: [
-			{ text: "WP", link: "/" },
-			{ text: "OOP", link: "https://deezombiedude612.github.io/oop-labs" },
+			{ text: "Practical Preparation", link: "/lab00" },
+			{ text: "macOS LAMP Guide (Hard Way)", link: "/lamp_macos" },
+			{
+				text: "TC Practical Labs",
+				items: [
+					{ text: "ITS30505: Introduction to Computing", link: "https://deezombiedude612.github.io/itc-labs" },
+					{ text: "ITS30605: Web Programming", link: "/" },
+					{ text: "ITS42004: Object-Oriented Programming", link: "https://deezombiedude612.github.io/oop-labs" },
+					{
+						text: "ITS42104: Object-Oriented Analysis and Design (old)",
+						link: "https://deezombiedude612.github.io/ooad-labs",
+					},
+				],
+			},
+			{
+				text: "Asgn 3 Groupings",
+				items: [
+					{ text: "2022 April", link: "/asgn3_202204" },
+					{ text: "2021 August", link: "/archive/202108/asgn3_202108" },
+					{ text: "2021 April", link: "/archive/asgn3_202104" },
+					{ text: "2020 August S1", link: "/archive/asgn3_202008_1" },
+					{ text: "2020 August S2", link: "/archive/asgn3_202008_2" },
+					{ text: "2020 August S3", link: "/archive/asgn3_202008_3" },
+				],
+			},
+			{
+				text: "Archive",
+				items: [
+					{
+						text: "2021 August",
+						link: "/archive/202108/",
+					},
+				],
+			},
 			// { text: "OOAD", link: "https://deezombiedude612.github.io/ooad-labs" },
 		],
 		sidebar: [
@@ -57,9 +91,9 @@ module.exports = {
 					"/lab01",
 					"/lab02",
 					"/lab03",
-					// "/lab04",
-					// "/lab05",
-					// "/lab06",
+					"/lab04",
+					"/lab05",
+					"/lab06",
 					// "/lab07",
 					// "/lab08",
 					// "/lab09",
@@ -77,21 +111,22 @@ module.exports = {
 						title: "2021 August",
 						collapsable: true,
 						children: [
+							"/archive/202108/",
 							"/archive/202108/asgn3_202108",
-							"/archive/202108/lab00.md",
-							"/archive/202108/lab01.md",
-							"/archive/202108/lab02.md",
-							"/archive/202108/lab03.md",
-							"/archive/202108/lab04.md",
-							"/archive/202108/lab05.md",
-							"/archive/202108/lab06.md",
-							"/archive/202108/lab07.md",
-							"/archive/202108/lab08.md",
-							"/archive/202108/lab09.md",
-							"/archive/202108/lab10.md",
-							"/archive/202108/lab11.md",
-							"/archive/202108/lab12.md",
-							"/archive/202108/lab13.md",
+							"/archive/202108/lab00",
+							"/archive/202108/lab01",
+							"/archive/202108/lab02",
+							"/archive/202108/lab03",
+							"/archive/202108/lab04",
+							"/archive/202108/lab05",
+							"/archive/202108/lab06",
+							"/archive/202108/lab07",
+							"/archive/202108/lab08",
+							"/archive/202108/lab09",
+							"/archive/202108/lab10",
+							"/archive/202108/lab11",
+							"/archive/202108/lab12",
+							"/archive/202108/lab13",
 						],
 					},
 					{
@@ -110,6 +145,9 @@ module.exports = {
 	},
 	markdown: {
 		lineNumbers: true,
+		extendMarkdown: (md) => {
+			md.use(require("markdown-it-katex"));
+		},
 	},
 
 	/**

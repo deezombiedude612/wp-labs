@@ -7,8 +7,9 @@ navbar: true
 # Practical 03: HTML Forms
 
 This week's practical activity explores some more features including those in HTML forms and intermediate CSS.
+We will attempt to create a HTML form utilizing these features (minus information retrieval, this'll be covered when we go through PHP).
 
-## Optional Activity
+## Task
 
 Create a form as close as the image given below:
 
@@ -18,20 +19,30 @@ Image assets are given below:
 
 [Lab 03 Activity Assets](https://deezombiedude612.github.io/class-assets/wp-lab03-props/lab03_resources.zip)
 
-## Tasks
+The font used to create this form is called **Urbanist**, and it can be found in Google Fonts.
+Click [HERE](https://fonts.google.com/specimen/Urbanist) to open the Google Fonts page showcasing the font and to get details on incorporating it into your web form.
 
-### Task 1
+### Some Extra Details
 
-Recall the application process when you first enrolled into college.
-During then, you are asked to fill up a form for information including (but not limited to) your name, residence address, phone number, e-mail, date of birth, and emergency contact.
+For **Status** under _Personal Particulars_, include the following in the drop-down list:
 
-Create a web form that requires users to input the mentioned information required.
-Feel free to add some more pieces of required information into your form. Use as many form elements as necessary;
-include at least one instance of every type of form element mentioned during lecture.
+- Please select status (disabled, selected)
+- Active
+- Deferred
+- Graduated
+- Terminated
 
-### Task 2
+For **Enrolled Program** under _Academic Record_, include the following:
 
-Beautify your web form using CSS. Include the use of borders, margins and paddings.
+- Please select a program (disabled, selected)
+- Foundation in Computing (FIC)
+- Diploma in Information Technology (DIT)
+
+### Form Submission
+
+Upon selecting the `Submit` button, redirect it to a different webpage called `form-submitted.html`.
+In this page, create a webpage that essentially lets the website visitor know that the details entered into the form have been successfully collected.
+Include any other element/text/etc. that can be considered relevant here.
 
 ### Extra Task
 

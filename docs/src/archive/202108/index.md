@@ -2,9 +2,10 @@
 home: true
 # title: Web Programming Practical
 tagline: Web Programming
-editlink: true
+# editlink: true
 navbar: true
 # sidebar: false
+footer: "@2021 Henry Heng"
 ---
 
 **This site hosts the practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College.**
@@ -13,7 +14,9 @@ navbar: true
 
 The aim of these practical lab exercises is to guide the students in mastering the fundamentals behind web development to develop visually appealing web sites or applications.
 
-## Schedule (subject to change)
+## Schedule (August 2021 Semester)
+
+<!-- The schedule is subject to change. -->
 
 |             Week             | Lecture                                           | Practical Lab                                                          |
 | :--------------------------: | ------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -42,9 +45,3 @@ It is encouraged that you ensure that you're familiar with the lecture content b
 <!-- Unavailable at the moment, please check back later! -->
 
 - [Assignment 3 Groupings](asgn3_202108.md)
-
----
-
-<div style="padding: 3rem 0 1rem; text-align: center;">
-	@2021 Henry Heng
-</div>
