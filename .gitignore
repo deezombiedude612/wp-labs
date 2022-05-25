@@ -3,3 +3,4 @@ node_modules
 dist
 docs/.DS_Store
 docs/src/.DS_Store
+docs/scss
