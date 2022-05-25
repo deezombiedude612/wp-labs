@@ -1,0 +1,24 @@
+$small: 775px;
+$medium: 1025px;
+
+iframe.youtube-iframe {
+	width: 560px;
+	height: 315px;
+}
+
+@media only screen and (min-width: $small) {
+	iframe.youtube-iframe {
+		width: 100vw;
+		height: 100vh;
+		max-width: 720px;
+		max-height: 405px;
+	}
+}
+@media only screen and (min-width: $medium) {
+	iframe.youtube-iframe {
+		width: 100vw;
+		height: 100vh;
+		max-width: 960px;
+		max-height: 540px;
+	}
+}
