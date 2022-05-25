@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+<!-- This one blocks off the side navigation -->
+{% block site_nav %}{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<section class="text-center" id="main-404">
+	<!-- <h1>404</h1> -->
+	<h2 id="message">Take me home, scotty!</h2>
+
+	<!-- <img class="text-center" src="https://henryheng612.com/assets/images/snowtrap-wut.png" alt="SnowTrap Wut" /> -->
+	<img class="text-center" src="/wp-labs/assets/images/snowtrap-wut.png" alt="SnowTrap Wut" />
+	<p>Art by <a href="https://twitter.com/Orlando_Fox" target="_blank">@Orlando_Fox</a></p>
+</section>
+
+<script>
+	const messages = [
+		"That's a Four-Oh-Four.",
+		"There's nothing here.",
+		"How did we get here?",
+		"Looks like we've got some broken links.",
+	];
+
+	const random = Math.floor(Math.random() * messages.length);
+	document.querySelector("h2#message").innerHTML = messages[random];
+</script>
+{% endblock %}

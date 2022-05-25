@@ -1,0 +1,1823 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deezombiedude612.github.io/wp-labs/lamp_macos/">
+      
+      <link rel="icon" href="../assets/images/hhicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
+    
+    
+      
+        <title>Setting Up LAMP Stack in macOS (The Hard Way) - ITS30605 WP Labs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3de6f41f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extras.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="oscillo" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-lamp-stack-in-macos-the-hard-way" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ITS30605 WP Labs" class="md-header__button md-logo" aria-label="ITS30605 WP Labs" data-md-component="logo">
+      
+  <img src="../assets/images/hhicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ITS30605 WP Labs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setting Up LAMP Stack in macOS (The Hard Way)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="oscillo" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab00/" class="md-tabs__link md-tabs__link--active">
+        Guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab01/" class="md-tabs__link">
+        2022 April
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../asgn3_202204/" class="md-tabs__link">
+        Asgn 3 Groups
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../archive/202108/" class="md-tabs__link">
+        Archive
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://deezombiedude612.github.io/itc-labs" class="md-tabs__link">
+      ITC Labs
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://deezombiedude612.github.io/oop-labs" class="md-tabs__link">
+      OOP Labs
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://deezombiedude612.github.io/ooad-labs" class="md-tabs__link">
+      OOAD Labs
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ITS30605 WP Labs" class="md-nav__button md-logo" aria-label="ITS30605 WP Labs" data-md-component="logo">
+      
+  <img src="../assets/images/hhicon.png" alt="logo">
+
+    </a>
+    ITS30605 WP Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab00/" class="md-nav__link">
+        Practical Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xampp/" class="md-nav__link">
+        XAMPP Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setting Up LAMP Stack in macOS (The Hard Way)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Setting Up LAMP Stack in macOS (The Hard Way)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-start-the-apache-server" class="md-nav__link">
+    Step 1: Start the Apache Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-sites-directory" class="md-nav__link">
+    Step 2: Create Sites Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-usernameconf-file" class="md-nav__link">
+    Step 3: Create username.conf File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-configure-the-httpdconf-file" class="md-nav__link">
+    Step 4: Configure the httpd.conf File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-configure-the-httpd-userdirconf-file" class="md-nav__link">
+    Step 5: Configure the httpd-userdir.conf File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-enable-php-80" class="md-nav__link">
+    Step 6: Enable PHP 8.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Enable PHP 8.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-php-working-properly-now" class="md-nav__link">
+    Is PHP working properly now?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-install-mysql" class="md-nav__link">
+    Step 7: Install MySQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-install-phpmyadmin" class="md-nav__link">
+    Step 8: Install phpMyAdmin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          2022 April
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022 April" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2022 April
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab01/" class="md-nav__link">
+        Practical 01: Getting Started with HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab02/" class="md-nav__link">
+        Practical 02: Applying CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab03/" class="md-nav__link">
+        Practical 03: HTML Forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab04/" class="md-nav__link">
+        Practical 04: Introduction to JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab05/" class="md-nav__link">
+        Practical 05: JavaScript Program Control Structure & Arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab06/" class="md-nav__link">
+        Practical 06: JavaScript Functions & HTML DOM Manipulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07/" class="md-nav__link">
+        Practical 07: Introduction to PHP and LAMP Web Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab08/" class="md-nav__link">
+        Practical 08: Introducing PHP into Forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab09/" class="md-nav__link">
+        Practical 09: PHP Forms and Sessions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Asgn 3 Groups
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Asgn 3 Groups" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Asgn 3 Groups
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202204/" class="md-nav__link">
+        2022 April
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202108/" class="md-nav__link">
+        2021 August
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202104/" class="md-nav__link">
+        2021 April
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          2020 August
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2020 August" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          2020 August
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202008_1/" class="md-nav__link">
+        Session 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202008_2/" class="md-nav__link">
+        Session 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asgn3_202008_3/" class="md-nav__link">
+        Session 3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Archive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Archive" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Archive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          202108
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202108" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          202108
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab00/" class="md-nav__link">
+        Practical Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab01/" class="md-nav__link">
+        Practical 01: Getting Started with HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab02/" class="md-nav__link">
+        Practical 02: Applying CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab03/" class="md-nav__link">
+        Practical 03: HTML Forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab04/" class="md-nav__link">
+        Practical 04: Introduction to JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab05/" class="md-nav__link">
+        Practical 05: JavaScript Program Control Structure & Arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab06/" class="md-nav__link">
+        Practical 06: JavaScript Functions & HTML DOM Manipulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab07/" class="md-nav__link">
+        Practical 07: Introduction to PHP and LAMP Web Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab08/" class="md-nav__link">
+        Practical 08: Introducing PHP into Forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab09/" class="md-nav__link">
+        Practical 09: PHP Forms and Sessions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab10/" class="md-nav__link">
+        Practical 10: Understanding MySQL Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab11/" class="md-nav__link">
+        PHP Code-Along Series (Part 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab12/" class="md-nav__link">
+        PHP Code-Along Series (Part 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202108/lab13/" class="md-nav__link">
+        PHP Code-Along Series (Part 3)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          202104
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202104" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          202104
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202104/asgn3_202104/" class="md-nav__link">
+        Assignment 3 Groups [04/2021]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          202008
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202008" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          202008
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/asgn3_202008_1/" class="md-nav__link">
+        Session 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/asgn3_202008_2/" class="md-nav__link">
+        Session 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/asgn3_202008_3/" class="md-nav__link">
+        Session 3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://deezombiedude612.github.io/itc-labs" class="md-nav__link">
+        ITC Labs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://deezombiedude612.github.io/oop-labs" class="md-nav__link">
+        OOP Labs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://deezombiedude612.github.io/ooad-labs" class="md-nav__link">
+        OOAD Labs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="setting-up-lamp-stack-in-macos-the-hard-way">Setting Up LAMP Stack in macOS (The Hard Way)</h1>
+<p>So, you're a macOS user who couldn't install or use XAMPP properly... or you decided to be nuts and try things the hard way.
+Well, if you decided to open and follow this guide for whatever your reason may be, here's a rundown of what you'll need to do to set up the LAMP stack inside your macOS machine.
+Let's get started!</p>
+<div class="admonition warning">
+<p class="admonition-title">Take Note</p>
+<p>As of writing this guide, we are using macOS Big Sur (macOS 11.0+), PHP 8.0.9, MySQL Community Server 8.0.25, and phpMyAdmin 5.1.1.
+This guide may get outdated rather quickly, so if you're reading this after at least a year from the publication of this guide, do due diligence and find out if any of the steps no longer apply to you.</p>
+</div>
+<h2 id="step-1-start-the-apache-server">Step 1: Start the Apache Server</h2>
+<p>macOS comes with the Apache Server by default.
+To start the built-in Apache server, open the Terminal app from your Application folder or type <strong>Terminal</strong> in the Spotlight Search (shortcut: <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-space">Space</kbd></span>).</p>
+<p>Type <code>sudo apachectl start</code> and press Enter.</p>
+<p>Open your web browser and type <code>localhost</code> or <code>127.0.0.1</code> in the address bar.
+If the Apache Server has successfully started, you should see this appear in your web browser:</p>
+<p><img alt="It works!" src="../images/lamp_001.png" /></p>
+<h2 id="step-2-create-sites-directory">Step 2: Create Sites Directory</h2>
+<p>Fancy, yes?
+The page you're looking at now is a result of a default web page file that is in the following location:</p>
+<div class="highlight"><pre><span></span><code>/Library/WebServer/Documents
+</code></pre></div>
+<p>To be precise, this file you're looking at is named <code>index.html.en</code>.
+However, that's quite a hard-to-remember location if you're not well-versed with the ins and outs of your system.
+In addition, this folder's contents cannot be edited without changing a few permissions by default.</p>
+<p>As a workaround, we will create a <strong>Sites</strong> directory under your home folder and use that folder to contain all our PHP web files.
+At the end of this guide, typing in <code>localhost</code> or <code>127.0.0.1</code> in your web browser's address bar will source the web files from this folder for view.</p>
+<ol>
+<li>
+<p>Heawd over to your account folder.
+    This one should be the folder with your computer's name on it.</p>
+<p>The full location of this folder is:</p>
+<div class="highlight"><pre><span></span><code>Macintosh HD/Users/&lt;your_account_folder&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Create a folder named Sites. Upon creating the folder, the folder icon should now have a compass image appear on top of it like as shown below:</p>
+<p><img alt="Sites folder" src="../images/lamp_002.png" /></p>
+</li>
+</ol>
+<p>For easier access, I have it as a shortcut in the Finder window's left-hand menu (just drag this <code>Sites</code> folder over to the left menu).
+You can also drag it to the dock if you so desire.</p>
+<h2 id="step-3-create-usernameconf-file">Step 3: Create username.conf File</h2>
+<p>To be able to recognize the files stashed inside the <code>Sites</code> directory, you will require setting up a configuration file called <code>&lt;username&gt;.conf</code>
+(i.e., if the account username I'm using in my machine is <code>henryheng612</code>, my configuration file should be called <code>henryheng612.conf</code>).</p>
+<ol>
+<li>
+<p>If you're not sure what your account username is, type <code>whoami</code> in the Terminal and hit Enter.
+    This UNIX command will reveal it inside your Terminal window.
+    <strong>Remember to note that name down, we will be using it shortly.</strong></p>
+</li>
+<li>
+<p>Right now, the Terminal window is currently inside your account folder.
+    We will need to create this configuration file in a different location.
+    Type the following command line and press Enter.</p>
+<div class="highlight"><pre><span></span><code>cd /etc/apache2/users
+</code></pre></div>
+<p>Extra Note: <code>cd</code> is the command in UNIX to navigate out of your current directory to a new one.</p>
+</li>
+<li>
+<p>Type <code>ls</code> and press Enter again.
+    This command displays all visible files in the current file directory (to include ones hidden by default, type <code>ls -a</code> instead).</p>
+</li>
+<li>
+<p>Check to see if there is an existing <code>&lt;username&gt;.conf</code> file (it will appear in the Terminal window if it exists).
+    If so, make a backup copy by entering the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo cp &lt;username&gt;.conf &lt;username&gt;.conf.bak
+</code></pre></div>
+<p>Remember to replace all instances of <code>&lt;username&gt;</code> with your own account username!</p>
+<p>Extra Note: <code>sudo</code> is used to request administrator access in a UNIX system.
+Often if you use <code>sudo</code>, you'll be prompted to enter your password.
+Don't worry, this is normal.</p>
+</li>
+<li>
+<p>We are now ready to create/edit our configuration file.
+    Type <code>sudo nano &lt;username&gt;.conf</code> in the Terminal window and press Enter.
+    If the file does not exist, you should see a blank window space.</p>
+<p>Extra Note: <code>nano</code> is a text editor used in UNIX command line interface (CLI) systems that functions like any regular text editor you've used before, just without mousr support and some nice-to-have features.
+Frequent UNIX users will find themselves using it often.
+Alternatives are <code>vi</code> and <code>vim</code>, and I think there's a debate among some nerds about which is best.
+Unless this piques your interest, you need not know the details behind it.</p>
+</li>
+<li>
+<p>Copy and paste the following configuration.</p>
+<div class="highlight"><pre><span></span><code>&lt;Directory &quot;Users/&lt;username&gt;/Sites/&quot;&gt;
+AllowOverride All
+Options Indexes MultiViews FollowSymLinks
+Require all granted
+&lt;/Directory&gt;
+</code></pre></div>
+<p>A gentle reminder: Remember to replace all instances of <code>&lt;username&gt;</code> with your account username!</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span> and press Enter to save the file.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> and press Enter to exit the nano editor.</p>
+</li>
+</ol>
+<h2 id="step-4-configure-the-httpdconf-file">Step 4: Configure the httpd.conf File</h2>
+<p>Now there's also another configuration file we'll need to modify, namely the <code>httpd.conf</code> file.</p>
+<ol>
+<li>
+<p>In your Terminal window, enter in</p>
+<div class="highlight"><pre><span></span><code>cd /etc/apache2
+</code></pre></div>
+</li>
+<li>
+<p>Type <code>ls</code> and press Enter again.
+    You should see <code>httpd.conf</code> being listed as one of the files inside the current directory.</p>
+</li>
+<li>
+<p>Type <code>sudo cp httpd.conf httpd.conf.bak</code> and press Enter.
+    This will create a backup of this configuration file in case something goes awry.</p>
+</li>
+<li>
+<p>Type <code>sudo nano httpd.conf</code> and press Enter.
+    You should see something like this appear in the nano text editor in your Terminal window.</p>
+<p><img alt="httpd.conf File" src="../images/lamp_003.png" /></p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>, type in <code>LoadModule authz_core_module</code> and press Enter.
+    We are using a search feature in the nano text editor to look for specific lines inside this file.</p>
+<p><img alt="httpd.conf File Search" src="../images/lamp_004.png" /></p>
+</li>
+<li>
+<p>Uncomment the following modules.
+    The <code>#</code> you see in front of each line means that line is commented out (i.e., that specific line or module will be ignored).
+    What we want to do is to enable these modules in our Apache server.</p>
+<div class="highlight"><pre><span></span><code>LoadModule authn_core_module libexec/apache2/mod_authn_core.so
+
+LoadModule authz_host_module libexec/apache2/mod_authz_host.so
+
+LoadModule userdir_module libexec/apache2/mod_userdir.so
+
+LoadModule include_module libexec/apache2/mod_include.so
+
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+</code></pre></div>
+</li>
+<li>
+<p>Uncomment the following line for the User home directories.</p>
+<div class="highlight"><pre><span></span><code>Include /private/etc/apache2/extra/httpd-userdir.conf
+</code></pre></div>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>, search up <code>DocumentRoot</code> and press Enter.
+    We want to edit the following two lines – this shows <code>DocumentRoot</code> configuration in <code>httpd.conf</code> which dictates the folder where your machine will source its web files to be used inside localhost.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>...
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>DocumentRoot &quot;/Library/WebServer/Documents&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&lt;Directory &quot;/Library/WebServer/Documents&quot;&gt;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>...
+</code></pre></div>
+<p>You may choose to replace them completely with these two lines or add them after commenting the latter.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>...
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DocumentRoot &quot;/Users/&lt;username&gt;/Sites/&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;Directory &quot;/Users/&lt;username&gt;/Sites/&quot;&gt;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
+</code></pre></div>
+<p>A gentle reminder: Remember to replace all instances of <code>&lt;username&gt;</code> with your account username!</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>, search up <code>AllowOverride None</code> and press Enter.
+    Here, replace this line with <code>AllowOVerride All</code>.</p>
+<p>Your DocumentRoot configuration in <code>httpd.conf</code> should look like as follows:</p>
+<p><img alt="httpd.conf File Modified" src="../images/lamp_005.png" /></p>
+</li>
+<li>
+<p>For extra measure, we can set the Apache Server to serve an index.php file instance first before an index.html.
+    Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>, search up <code>DirectoryIndex</code> and press Enter.
+    You should see the following:</p>
+<p><img alt="httpd.conf Search DirectoryIndex" src="../images/lamp_006.png" /></p>
+<p>From the line where it says</p>
+<div class="highlight"><pre><span></span><code>DirectoryIndex index.html
+</code></pre></div>
+<p>Add index.php so it now says</p>
+<div class="highlight"><pre><span></span><code>DirectoryIndex index.php index.html
+</code></pre></div>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span> and press Enter to save the file.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> and press Enter to exit the nano editor.</p>
+</li>
+</ol>
+<h2 id="step-5-configure-the-httpd-userdirconf-file">Step 5: Configure the httpd-userdir.conf File</h2>
+<ol>
+<li>
+<p>In yuor Terminal window, enter in <code>cd /etc/apache2/extra</code>.</p>
+</li>
+<li>
+<p>Type <code>ls</code> and press Enter again.
+    You should see <code>httpd-userdir.conf</code> being listed as one of the files inside the current directory.</p>
+</li>
+<li>
+<p>Type <code>sudo cp httpd-userdir.conf httpd-userdir.conf.bak</code> and press Enter.
+    This will create a backup of this configuration file in case something goes awry.</p>
+</li>
+<li>
+<p>Type <code>sudo nano httpd-userdir.conf</code> and press Enter.
+    You should see something like this appear in the nano text editor in your Terminal window:</p>
+<p><img alt="httpd-userdir.conf File" src="../images/lamp_007.png" /></p>
+</li>
+<li>
+<p>Uncomment the following line.</p>
+<div class="highlight"><pre><span></span><code>Include /private/etc/apache2/users/*.conf
+</code></pre></div>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span> and press Enter to save the file.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> and press Enter to exit the nano editor.</p>
+</li>
+</ol>
+<p>After carrying out the previous 5 steps, type in <code>sudo apachectl restart</code> amd press Enter.
+If you type in localhost or 127.0.0.1 in your web browser's address bar now, it should show a 403 Forbidden Access error akin to the following:</p>
+<p><img alt="403 Forbidden Access" src="../images/lamp_008.png" /></p>
+<p>Not to worry!
+It means everything's been set up properly so far.
+This error is caused due to the Sites folder we created not having an <code>index.php</code> or <code>index.html</code> file to display.</p>
+<h2 id="step-6-enable-php-80">Step 6: Enable PHP 8.0</h2>
+<p>macOS has PHP built in (at least in macOS Big Sur and earlier).
+The PHP shipped with Big Sur is PHP version 7.3.22, which Apple hints on removing in one of the upcoming future versions of macOS.
+Regardless, we will be using a fresh install of PHP 8.0 using an installation package manager called Homebrew.</p>
+<ol>
+<li>
+<p>Head over to <a href="https://brew.sh">https://brew.sh</a>.
+    You will be greeted with Homebrew's home page as follows:</p>
+<p><img alt="Homebrew Home Page" src="../images/lamp_009.png" /></p>
+</li>
+<li>
+<p>The first section you should see is "Install Homebrew", where there's a Terminal command line following the title.
+    Copy that command line and run it in a Terminal window.
+    This will install Homebrew inside your Mac.
+    Give it time, it will be ready for use shortly.</p>
+</li>
+<li>
+<p>After installing Homebrew, type in <code>brew install php</code>.
+    This will install PHP as well as any other software dependencies required into your Mac (think of software dependencies as pre-requisites).</p>
+</li>
+<li>
+<p>Open a new tab in the Terminal (or reboot the Terminal application).
+    If you enter in <code>php --version</code>, you should view the PHP version being used like as follows:</p>
+<p><img alt="PHP Info in Terminal" src="../images/lamp_010.png" /></p>
+<details class="info" open="open">
+<summary>NOTE ABOUT THIS TERMINAL WINDOW INTERFACE</summary>
+<p>I'm currently using Oh My Zsh in my terminal, this is not required for you to follow this whole guide.
+If you would like to try out my not-so-custom Oh My Zsh Terminal theme, look up how to install Oh My Zsh first, then head over to the following link to download my theme.
+Have fun either way!</p>
+<p><a href="https://github.com/deezombiedude612/macOS-Init/blob/master/dzd612.zsh-theme">My Custom Theme Here</a></p>
+</details>
+</li>
+<li>
+<p>Now that PHP's been installed in your Mac, we will need Apache to use this PHP by default.
+    To do this, we will have to return to our <code>httpd.conf</code> file once more to make some further changes.</p>
+</li>
+<li>
+<p>In your Terminal window, enter in <code>sudo nano /etc/apache2/httpd.conf</code>.</p>
+</li>
+<li>
+<p>You may have noticed that after successfully installing PHP with Homebrew.
+    If you've missed it, you can type in <code>brew info php</code> and the instructions will reappear again.</p>
+<p><img alt="brew info php" src="../images/lamp_011.png" /></p>
+<p>Refer to the part under <strong>Caveats</strong>.
+This part details what is required to add into your <code>httpd.conf</code> file.</p>
+<p>Depending on your Mac (from what I've known from M1 Mac users, the file locations may vary), you may be asked to insert the following or a variant of it:</p>
+<div class="highlight"><pre><span></span><code> LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so
+
+ &lt;FilesMatch \.php$&gt;
+     SetHandler application/x-httpd-php
+ &lt;/FilesMatch&gt;
+</code></pre></div>
+<p>That is all which will be needed</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>, search up <code>LoadModule php</code> and press Enter.
+    After the last LoadModule line, paste the required lines as mentioned in Line 7.</p>
+<div class="admonition danger caution">
+<p class="admonition-title">Danger</p>
+<p><strong>Do not uncomment the following line!</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#LoadModule php7_module libexec/apache2/libphp7.so
+</code></pre></div>
+<p>Uncommenting this will get Apache to run the outdated PHP that came with your Mac, we don't want this.</p>
+</div>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span> and press Enter to save the file.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> and press Enter to exit the nano editor.</p>
+</li>
+<li>
+<p>Type in <code>sudo apachectl restart</code> and press Enter.
+    This should enable the changes we made to have Apache run PHP 8.0 in your Mac.</p>
+</li>
+</ol>
+<h3 id="is-php-working-properly-now">Is PHP working properly now?</h3>
+<p>To check if PHP is working on your local Mac's web server, we will be creating a phpinfo() file to load into your browser.</p>
+<ol>
+<li>
+<p>Go to your <code>Sites</code> folder and create a file called <code>phpinfo.php</code>.</p>
+</li>
+<li>
+<p>In <code>phpinfo.php</code>, put in the following code and save the file:</p>
+<div class="highlight"><pre><span></span><code>&lt;?php phpinfo(); ?&gt;
+</code></pre></div>
+</li>
+<li>
+<p>If you type in <code>localhost/phpinfo.php</code> or <code>127.0.0.1/phpinfo.php</code> in your web browser's address bar, you should see something like this:</p>
+<p><img alt="phpinfo.php" src="../images/lamp_012.png" /></p>
+<p>Congratulations, you're now running a current version of PHP on your local web server!</p>
+</li>
+</ol>
+<h2 id="step-7-install-mysql">Step 7: Install MySQL</h2>
+<p>You will also require a MySQL or mariaDB database server.
+This step will involve installing MySQL's Community Server inside your Mac to use – if you plan on learning more on MySQL databases, consider this a way to kill two birds with one stone! 😁</p>
+<p>Like with PHP, you can install MySQL or mariaDB with Homebrew.
+However, the following instructions will focus more towards not interacting with the Terminal as much as possible.</p>
+<ol>
+<li>
+<p>Head over to the following link and download the DMG Archive installer.</p>
+<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+</li>
+<li>
+<p>Proceed with the installation up until you reach <strong>Configuration</strong> stage (this should be the second last part of the installation process).</p>
+</li>
+<li>
+<p>At the <strong>Configuration</strong> stage, you will be required to select a Password Encryption type.
+    We will be installing one more piece of software to access our MySQL database later, but it will not work well if we choose the Strong Password Encryption option.
+    In this case, select Use Legacy Password Encryption.</p>
+<p><img alt="MySQL Password Encryption Settings" src="../images/lamp_013.png" /></p>
+</li>
+<li>
+<p>Enter in your MySQL database password.</p>
+<p><img alt="Enter MySQL Password" src="../images/lamp_014.png" /></p>
+</li>
+</ol>
+<div class="admonition failure">
+<p class="admonition-title">OOPS!</p>
+<p>If you proceeded with the Strong Password Encryption by mistake during installation, don't worry.
+Head over to System Preferences, and you should see MySQL as one of the last options in the window as follows:</p>
+<p><img alt="System Preferences" src="../images/lamp_015.png" /></p>
+<p>Select the MySQL option and you will be greeted with a dashboard like as follows:</p>
+<p><img alt="MySQL Dashboard" src="../images/lamp_016.png" /></p>
+<p>Select <strong>Initialize Database</strong> and you'll be greeted with this screen.</p>
+<p><img alt="MySQL Initialize Database" src="../images/lamp_017.png" /></p>
+<p>Select <strong>Use Legacy Password Encryption</strong> and enter your password again. Crisis averted!! :relieved:</p>
+</div>
+<ol>
+<li>
+<p>Open up a <strong>NEW</strong> Terminal window and type in <code>ls -a</code>.
+    Look and see if either a file called <code>.zshrc</code> or <code>.bashrc</code> exists inside your account folder.
+    In this example, my machine has <code>.zshrc</code>.</p>
+<p><img alt="Search for .zshrc or .bashrc" src="../images/lamp_018.png" /></p>
+</li>
+<li>
+<p>If you have <code>.zshrc</code> like in my case (this should be true for all those running macOS Cataline or later), type the following command:</p>
+<div class="highlight"><pre><span></span><code>echo &quot;export PATH=${PATH}:/usr/local/mysql/bin/&quot; &gt;&gt; ~/.zshrc
+</code></pre></div>
+<p>If you're using <code>.bashrc</code> instead, type the following command:</p>
+<div class="highlight"><pre><span></span><code>echo &quot;export PATH=${PATH}:/usr/local/mysql/bin/&quot; &gt;&gt; ~/.bashrc
+</code></pre></div>
+</li>
+<li>
+<p>Open a new Terminal window and enter in <code>mysql --version</code>.
+    It should print out the version of MySQL installed in your machine.</p>
+<p><img alt="MySQL Version Info" src="../images/lamp_019.png" /></p>
+</li>
+<li>
+<p>Type in <code>mysql -u root -p</code>.
+    You should be prompted to enter the password you've set for MySQL.
+    Once you've entered the correct password, you should see a CLI nterface to enter MySQL commands.
+    We don't need to do anything here for now, so just type in <code>exit</code> and press Enter to exit this interface.</p>
+<p><img alt="MySQL CLI" src="../images/lamp_020.png" /></p>
+</li>
+</ol>
+<p>If you like, you can also proceed to install MySQL Workbench.
+It is an IDE that is primarily used to create and test MySQL scripts.
+However, we will be using something else instead for this module.. and that is phpMyAdmin.</p>
+<h2 id="step-8-install-phpmyadmin">Step 8: Install phpMyAdmin</h2>
+<p>Alright, the last thing you'll need to install and/or configure.. I promise!
+Also like PHP, you can install phpMyAdmin using Homebrew, but we will again avoid using the Terminal like for MySQL in the following instructions.</p>
+<ol>
+<li>
+<p>Head over to the following link to download phpMyAdmin (which is in a zip file): <a href="https://phpmyadmin.net">https://phpmyadmin.net</a></p>
+</li>
+<li>
+<p>Unzip the zip file.
+   Rename the folder to just "phpmyadmin" and move it to the <code>Sites</code> folder.</p>
+</li>
+<li>
+<p>If you type in <code>localhost/phpinfo.php</code> or <code>127.0.0.1/phpinfo.php</code> in your browser's address bar, you should be greeted with a login page like this:
+   <img alt="phpMyAdmin Login" src="../images/lamp_021.png" /></p>
+</li>
+<li>
+<p>Type in <strong>root</strong> as your username and enter the password you set when installing MySQL earlier.
+   You should now be greeted with a control panel like this:
+   <img alt="phpMyAdmin Dashboard" src="../images/lamp_022.png" /></p>
+</li>
+</ol>
+<p>And... you're done!
+That is all you need to install and configure to prepare a LAMP stack from scratch.
+I hope you've gained a sense of accomplishment from going through these steps, it's a fruitful one!</p>
+<p>If you have any more questions, you know where to reach me. :wink:</p>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p>[Tech CookBook] Setting Up Your Local Web Server on macOS Big Sur 11.0.1 (2020) | MAMP | macOS, Apache, MySQL, PHP. Link:
+   <a href="https://tech-cookbook.com/2020/11/14/setting-up-your-local-web-server-on-macos-big-sur-11-0-1-2020-mamp-macos-apache-mysql-php/">https://tech-cookbook.com/2020/11/14/setting-up-your-local-web-server-on-macos-big-sur-11-0-1-2020-mamp-macos-apache-mysql-php/</a></p>
+</li>
+<li>
+<p>[YouTube] How To Set Up phpMyAdmin With MySQL 8.0+ on MacOS. Link:
+   <a href="https://youtu.be/SVNbRXUEDUg">https://youtu.be/SVNbRXUEDUg</a></p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../xampp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XAMPP Installation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              XAMPP Installation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lab01/" class="md-footer__link md-footer__link--next" aria-label="Next: Practical 01: Getting Started with HTML" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Practical 01: Getting Started with HTML
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 - 2022 Henry Heng
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://twitter.com/deezombiedude" target="_blank" rel="noopener" title="deezombiedude on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/deezombiedude612" target="_blank" rel="noopener" title="deezombiedude612 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c2e1ee47.min.js"></script>
+      
+        <script src="../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

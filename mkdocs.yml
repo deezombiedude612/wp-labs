@@ -1,0 +1,120 @@
+site_name: ITS30605 WP Labs
+site_url: https://deezombiedude612.github.io/wp-labs
+docs_dir: src
+site_dir: docs
+theme:
+  name: material
+  custom_dir: "custom"
+  favicon: "assets/images/hhicon.png"
+  logo: "assets/images/hhicon.png"
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: oscillo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - toc.integrate
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - meta
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tilde
+
+extra_css:
+  - css/extras.css
+
+extra_javascript:
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Practical Preparation: lab00.md
+      - XAMPP Installation: xampp.md
+      - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
+  - 2022 April:
+      # - lab00.md
+      - lab01.md
+      - lab02.md
+      - lab03.md
+      - lab04.md
+      - lab05.md
+      - lab06.md
+      - lab07.md
+      - lab08.md
+      - lab09.md
+      # - lab10.md
+      # - lab11.md
+      # - lab12.md
+      # - lab13.md
+  - Asgn 3 Groups:
+      - 2022 April: asgn3_202204.md
+      - 2021 August: asgn3_202108.md
+      - 2021 April: asgn3_202104.md
+      - 2020 August:
+          - Session 1: asgn3_202008_1.md
+          - Session 2: asgn3_202008_2.md
+          - Session 3: asgn3_202008_3.md
+  - Archive:
+      - 202108:
+          - Home: archive/202108/index.md
+          - archive/202108/lab00.md
+          - archive/202108/lab01.md
+          - archive/202108/lab02.md
+          - archive/202108/lab03.md
+          - archive/202108/lab04.md
+          - archive/202108/lab05.md
+          - archive/202108/lab06.md
+          - archive/202108/lab07.md
+          - archive/202108/lab08.md
+          - archive/202108/lab09.md
+          - archive/202108/lab10.md
+          - archive/202108/lab11.md
+          - archive/202108/lab12.md
+          - archive/202108/lab13.md
+      - 202104:
+          - archive/202104/asgn3_202104.md
+      - 202008:
+          - Session 1: archive/202008/asgn3_202008_1.md
+          - Session 2: archive/202008/asgn3_202008_2.md
+          - Session 3: archive/202008/asgn3_202008_3.md
+  - ITC Labs: https://deezombiedude612.github.io/itc-labs
+  - OOP Labs: https://deezombiedude612.github.io/oop-labs
+  - OOAD Labs: https://deezombiedude612.github.io/ooad-labs
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/deezombiedude
+      name: deezombiedude on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/deezombiedude612
+      name: deezombiedude612 on GitHub
+copyright: Copyright &copy; 2021 - 2022 Henry Heng

@@ -1,0 +1,23 @@
+{
+  "name": "wp-labs-new",
+  "version": "2.0.0",
+  "description": "ITS30605 Web Programming Practical Labs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "mkdocs serve",
+    "compile:sass": "sass src/scss:src/css/",
+    "watch:sass": "sass --watch src/scss:src/css/"
+  },
+  "keywords": [
+    "its30605",
+    "web programming"
+  ],
+  "author": "Oscillo Strix",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.52.0"
+  }
+}
