@@ -198,8 +198,8 @@ Create a HTML file that uses external JavaScript to carry out the following.
 Bubble sort is one of many types of sorting algorithms taught in data structures and algorithms courses.
 Watch the following video to understand the concept behind bubble sort (0:48 to 2:40).
 
-<div style="text-align: center;">
-	<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uJLwnsLn0_Q?start=48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="text-center">
+	<iframe class="youtube-iframe" src="https://www.youtube-nocookie.com/embed/uJLwnsLn0_Q?start=48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 In this activity, we will be using an external JavaScript file to contain our logic and the browser's inspector console to view our outputs.

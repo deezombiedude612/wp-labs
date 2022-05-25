@@ -84,7 +84,7 @@ nav:
           - Session 2: asgn3_202008_2.md
           - Session 3: asgn3_202008_3.md
   - Archive:
-      - 202108:
+      - 2021 August:
           - Home: archive/202108/index.md
           - archive/202108/lab00.md
           - archive/202108/lab01.md
@@ -100,15 +100,16 @@ nav:
           - archive/202108/lab11.md
           - archive/202108/lab12.md
           - archive/202108/lab13.md
-      - 202104:
+      - 2021 April:
           - archive/202104/asgn3_202104.md
-      - 202008:
+      - 2020 August:
           - Session 1: archive/202008/asgn3_202008_1.md
           - Session 2: archive/202008/asgn3_202008_2.md
           - Session 3: archive/202008/asgn3_202008_3.md
   - ITC Labs: https://deezombiedude612.github.io/itc-labs
   - OOP Labs: https://deezombiedude612.github.io/oop-labs
   - OOAD Labs: https://deezombiedude612.github.io/ooad-labs
+
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -117,4 +118,5 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/deezombiedude612
       name: deezombiedude612 on GitHub
+
 copyright: Copyright &copy; 2021 - 2022 Henry Heng

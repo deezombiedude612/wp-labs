@@ -9,7 +9,7 @@ Here, we will be going through how to utilize credentials stored in a database i
 
 ## Video
 
-<div style="text-align: center;">
+<div class="text-center">
 	<iframe class="youtube-iframe" src="https://www.youtube.com/embed/eY5TjZVZZIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 

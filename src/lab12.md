@@ -8,7 +8,7 @@ The second part of this series is concerned with implementing data manipulation 
 
 ## Video
 
-<div style="text-align: center;">
+<div class="text-center">
 	<iframe class="youtube-iframe" src="https://www.youtube.com/embed/Q_E6sE62zKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
