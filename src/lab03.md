@@ -19,7 +19,7 @@ Create a form as close as the image given below:
 
 Image assets are given below:
 
-[Lab 03 Activity Assets](https://deezombiedude612.github.io/class-assets/wp-lab03-props/lab03_resources.zip)
+[Lab 03 Activity Assets](./props/lab03_resources.zip)
 
 The font used to create this form is called **Urbanist**, and it can be found in Google Fonts.
 Click [HERE](https://fonts.google.com/specimen/Urbanist) to open the Google Fonts page showcasing the font and to get details on incorporating it into your web form.
@@ -60,3 +60,11 @@ This will set the viewport of the webpage, which will give the browser instructi
 Apart from that, media queries were used to cater for different screen sizes.
 Look up media queries online and try to incorporate it into your web form.
 You may use your browser's inspector tool to simulate viewing the webpage from a mobile device of your own choosing.
+
+### Video Guide
+
+The following video will give a thorough walkthrough on how to develop the above form.
+
+<div class="text-center">
+	<iframe class="youtube-iframe" src="https://www.youtube-nocookie.com/embed/DaEHSpeh3Tk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

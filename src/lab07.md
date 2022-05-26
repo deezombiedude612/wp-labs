@@ -55,7 +55,7 @@ Ensure that both the Apache server and the MySQL are running as according to the
 Inside the `htdocs` folder, create a PHP file named `test.php`.
 In this file, enter the following script:
 
-```php
+```php linenums="1" title="test.php"
 <?php
 	echo "<h1>It works!</h1>";
 ```

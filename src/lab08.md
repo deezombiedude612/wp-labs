@@ -59,7 +59,7 @@ We'll proceed to create our PHP file surrounding this form element.
 To process the form, we'll need to create the script mentioned in the `action` attribute of the `<form>` tag called `process-order.php`.
 Prepare `process-order.php` starting off with the following HTML code:
 
-```html linenums="1" hl_lines="40"
+```html linenums="1" hl_lines="40" title="process-order.php"
 <!DOCTYPE html>
 <html>
 	<head>

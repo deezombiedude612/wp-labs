@@ -56,7 +56,7 @@ Alternatively, you can click and drag your project folder from your File Explore
 Create a web page file named `index.html` your project directory.
 After that, copy and paste the following into your web page:
 
-```html
+```html linenums="1" title="index.html"
 <!DOCTYPE html>
 <html>
 	<head>

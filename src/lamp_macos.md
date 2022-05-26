@@ -310,7 +310,9 @@ To check if PHP is working on your local Mac's web server, we will be creating a
 
 2.  In `phpinfo.php`, put in the following code and save the file:
 
-        <?php phpinfo(); ?>
+    ```php linenums="1" title="phpinfo.php"
+    <?php phpinfo(); ?>
+    ```
 
 3.  If you type in `localhost/phpinfo.php` or `127.0.0.1/phpinfo.php` in your web browser's address bar, you should see something like this:
 
@@ -342,22 +344,22 @@ However, the following instructions will focus more towards not interacting with
 
     ![Enter MySQL Password](./images/lamp_014.png)
 
-!!! failure "OOPS!"
+    !!! failure "OOPS!"
 
-    If you proceeded with the Strong Password Encryption by mistake during installation, don't worry.
-    Head over to System Preferences, and you should see MySQL as one of the last options in the window as follows:
+        If you proceeded with the Strong Password Encryption by mistake during installation, don't worry.
+        Head over to System Preferences, and you should see MySQL as one of the last options in the window as follows:
 
-    ![System Preferences](./images/lamp_015.png)
+        ![System Preferences](./images/lamp_015.png)
 
-    Select the MySQL option and you will be greeted with a dashboard like as follows:
+        Select the MySQL option and you will be greeted with a dashboard like as follows:
 
-    ![MySQL Dashboard](./images/lamp_016.png)
+        ![MySQL Dashboard](./images/lamp_016.png)
 
-    Select **Initialize Database** and you'll be greeted with this screen.
+        Select **Initialize Database** and you'll be greeted with this screen.
 
-    ![MySQL Initialize Database](./images/lamp_017.png)
+        ![MySQL Initialize Database](./images/lamp_017.png)
 
-    Select **Use Legacy Password Encryption** and enter your password again. Crisis averted!! :relieved:
+        Select **Use Legacy Password Encryption** and enter your password again. Crisis averted!! 😌
 
 5.  Open up a **NEW** Terminal window and type in `ls -a`.
     Look and see if either a file called `.zshrc` or `.bashrc` exists inside your account folder.
@@ -410,7 +412,7 @@ And... you're done!
 That is all you need to install and configure to prepare a LAMP stack from scratch.
 I hope you've gained a sense of accomplishment from going through these steps, it's a fruitful one!
 
-If you have any more questions, you know where to reach me. :wink:
+If you have any more questions, you know where to reach me. 😉
 
 ## References
 
