@@ -2,26 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
 iframe.youtube-iframe {
-  width: 560px;
-  height: 315px;
+  width: 100vw;
+  aspect-ratio: 16/9;
 }
 
-@media only screen and (min-width: 775px) {
-  iframe.youtube-iframe {
-    width: 100vw;
-    height: 100vh;
-    max-width: 720px;
-    max-height: 405px;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  iframe.youtube-iframe {
-    width: 100vw;
-    height: 100vh;
-    max-width: 960px;
-    max-height: 540px;
-  }
-}
 .fw-bold {
   font-weight: bold;
 }
@@ -54,10 +38,6 @@ iframe.youtube-iframe {
 h2#message {
   font-family: "Caveat", "Grape Nuts", cursive;
   font-size: 48px;
-}
-
-#main-404 {
-  margin-top: -3.5rem;
 }
 
 /*# sourceMappingURL=extras.css.map */
