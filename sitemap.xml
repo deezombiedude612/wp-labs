@@ -36,11 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://deezombiedude612.github.io/wp-labs/getting-started/</loc>
-         <lastmod>2022-05-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://deezombiedude612.github.io/wp-labs/lab01/</loc>
          <lastmod>2022-05-29</lastmod>
          <changefreq>daily</changefreq>
@@ -127,6 +122,11 @@
     </url>
     <url>
          <loc>https://deezombiedude612.github.io/wp-labs/list_202204/</loc>
+         <lastmod>2022-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://deezombiedude612.github.io/wp-labs/practical-preparation/</loc>
          <lastmod>2022-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
