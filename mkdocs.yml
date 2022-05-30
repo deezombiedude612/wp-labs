@@ -57,11 +57,10 @@ extra_javascript:
 nav:
   - Home: index.md
   - Guides:
-      - Practical Preparation: lab00.md
+      - Practical Preparation: practical-preparation.md
       - XAMPP Installation: xampp.md
       - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
   - 2022 April:
-      # - lab00.md
       - lab01.md
       - lab02.md
       - lab03.md
@@ -71,18 +70,23 @@ nav:
       - lab07.md
       - lab08.md
       - lab09.md
-      # - lab10.md
-      # - lab11.md
-      # - lab12.md
-      # - lab13.md
+      - lab10.md
+      - lab11.md
+      - lab12.md
+      - lab13.md
   - Asgn 3 Groups:
       - 2022 April: asgn3_202204.md
       - 2021 August: asgn3_202108.md
       - 2021 April: asgn3_202104.md
       - 2020 August:
-          - Session 1: asgn3_202008_1.md
-          - Session 2: asgn3_202008_2.md
-          - Session 3: asgn3_202008_3.md
+          - Session 1 (G3): asgn3_202008_1.md
+          - Session 2 (G1): asgn3_202008_2.md
+          - Session 3 (G2): asgn3_202008_3.md
+      - Name List:
+          - 2022 April: list_202204.md
+          - 2021 August: list_202108.md
+          - 2021 April: list_202104.md
+          - 2020 August: list_202008.md
   - Archive:
       - 2021 August:
           - Home: archive/202108/index.md

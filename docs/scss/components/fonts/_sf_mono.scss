@@ -1,0 +1,80 @@
+$font_dir: "../assets/fonts/san-francisco/sf_mono/";
+$font_name: "SF Mono";
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Regular.otf") format("opentype");
+	font-style: normal;
+	font-weight: normal; // 400
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-RegularItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: normal; // 400
+}
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Bold.otf") format("opentype");
+	font-style: normal;
+	font-weight: bold; // 700
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-BoldItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: bold; // 700
+}
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Light.otf") format("opentype");
+	font-style: normal;
+	font-weight: 300;
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-LightItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Medium.otf") format("opentype");
+	font-style: normal;
+	font-weight: 500;
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-MediumItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Semibold.otf") format("opentype");
+	font-style: normal;
+	font-weight: 600;
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-SemiboldItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-Heavy.otf") format("opentype");
+	font-style: normal;
+	font-weight: 800;
+}
+@font-face {
+	font-family: $font_name;
+	src: url("#{$font_dir}SF-Mono-HeavyItalic.otf") format("opentype");
+	font-style: italic;
+	font-weight: 800;
+}

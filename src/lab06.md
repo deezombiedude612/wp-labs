@@ -128,29 +128,6 @@ Suitable messages are displayed as a result of the checks.
 
 Create a HTML file that uses embedded JavaScript to carry out the following.
 
-**Part 1:** Create a `<script>` element located in the `<head>` section containing the following code snippet:
-
-```js linenums="1" hl_lines="4"
-function showPrimes(limit) {
-	for (let number = 2; number <= limit; ++number) {
-		let isPrime = true;
-		/* ---- CONTINUE CODE FROM HERE ---- */
-	}
-}
-```
-
-The given code snippet depicts a function named `showPrimes` which takes in a parameter value called `limit`.
-
-**Part 2:** In the `<body>` section, create another `<script>` element containing the following line:
-
-```js
-showPrimes(20);
-```
-
-### Task 3
-
-Create a HTML file that uses embedded JavaScript to carry out the following.
-
 Create a function called `arrayFromRange()` which creates an array of integers between and including the two numbers that are passed into the function.
 
 Example:
@@ -162,7 +139,7 @@ arrayFromRange(-10, -4); // this should return [-10, -9, -8, -7, -6, -5, -4];
 
 After creating the function, add another line of JavaScript code at the very end of the `<script>` element to invoke the created function.
 
-### Task 4
+### Task 3
 
 Create a HTML file that uses embedded JavaScript to carry out the following. You are required to only use the browser's inspector console to generate outputs.
 
@@ -171,7 +148,7 @@ number.)
 
 **Part 2:** Create a function that takes in a circle's radius value and returns the area of the circle with that radius.
 
-### Task 5
+### Task 4
 
 Create a HTML file that uses external JavaScript to carry out the following.
 
@@ -223,7 +200,7 @@ fizzBuzz(false);
 
     Use the `typeof` operator to check the variable's type.
 
-### Task 6
+### Task 5
 
 Create a HTML file that uses external JavaScript to carry out the following. You are required to only use the browser's inspector console to generate outputs.
 
@@ -238,3 +215,28 @@ Create a HTML file that uses external JavaScript to carry out the following. You
 **Part 2:** Use the for-in loop to iterate through the `movie` object's attributes, printing them each time.
 
 **Part 3:** In the same for/in loop, implement a check such that only the attributes containing string values are printed in the console.
+
+## Challenge Tasks
+
+### Challenge Task 1
+
+Create a HTML file that uses embedded JavaScript to carry out the following.
+
+**Part 1:** Create a `<script>` element located in the `<head>` section containing the following code snippet:
+
+```js linenums="1" hl_lines="4"
+function showPrimes(limit) {
+	for (let number = 2; number <= limit; ++number) {
+		let isPrime = true;
+		/* ---- CONTINUE CODE FROM HERE ---- */
+	}
+}
+```
+
+The given code snippet depicts a function named `showPrimes` which takes in a parameter value called `limit`.
+
+**Part 2:** In the `<body>` section, create another `<script>` element containing the following line:
+
+```js
+showPrimes(20);
+```
