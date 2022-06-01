@@ -220,7 +220,7 @@ iframe.youtube-iframe {
 [data-md-color-scheme="slate"] .md-nav__item .md-nav__link--active {
 	color: #dca978;
 } */
-h2#message {
+h2#message, h2#take-me-back {
   font-family: "Caveat", "Grape Nuts", cursive;
   font-size: 48px;
 }
