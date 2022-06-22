@@ -1705,9 +1705,9 @@ This will not utilize database connectivity just yet, but you should be able to 
 <a id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Login Page<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;off&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17"></a>                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Username&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Username&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;off&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Password&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20"></a>
 <a id="__codelineno-3-21" name="__codelineno-3-21"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log In&quot;</span> <span class="p">/&gt;</span>
@@ -1788,7 +1788,7 @@ We will utilize this to display a message in our <code>p#error</code> element in
 <span class="normal"><a href="#__codelineno-6-13">13</a></span>
 <span class="normal"><a href="#__codelineno-6-14">14</a></span>
 <span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">&lt;form action=&quot;.&quot; method=&quot;post&quot;&gt;</span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">&lt;form action=&quot;.&quot; method=&quot;post&quot; autocomplete=&quot;off&quot;&gt;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="hll"><span class="x">    &lt;p id=&quot;error&quot;&gt;</span>
 </span><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="hll"><span class="x">    </span><span class="cp">&lt;?php</span>
 </span><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="nv">$invalid_login</span><span class="p">)</span> <span class="o">:</span>
@@ -1798,7 +1798,7 @@ We will utilize this to display a message in our <code>p#error</code> element in
 </span><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="hll">        <span class="k">endif</span><span class="p">;</span>
 </span><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="hll">    <span class="cp">?&gt;</span><span class="x"></span>
 </span><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="hll"><span class="x">    &lt;/p&gt;</span>
-</span><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="x">    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot; /&gt;&lt;br /&gt;</span>
+</span><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="x">    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot; autocomplete=&quot;off&quot; /&gt;&lt;br /&gt;</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="x">    &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;&lt;br /&gt;</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13"></a>
 <a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="x">    &lt;input type=&quot;submit&quot; value=&quot;Log In&quot; /&gt;</span>
@@ -1855,7 +1855,7 @@ We will carry this out through utilizing an if-else statement.</p>
 </span><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="hll">        <span class="k">else</span> <span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 </span><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">    &lt;h1&gt;Login Page&lt;/h1&gt;</span>
 <a id="__codelineno-7-13" name="__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">    &lt;form action=&quot;.&quot; method=&quot;post&quot;&gt;</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">    &lt;form action=&quot;.&quot; method=&quot;post&quot; autocomplete=&quot;off&quot;&gt;</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="x">        &lt;p id=&quot;error&quot;&gt;</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="x">            </span><span class="cp">&lt;?php</span>
 <a id="__codelineno-7-17" name="__codelineno-7-17"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$invalid_login</span><span class="p">)</span> <span class="o">:</span>
@@ -1865,7 +1865,7 @@ We will carry this out through utilizing an if-else statement.</p>
 <a id="__codelineno-7-21" name="__codelineno-7-21"></a>                <span class="k">endif</span><span class="p">;</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22"></a>            <span class="cp">?&gt;</span><span class="x"></span>
 <a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="x">        &lt;/p&gt;</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="x">        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot;&gt;&lt;br&gt;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="x">        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot; autocomplete=&quot;off&quot;&gt;&lt;br&gt;</span>
 <a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="x">        &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot;&gt;&lt;br&gt;</span>
 <a id="__codelineno-7-26" name="__codelineno-7-26"></a>
 <a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="x">        &lt;input type=&quot;submit&quot; value=&quot;Log In&quot;&gt;</span>
