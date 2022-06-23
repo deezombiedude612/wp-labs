@@ -1733,32 +1733,40 @@ Create JavaScript code within <code>&lt;script&gt;</code> tags inside the webpag
 <p>Create a HTML webpage that displays a prompt box that requests users to enter their name.
 Once entered, an alert box should follow up with a greeting that contains the entered name.</p>
 <p>Use a <strong>separate JavaScript file</strong> to contain the JavaScript code for this functionality.</p>
+<div class="admonition tip how to link separate javascript files">
+<p class="admonition-title">Tip</p>
+<p>To link another JavaScript file for use with your HTML page, you'll still need the <code>&lt;script&gt;</code> tags, but now with a <code>src</code> attribute added to it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The given line looks for a JavaScript file named <code>script.js</code> to include together with your HTML file.
+All rules pertaining to locating JavaScript files in subfolders or the parent folders work the same way as how it is for CSS and image files.</p>
+</div>
 <h3 id="task-4">Task 4</h3>
 <p>Create an empty HTML file containing the following in the <code>&lt;body&gt;</code> section:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="hll"><span class="w">    </span><span class="cm">/* ---- INSERT CODE HERE ---- */</span><span class="w"></span>
-</span><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="hll">
-</span><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="hll"><span class="w">    </span><span class="cm">/* ---- END INSERT CODE ---- */</span><span class="w"></span>
-</span><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="hll"><span class="w">    </span><span class="cm">/* ---- INSERT CODE HERE ---- */</span><span class="w"></span>
+</span><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="hll">
+</span><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="hll"><span class="w">    </span><span class="cm">/* ---- END INSERT CODE ---- */</span><span class="w"></span>
+</span><a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>You should now be able to view from the values of <code>a</code> and <code>b</code> being printed in the console.</p>
-<p>Within the given boundaries as stated in the above code snippet, write some extra JavaScript code that will swap the values of variables a and b.
+<p>Within the given boundaries as stated in the above code snippet, write some extra JavaScript code that will swap the values of variables <code>a</code> and <code>b</code>.
 You may check your variable answers using your browser's console or insert additional lines of code to automatically print out their values.</p>
 <details class="hint">
 <summary>Hint</summary>
