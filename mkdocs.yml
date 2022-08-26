@@ -57,24 +57,31 @@ extra_javascript:
 nav:
   - Home: index.md
   - Guides:
-      - Practical Preparation: practical-preparation.md
-      - XAMPP Installation: xampp.md
+      - Guides: guides.md
+      - Code Editor (VS Code): guide-vscode.md
+      - XAMPP Installation: guide-xampp.md
       - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
-  - 2022 April:
+      - HTML Deprecated Tags & Attributes: guide-deprecated.md
+  - 2022 August:
       - lab01.md
       - lab02.md
       - lab03.md
-      - lab04.md
-      - lab05.md
-      - lab06.md
-      - lab07.md
-      - lab08.md
-      - lab09.md
-      - lab10.md
-      - lab11.md
-      - lab12.md
-      - lab13.md
+      # - lab04.md
+      # - lab05.md
+      # - lab06.md
+      # - "Practical 07: Extra JavaScript Activities":
+      #     - lab07.md
+      #     - lab07A.md
+      #     - lab07B.md
+      # - lab08.md
+      # - lab09.md
+      # - lab10.md
+      # - "PHP Code-Along Series":
+      #     - lab11.md
+      #     - lab12.md
+      #     - lab13.md
   - Asgn 3 Groups:
+      - 2022 August: asgn3_202208.md
       - 2022 April: asgn3_202204.md
       - 2021 August: asgn3_202108.md
       - 2021 April: asgn3_202104.md
@@ -83,11 +90,28 @@ nav:
           - Session 2 (G1): asgn3_202008_2.md
           - Session 3 (G2): asgn3_202008_3.md
       - Name List:
+          - 2022 August: list_202208.md
           - 2022 April: list_202204.md
           - 2021 August: list_202108.md
           - 2021 April: list_202104.md
           - 2020 August: list_202008.md
   - Archive:
+      - 2022 April:
+          - Home: archive/202204/index.md
+          - archive/202204/practical-preparation.md
+          - archive/202204/lab01.md
+          - archive/202204/lab02.md
+          - archive/202204/lab03.md
+          - archive/202204/lab04.md
+          - archive/202204/lab05.md
+          - archive/202204/lab06.md
+          - archive/202204/lab07.md
+          - archive/202204/lab08.md
+          - archive/202204/lab09.md
+          - archive/202204/lab10.md
+          - archive/202204/lab11.md
+          - archive/202204/lab12.md
+          - archive/202204/lab13.md
       - 2021 August:
           - Home: archive/202108/index.md
           - archive/202108/lab00.md

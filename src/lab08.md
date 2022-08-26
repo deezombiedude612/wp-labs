@@ -59,7 +59,7 @@ We'll proceed to create our PHP file surrounding this form element.
 To process the form, we'll need to create the script mentioned in the `action` attribute of the `<form>` tag called `process-order.php`.
 Prepare `process-order.php` starting off with the following HTML code:
 
-```html linenums="1" hl_lines="40" title="process-order.php"
+```html linenums="1" hl_lines="39" title="process-order.php"
 <!DOCTYPE html>
 <html>
 	<head>
@@ -72,8 +72,7 @@ Prepare `process-order.php` starting off with the following HTML code:
 				font-weight: bold;
 			}
 
-			thead tr {
-				/* table tr:first-of-type { */
+			th {
 				background-color: #cccccc;
 			}
 
@@ -129,6 +128,11 @@ Modify `process-order.php` such that it displays the following when the order fo
 
 ![Lab 08-002](./images/lab08_002.png)
 
+!!! tip
+
+    In place of where you immediately insert Listing 1, replace it with the given code snippet.
+    This code snippet has a line where you insert Listing 1 in as well.
+
 ## Task 3: Adding Dynamic Content
 
 Modify `process-order.php` to display the date and time when the form was submitted.
@@ -137,7 +141,7 @@ Modify `process-order.php` to display the date and time when the form was submit
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . <?= date("F jS Y, l, H:i:s"); ?> . "</p>";
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
 	} else {
 		?>
 		<!-- Listing 1 goes here -->
@@ -160,7 +164,7 @@ Within the same PHP script, add some lines to display the customer's order list.
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s"); . "</p>";
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
 
 		?>
 		<p class="font-bold">Your order is as follows:</p>
@@ -198,7 +202,7 @@ Within the same script, add some lines to display the following additional outpu
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . <?= date("F jS Y, l, H:i:s"); ?> . "</p>";
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
 
 		?>
 		<p class="font-bold">Your order is as follows:</p>

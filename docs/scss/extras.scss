@@ -8,6 +8,10 @@
 //   --md-primary-fg-color--dark:  #90030C;
 // }
 
+:root {
+	--error-h2-size: 48px;
+}
+
 [data-md-color-scheme="oscillo"] {
 	--md-primary-fg-color: #89623d;
 	--md-default-fg-color--light: #89623d; // title
@@ -31,11 +35,16 @@
 
 // 404 Error Message Style
 
-h2#message {
-	font-family: 'Caveat', 'Grape Nuts', cursive;
-	font-size: 48px;
+h2#message, h2#take-me-back {
+	font-size: var(--error-h2-size);
 }
 
+h2#message {
+	font-family: 'Caveat', 'Grape Nuts', cursive;
+}
+h2#take-me-back {
+	font-family: 'Grape Nuts', 'Caveat', cursive;
+}
 // #main-404 {
 // 	margin-top: -3.5rem;
 // }

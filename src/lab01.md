@@ -149,3 +149,5 @@ For instance, rather than using the `<u></u>` element to denote underlined text,
 Using CSS rather than resorting to deprecated tags has its upsides.
 For one, you can implement one style ruling to be shared across multiple HTML elements in multiple HTML documents.
 We will delve more into CSS stylings in the next practical.
+
+Refer here for the list of deprecated HTML tags and attributes you **SHOULD NOT USE**: [HTML Deprecated Tags and Attributes](guide-deprecated.md)

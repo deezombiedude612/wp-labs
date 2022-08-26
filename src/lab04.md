@@ -163,6 +163,17 @@ Once entered, an alert box should follow up with a greeting that contains the en
 
 Use a **separate JavaScript file** to contain the JavaScript code for this functionality.
 
+!!! tip How to Link Separate JavaScript Files
+
+    To link another JavaScript file for use with your HTML page, you'll still need the `<script>` tags, but now with a `src` attribute added to it:
+
+    ```html
+    <script src="script.js"></script>
+    ```
+
+    The given line looks for a JavaScript file named `script.js` to include together with your HTML file.
+    All rules pertaining to locating JavaScript files in subfolders or the parent folders work the same way as how it is for CSS and image files.
+
 ### Task 4
 
 Create an empty HTML file containing the following in the `<body>` section:
@@ -183,7 +194,7 @@ Create an empty HTML file containing the following in the `<body>` section:
 
 You should now be able to view from the values of `a` and `b` being printed in the console.
 
-Within the given boundaries as stated in the above code snippet, write some extra JavaScript code that will swap the values of variables a and b.
+Within the given boundaries as stated in the above code snippet, write some extra JavaScript code that will swap the values of variables `a` and `b`.
 You may check your variable answers using your browser's console or insert additional lines of code to automatically print out their values.
 
 ??? hint

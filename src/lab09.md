@@ -88,7 +88,7 @@ button#logout:hover {
 }
 ```
 
-```js title="js/script.js"
+```js title="js/index.js"
 if (document.querySelector("#logout")) {
 	document.querySelector("#logout").addEventListener("click", () => {
 		const response = confirm("Confirm logout?");
@@ -121,9 +121,9 @@ if (document.querySelector("#logout")) {
 		<section id="container">
 			<h1>Login Page</h1>
 
-			<form action="." method="post">
+			<form action="." method="post" autocomplete="off">
 				<p id="error"></p>
-				<input type="text" name="username" id="username" placeholder="Username" /><br />
+				<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" /><br />
 				<input type="password" name="password" id="password" placeholder="Password" /><br />
 
 				<input type="submit" value="Log In" />
@@ -188,7 +188,7 @@ As for when the credentials do not match, we have a flag variable named `$invali
 We will utilize this to display a message in our `p#error` element in the form to alert users if the credentials do not match.
 
 ```php linenums="1" hl_lines="2-10"
-<form action="." method="post">
+<form action="." method="post" autocomplete="off">
 	<p id="error">
 	<?php
 		if ($invalid_login) :
@@ -198,7 +198,7 @@ We will utilize this to display a message in our `p#error` element in the form t
 		endif;
 	?>
 	</p>
-	<input type="text" name="username" id="username" placeholder="Username" /><br />
+	<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" /><br />
 	<input type="password" name="password" id="password" placeholder="Password" /><br />
 
 	<input type="submit" value="Log In" />
@@ -228,7 +228,7 @@ We will carry this out through utilizing an if-else statement.
 		else : ?>
 	<h1>Login Page</h1>
 
-	<form action="." method="post">
+	<form action="." method="post" autocomplete="off">
 		<p id="error">
 			<?php
 			if ($invalid_login) :
@@ -238,7 +238,7 @@ We will carry this out through utilizing an if-else statement.
 				endif;
 			?>
 		</p>
-		<input type="text" name="username" id="username" placeholder="Username"><br>
+		<input type="text" name="username" id="username" placeholder="Username" autocomplete="off"><br>
 		<input type="password" name="password" id="password" placeholder="Password"><br>
 
 		<input type="submit" value="Log In">

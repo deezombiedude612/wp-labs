@@ -163,7 +163,7 @@ The respective BMI interpretations are as follows:
 | 25.0 ≤ BMI < 30.0 |   Overweight   |
 |    BMI ≥ 30.0     |     Obese      |
 
-Implement the written script in a separate JavaScript file separate from your HTML file.
+Implement the written script in a JavaScript file **separate from your HTML file**.
 You may choose to output the result from the console or via visual elements on your webpage
 (i.e., print the result in the browser window as a paragraph or regular text).
 
@@ -191,7 +191,8 @@ Create a HTML file that uses external JavaScript to carry out the following.
 
     ??? hint
 
-        There exists a `shift()` function that can do one of the given requirements here. Perhaps there's also an _unshift_ function which does the opposite as well?
+        There exists a `shift()` function that can do one of the given requirements here.
+        Perhaps there's also an _unshift_ function which does the opposite as well?
 
 ## Activity: Bubble Sort
 

@@ -76,18 +76,64 @@ If so, name them and describe how they will be used in your supposed function.
 As practice, you may also consider developing these functions with these plans in mind to be used with a HTML page.
 You may name your parameter(s) and/or function(s) as you please, but preferably with respect to their meaningfulness.
 
-1. This function delivers a greeting based on a selected language from a list of available languages.
-2. This function prints out the first 20 numbers in a sequence dictated by an already preset Maclaurin series expression.
+1.  This function delivers a greeting based on a provided language from a list of available languages.
 
-For testing purposes, you can use the common Maclaurin function:
+    ??? question "Model Answer"
 
-$$ \frac{1}{1-x} = 1 + x + x^2 + x^3 + x^4 + ... $$
+        ```js
+        function greeting(language)
+        ```
 
-Use `x = 1` to `x = 20` in this function.
+        This can be interpreted in many ways - the language can be provided by being passed into the function (e.g., via a prompt box), or the function can have a mechanism in it that will obtain that language value from a drop-down list element, for instance.
+        In the latter case, we can safely omit the `language` parameter from the function declaration.
 
-3. This function gathers two strings to check if the first letter in each one match regardless of case.
-4. This function retrieves the user input from a HTML `<input>` field to prepare an array of distinct characters used in said input.
-5. This function calculates the age of a person, place, or object by using its year of origin/date of birth/etc. and the current year during use.
+2.  This function prints out the first 20 numbers in a sequence dictated by an already preset Maclaurin series expression.
+
+    For testing purposes, you can use the common Maclaurin function:
+
+    $$ \frac{1}{1-x} = 1 + x + x^2 + x^3 + x^4 + ... $$
+
+    Use `x = 1` to `x = 20` in this function.
+
+    ??? question "Model Answer"
+
+        ```js
+        function printMaclaurin()
+        ```
+
+        The description states a preset number of terms to be printed (i.e., 20), so this value need not be put in as a parameter to the function.
+
+3.  This function gathers two strings to check if the first letter in each one match regardless of case.
+
+    ??? question "Model Answer"
+
+        ```js
+        function firstLetterMatch(string1, string2)
+        ```
+
+        Two strings are needed from the user, so it only seems right to have them provided as parameters in this case.
+
+4.  This function retrieves the user input from a HTML `<input>` field to prepare an array of distinct characters used in said input.
+
+    ??? question "Model Answer"
+
+        ```js
+        function userInputToArray()
+        ```
+
+        The description mentions that the user input is to be retrieved from a HTML `<input>` field, so there is no need to pass it in as a function parameter.
+
+5.  This function calculates the age of a person, place, or object by using its year of origin/date of birth/etc. and the current year during use.
+
+    ??? question "Model Answer"
+
+        ```js
+        function calculateAge(year)
+        ```
+
+        Just like the first one, this description does not make clear of how the year of origin/date of birth/etc. is to be obtained from the user.
+        You can have the function read the HTML element's value from within the function, or get the user to enter it from a prompt box.
+        In the earlier case, you don't need the year to be passed in as a parameter.
 
 ## Tasks
 
@@ -106,7 +152,7 @@ Suitable messages are displayed as a result of the checks.
 <p>You can apply for a license to drive when you are 16 years old.</p>
 <p>To check if you are old enough to drive, input your age and click the button:</p>
 
-<input type="text" id="ageNow" />
+<input type="number" id="ageNow" />
 <button onclick="checkAgeFunction()">Check now</button>
 
 <p id="ageCheck"></p>
@@ -117,7 +163,7 @@ Suitable messages are displayed as a result of the checks.
 
 		/* ---- END INSERT CODE ---- */
 
-		document.getElementById("ageCheck").innerHTML = CanApply;
+		document.getElementById("ageCheck").innerHTML = canApply;
 	}
 </script>
 ```
@@ -214,7 +260,7 @@ Create a HTML file that uses external JavaScript to carry out the following. You
 
 **Part 2:** Use the for-in loop to iterate through the `movie` object's attributes, printing them each time.
 
-**Part 3:** In the same for/in loop, implement a check such that only the attributes containing string values are printed in the console.
+**Part 3:** In the same for-in loop, implement a check such that only the attributes containing string values are printed in the console.
 
 ## Challenge Tasks
 

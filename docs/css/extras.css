@@ -199,6 +199,10 @@ iframe.youtube-iframe {
   text-align: center;
 }
 
+:root {
+  --error-h2-size: 48px;
+}
+
 [data-md-color-scheme=oscillo] {
   --md-primary-fg-color: #89623d;
   --md-default-fg-color--light: #89623d;
@@ -220,9 +224,16 @@ iframe.youtube-iframe {
 [data-md-color-scheme="slate"] .md-nav__item .md-nav__link--active {
 	color: #dca978;
 } */
+h2#message, h2#take-me-back {
+  font-size: var(--error-h2-size);
+}
+
 h2#message {
   font-family: "Caveat", "Grape Nuts", cursive;
-  font-size: 48px;
+}
+
+h2#take-me-back {
+  font-family: "Grape Nuts", "Caveat", cursive;
 }
 
 /*# sourceMappingURL=extras.css.map */
