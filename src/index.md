@@ -20,18 +20,18 @@ The schedule is subject to change.
 
 |             Week             | Lecture                                        | Practical Lab                                                               |                   Remarks                   |
 | :--------------------------: | ---------------------------------------------- | --------------------------------------------------------------------------- | :-----------------------------------------: |
-|  **1** <br> 29 Aug - 2 Sept  | Introduction to Web Programming<br>HTML Part 1 | [Preparation Guides](guides.md)                                             |
-|  **2** <br> 5 Sept - 9 Sept  | HTML Part 2                                    | [Practical 1: HTML Part 1](lab01.md)                                        |
+|  **1** <br> 29 Aug - 2 Sept  | Introduction to Web Programming<br>HTML Part 1 | [Preparation Guides](guides.md)                                             |                                             |
+|  **2** <br> 5 Sept - 9 Sept  | HTML Part 2                                    | [Practical 1: HTML Part 1](lab01.md)                                        |                                             |
 | **3** <br> 12 Sept - 16 Sept | HTML Part 3                                    | [Practical 2: HTML Part 2](lab02.md)                                        |                                             |
-| **4** <br> 19 Sept - 23 Sept | JavaScript Part 1                              | [Practical 3: HTML Part 3](lab03.md)                                        |
+| **4** <br> 19 Sept - 23 Sept | JavaScript Part 1                              | [Practical 3: HTML Part 3](lab03.md)                                        |                                             |
 | **5** <br> 26 Sept - 30 Sept | JavaScript Part 2                              | [Practical 4: JavaScript Part 1](lab04.md)                                  |            **Assignment 1 Due**             |
-|   **6** <br> 3 Oct - 7 Oct   | JavaScript Part 3                              | [Practical 5: JavaScript Part 2](lab05.md)                                  |
-|  **7** <br> 10 Oct - 14 Oct  | PHP Part 1                                     | [Practical 6: JavaScript Part 3](lab06.md)                                  |
+|   **6** <br> 3 Oct - 7 Oct   | JavaScript Part 3                              | [Practical 5: JavaScript Part 2](lab05.md)                                  |                                             |
+|  **7** <br> 10 Oct - 14 Oct  | PHP Part 1                                     | [Practical 6: JavaScript Part 3](lab06.md)                                  |                                             |
 |  **8** <br> 17 Oct - 21 Oct  | PHP Part 2                                     | [XAMPP Installation](guide-xampp.md)<br>[Practical 7: PHP Part 1](lab07.md) |             _Practical Test 1_              |
 |  **9** <br> 24 Oct - 28 Oct  | PHP Part 3                                     | [Practical 8: PHP Part 2](lab08.md)                                         |            **Assignment 2 Due**             |
 |  **10** <br> 31 Oct - 4 Nov  |                                                | [Practical 9: PHP Part 3](lab09.md)                                         |             _Practical Test 2_              |
-|  **11** <br> 7 Nov - 11 Nov  | Databases Part 1 & 2                           | [Practical 10: Databases Part 1](lab10.md)                                  |
-| **12** <br> 14 Nov - 18 Nov  | [Code-Along Series (Part 1)](lab11.md)         | [Code-Along Series (Part 2)](lab12.md)                                      |
+|  **11** <br> 7 Nov - 11 Nov  | Databases Part 1 & 2                           | [Practical 10: Databases Part 1](lab10.md)                                  |                                             |
+| **12** <br> 14 Nov - 18 Nov  | [Code-Along Series (Part 1)](lab11.md)         | [Code-Along Series (Part 2)](lab12.md)                                      |                                             |
 | **13** <br> 21 Nov - 25 Nov  |                                                | [Code-Along Series (Part 3)](lab13.md)                                      | _Practical Test 3_<br> **Assignment 3 Due** |
 |  **14** <br> 28 Nov - 2 Dec  | Wrap-up Lecture                                |                                                                             |           Web Design Competition            |
 
