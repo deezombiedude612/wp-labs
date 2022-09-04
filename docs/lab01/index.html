@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://deezombiedude612.github.io/wp-labs/lab01/">
       
       <link rel="icon" href="../assets/images/hhicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
@@ -19,11 +19,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3de6f41f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -39,7 +40,7 @@
     
       <link rel="stylesheet" href="../css/extras.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -523,16 +524,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task" class="md-nav__link">
-    Task
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
-    <nav class="md-nav" aria-label="Task">
+    <nav class="md-nav" aria-label="Getting Started">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#table-exercise" class="md-nav__link">
-    Table Exercise
+  <a href="#naming-your-files" class="md-nav__link">
+    Naming your Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-html-document-structure" class="md-nav__link">
+    Basic HTML Document Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-deprecated-tags" class="md-nav__link">
+    Avoid Deprecated Tags!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    Task 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    Task 2
   </a>
   
 </li>
@@ -553,26 +595,6 @@
   <a href="#website-design" class="md-nav__link">
     Website Design
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avoid-deprecated-tags" class="md-nav__link">
-    Avoid Deprecated Tags!
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1591,29 +1613,82 @@
 <h1 id="practical-01-getting-started-with-html">Practical 01: Getting Started with HTML</h1>
 <p>This practical will serve as a starting point to learning how to create webpages.
 You may have come across some of the tags used here in previous encounters, but be aware of deprecated tags! See <a href="#getting-started">Getting Started</a> for more information.</p>
-<h2 id="task">Task</h2>
-<p>Develop a webpage that contains a self-introduction of yourself. Your webpage should contain at least the following content:</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="naming-your-files">Naming your Files</h3>
+<p>HTML files typically have the <code>.html</code> extension.
+One can create a HTML file named <code>index.html</code> where <code>index</code> is the name designated to the page.</p>
+<p>Files with the name <code>index</code> are often treated as home pages in web sites.
+For example, when one visits <a href="https://times.taylors.edu.my">TIMeS</a>, the browser would immediately look for a file whose name is <code>index</code> if the name of the file is not specified.</p>
+<p>Let's just say TIMeS has a page called <code>login.html</code>. One may visit that page instead of <code>index.html</code> by specifying the filename after the URL, namely:</p>
+<div class="highlight"><pre><span></span><code>https://times.taylors.edu.my/login.html
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Take Note<p>Going forward, <strong>DO NOT</strong> name any of your project folders or files with spaces.
+This can inevitably complicate things when we start going through referencing files in your project directory.</p>
+<p>For example, if a web site with domain <code>www.example.com</code> has a file named <code>page 1.html</code>, the address bar in a web browser will have to interpret the link to that page as:</p>
+<div class="highlight"><pre><span></span><code>www.example.com/page%201.html
+</code></pre></div>
+<p>The best practice is to clump the words making up the file name together without spaces (i.e., <code>page1.html</code>), or to add a hyphen <span class="keys"><kbd class="key-minus">-</kbd></span> or underscore (<span class="keys"><kbd class="key-underscore">_</kbd></span>) to separate each word (i.e., <code>page-1.html</code>, <code>page_1.html</code>).</p>
+</p>
+</div>
+<h3 id="basic-html-document-structure">Basic HTML Document Structure</h3>
+<p>Your HTML file should take a form like as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="cm">&lt;!-- To contain stylesheets and various webpage information (i.e., Tab Name) --&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="cm">&lt;!-- Browser viewable content should be placed here --&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="avoid-deprecated-tags">Avoid Deprecated Tags!</h3>
+<p>Web developers are now expected to follow the HTML 5 standard when developing webpages.
+With this standard comes the fact that some tags/elements/attributes which were prevalently used in prior versions of HTML should no longer be applicable - they are what we call <strong>deprecated</strong>.
+In most cases, CSS is strongly recommended to be used as the ultimate alternative.</p>
+<p>For instance, rather than using the <code>&lt;u&gt;&lt;/u&gt;</code> element to denote underlined text, implement CSS like as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">&lt;!-- In &lt;head&gt; section: --&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">.</span><span class="nc">underlined</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">&lt;!-- In &lt;body&gt; section: --&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;underlined&quot;</span><span class="p">&gt;</span>Underlined text<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Using CSS rather than resorting to deprecated tags has its upsides.
+For one, you can implement one style ruling to be shared across multiple HTML elements in multiple HTML documents.
+We will delve more into CSS stylings in the next practical.</p>
+<p>Refer here for the list of deprecated HTML tags and attributes you <strong>SHOULD NOT USE</strong>: <a href="../guide-deprecated/">HTML Deprecated Tags and Attributes</a></p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1">Task 1</h3>
+<p>Develop a webpage that contains a self-introduction of yourself.
+Your webpage should contain at least the following content:</p>
 <ul>
 <li>a picture of yourself (or your online avatar/sona, a goat 🐐.. whatever rocks your boat)</li>
-<li>a short paragraph of yourself (use paragraph element)</li>
+<li>a short paragraph about yourself (use paragraph element)</li>
 <li>hobbies and interests (unordered list)</li>
 <li>favorite subjects in school (or college, you decide) (ordered list)</li>
 </ul>
-<p>You may take this as a first initiative to work on the <code>index.html</code> page of your very first assignment.</p>
-<h3 id="table-exercise">Table Exercise</h3>
-<p>At the bottom of the webpage, include a table element that replicates the following in terms of row and column span:</p>
+<p>You may take this as a first initiative to work on the <code>index.html</code> page of your very first assignment.
+If you're feeling adventurous, you can immediately begin looking into using CSS to start sprucing up your webpage.</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>What else would you put into a introduction page?
+Or more specifically, what would you like other people to know about you?</p>
+</details>
+<h3 id="task-2">Task 2</h3>
+<p>In a separate webpage called <code>tables.html</code>, create a table element that replicates the following in terms of row and column span:</p>
 <figure>
-<p><img alt="Lab 01 Table" src="../images/lab01_table.png" />
+<p><img alt="Lab 01 Task 2" src="../images/lab01_table.png" />
   </p>
 <figcaption>Table Exercise Demo</figcaption>
 </figure>
 <details class="hint">
 <summary>Hint</summary>
 <p>Consider the use of the <code>rowspan</code> and <code>colspan</code> HTML attributes.</p>
-</details>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>What else would you put into a introduction page?</p>
 </details>
 <h3 id="extra-task">Extra Task</h3>
 <p>Publish your webpage on GitHub Pages.
@@ -1661,56 +1736,13 @@ At the end of it, classes on designing a website using HTML and CSS is something
 <li>Dennis, A., Wixom, B. H. &amp; Tegarden, D. (2020). <em>Systems Analysis and Design: An Object-Oriented Approach with UML</em> (6th Edition). Wiley.</li>
 </ul>
 </div>
-<h2 id="getting-started">Getting Started</h2>
-<p>HTML files typically have the <code>.html</code> extension.
-One can create a HTML file named <code>index.html</code> where <code>index</code> is the name designated to the page.</p>
-<p>Files with the name <code>index</code> are often treated as home pages in web sites.
-For example, when one visits <a href="https://times.taylors.edu.my">TIMeS</a>, the browser would immediately look for a file whose name is <code>index</code> if the name of the file is not specified.</p>
-<p>Let's just say TIMeS has a page called <code>login.html</code>. One may visit that page instead of <code>index.html</code> by specifying the filename after the URL, namely:</p>
-<div class="highlight"><pre><span></span><code>https://times.taylors.edu.my/login.html
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Take Note<p>Going forward, <strong>DO NOT</strong> name any of your project folders or files with spaces.
-This can inevitably complicate things when we start going through referencing files in your project directory.</p>
-<p>For example, if a web site with domain <code>www.example.com</code> has a file named <code>page 1.html</code>, the address bar in a web browser will have to interpret the link to that page as:</p>
-<div class="highlight"><pre><span></span><code>www.example.com/page%201.html
-</code></pre></div>
-<p>The best practice is to clump the words making up the file name together without spaces (i.e., <code>page1.html</code>), or to add a hyphen <span class="keys"><kbd class="key-minus">-</kbd></span> or underscore (<span class="keys"><kbd class="key-underscore">_</kbd></span>) to separate each word (i.e., <code>page-1.html</code>, <code>page_1.html</code>).</p>
-</p>
-</div>
-<p>Your HTML file should take a form like as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="cm">&lt;!-- To contain stylesheets and various webpage information (i.e., Tab Name) --&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="cm">&lt;!-- Browser viewable content should be placed here --&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<h3 id="avoid-deprecated-tags">Avoid Deprecated Tags!</h3>
-<p>Web developers are now expected to follow the HTML 5 standard when developing webpages.
-With this standard comes the fact that some tags/elements/attributes which were prevalently used in prior versions of HTML should no longer be applicable - they are what we call <strong>deprecated</strong>.
-In most cases, CSS is strongly recommended to be used as the ultimate alternative.</p>
-<p>For instance, rather than using the <code>&lt;u&gt;&lt;/u&gt;</code> element to denote underlined text, implement CSS like as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">&lt;!-- In &lt;head&gt; section: --&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">.</span><span class="nc">underlined</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">&lt;!-- In &lt;body&gt; section: --&gt;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;underlined&quot;</span><span class="p">&gt;</span>Underlined text<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Using CSS rather than resorting to deprecated tags has its upsides.
-For one, you can implement one style ruling to be shared across multiple HTML elements in multiple HTML documents.
-We will delve more into CSS stylings in the next practical.</p>
-<p>Refer here for the list of deprecated HTML tags and attributes you <strong>SHOULD NOT USE</strong>: <a href="../guide-deprecated/">HTML Deprecated Tags and Attributes</a></p>
+
+
+
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1718,7 +1750,8 @@ We will delve more into CSS stylings in the next practical.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../guide-deprecated/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HTML Deprecated Tags &amp; Attributes" rel="prev">
@@ -1774,13 +1807,13 @@ We will delve more into CSS stylings in the next practical.</p>
     
     
     <a href="https://twitter.com/deezombiedude" target="_blank" rel="noopener" title="deezombiedude on Twitter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
     
     
     <a href="https://github.com/deezombiedude612" target="_blank" rel="noopener" title="deezombiedude612 on GitHub" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
 </div>
@@ -1793,10 +1826,11 @@ We will delve more into CSS stylings in the next practical.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c2e1ee47.min.js"></script>
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
         <script src="../js/mathjax.js"></script>
       

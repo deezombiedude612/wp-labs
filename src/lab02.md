@@ -4,18 +4,7 @@ template: base.html
 
 # Practical 02: Applying CSS
 
-This practical is an extension of Practical 01 - you will now attempt to implement visual styles to the content prepared in HTML.. unless you've done so already (in which case, you put some more 😝).
-
-## Task
-
-In the webpages you created, apply the various CSS styles you've learnt in lecture (e.g., background color, fonts, image positioning, etc.).
-When applying CSS to your webpages, look up some good aesthetic principles web designers or developers take when designing their websites.
-Try to apply those principles in your webpages wherever possible.
-
-### Optional Task: CSS Responsiveness
-
-Try and implement a styling that only applies itself in mobile screens.
-You may look up a screen resolution for a mobile device of your choice (e.g., iPhones, tablet screens).
+This practical is an extension of Practical 01 - you will now attempt to implement visual styles to the content prepared in HTML.. unless you've done so already (in which case, you can consider putting in some more 😝).
 
 ## Getting Started
 
@@ -116,6 +105,52 @@ With regards to custom fonts stored locally on your computer though, there's som
     		/* optional: font-weight */
     	}
     	```
+
+## Tasks
+
+### Task 1
+
+In the webpages you created, apply the various CSS styles you've learnt in lecture (e.g., background color, fonts, image positioning, etc.).
+When applying CSS to your webpages, look up some good aesthetic principles web designers or developers take when designing their websites.
+Try to apply those principles in your webpages wherever possible.
+
+### Task 2
+
+In another separate webpage called `animal-crossing.html`, try to replicate the following:
+
+<figure markdown>
+  ![Lab 02 Task 2](./images/lab02_task02.png)
+  <figcaption>Task 2 Demo</figcaption>
+</figure>
+
+Requirements:
+
+- The webpage should contain the contents as given in the figure.
+- Set the background color to beige.
+- The top image should
+
+      - occupy a **maximum width** of 400px
+      - be surrounded by a darkgreen dashed border with 3px thickness
+      - have a padding of 10px
+      - display the message "Tom Nook" if the image cannot be displayed
+
+- Download the given [Tom Nook image](./props/tom_nook.jpg) to use with this webpage.
+  Feel free to rename the image if desired.
+- Set the table borders to 1px solid black.
+- Each table cell should have a 10px padding.
+- The colored cell should have a lightseagreen background color.
+- For each list, you are required to follow the list style type as shown in the output.
+- For the first hyperlink, link it to `https://www.google.com` that
+  <span style="font-style: italic; text-decoration: underline;">opens in a new window</span>.
+  Do not use a different hyperlink text from what is given in the output.
+- For the second hyperlink, link it to an email address `tom_nook@mail.com`.
+  When the hyperlink is clicked, it should either open your computer's preferred mail application or an email website from your browser and open a new email draft.
+  The subject should be pre-filled with: "I Need Miles".
+
+### Optional Task: CSS Responsiveness
+
+Try and implement a styling that only applies itself in mobile screens.
+You may look up a screen resolution for a mobile device of your choice (e.g., iPhones, tablet screens).
 
 ## Mini-Tutorial: How to Center Images in HTML
 
