@@ -57,11 +57,15 @@ extra_javascript:
 nav:
   - Home: index.md
   - Guides:
-      - Guides: guides.md
-      - Code Editor (VS Code): guide-vscode.md
-      - XAMPP Installation: guide-xampp.md
-      - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
-      - HTML Deprecated Tags & Attributes: guide-deprecated.md
+      - List of Guides: guides.md
+      - Code Editor:
+          - VS Code: guide-vscode.md
+      - PHP Environment Setup:
+          - XAMPP Installation: guide-xampp.md
+          - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
+      - Miscellaneous & Optional References:
+          - HTML Deprecated Tags & Attributes: guide-deprecated.md
+          - CSS Attribute Selectors: guide-css-attribute-selectors.md
   - 2022 August:
       - lab01.md
       - lab02.md

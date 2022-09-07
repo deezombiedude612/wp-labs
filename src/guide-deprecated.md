@@ -2,7 +2,7 @@
 template: base.html
 ---
 
-# Guide: HTML Deprecated Tags and Attributes
+# HTML Deprecated Tags and Attributes
 
 **REMINDER:** In your assignments and tests, you will be marked down for use of any of the following deprecated tags and/or attributes.
 

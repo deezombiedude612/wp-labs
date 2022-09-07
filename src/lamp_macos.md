@@ -28,7 +28,7 @@ If the Apache Server has successfully started, you should see this appear in you
 ## Step 2: Create Sites Directory
 
 Fancy, yes?
-The page you're looking at now is a result of a default web page file that is in the following location:
+The page you're looking at now is a result of a default webpage file that is in the following location:
 
     /Library/WebServer/Documents
 

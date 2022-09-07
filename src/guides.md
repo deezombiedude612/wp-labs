@@ -2,7 +2,10 @@
 template: base.html
 ---
 
-# Guides
+# List of Guides
+
+Looking for some extra information on setting stuff up or for some small pieces of information?
+They'll populate here as and when I can put stuff in.
 
 ## Preparation Guides
 
@@ -38,7 +41,7 @@ I'll see what I can do during then.
 
 - [Setting Up LAMP Stack in macOS (The Hard Way)](lamp_macos.md)
 
-## Extra References
+## Miscellaneous and Optional References
 
 ### Deprecated Tags and Attributes in HTML
 
