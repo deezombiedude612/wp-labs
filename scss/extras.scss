@@ -1,0 +1,50 @@
+@import "components/colors";
+@import "components/fonts";
+@import "components/iframe";
+@import "components/text_format";
+// :root > * {
+//   --md-primary-fg-color:        #EE0F0F;
+//   --md-primary-fg-color--light: #ECB7B7;
+//   --md-primary-fg-color--dark:  #90030C;
+// }
+
+:root {
+	--error-h2-size: 48px;
+}
+
+[data-md-color-scheme="oscillo"] {
+	--md-primary-fg-color: #89623d;
+	--md-default-fg-color--light: #89623d; // title
+	--md-accent-fg-color: #e38d37;	// hover color
+	--md-typeset-a-color: #e38d37;	// TOC current item
+}
+[data-md-color-scheme="slate"] {
+	--md-primary-fg-color: #e38d37;
+	--md-default-fg-color--light: #e38d37;	// title
+	--md-accent-fg-color: #dca978;	// hover color
+	--md-typeset-a-color: #ffe002;	// TOC current item
+	/* --md-hue: 210; */
+}
+
+/* [data-md-color-scheme="oscillo"] .md-nav__item .md-nav__link--active {
+	color: #e38d37;
+}
+[data-md-color-scheme="slate"] .md-nav__item .md-nav__link--active {
+	color: #dca978;
+} */
+
+// 404 Error Message Style
+
+h2#message, h2#take-me-back {
+	font-size: var(--error-h2-size);
+}
+
+h2#message {
+	font-family: 'Caveat', 'Grape Nuts', cursive;
+}
+h2#take-me-back {
+	font-family: 'Grape Nuts', 'Caveat', cursive;
+}
+// #main-404 {
+// 	margin-top: -3.5rem;
+// }
