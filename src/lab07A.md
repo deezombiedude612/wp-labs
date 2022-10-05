@@ -4,10 +4,6 @@ template: base.html
 
 # Practical 07 (Activity 1): Multiplication Table
 
-!!! question "The original Practical 7 has moved!"
-
-    _For instructions on installing XAMPP for the upcoming lessons, click [HERE](xampp.md)._
-
 ## Preparation
 
 CSS and JS files are to be kept in their own separate subfolders.

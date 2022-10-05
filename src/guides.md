@@ -23,7 +23,9 @@ The following link will give a rough idea on how I set my copy of Visual Studio 
 Alternatively, you can try other code editors like Atom, Sublime Text, Brackets, and Notepad++.
 IDEs like Adobe Dreamweaver, Microsoft Expression Web (no longer supported, but functional), WebStorm/PHPStorm by Jetbrains are okay too.
 
-### PHP Programming and MySQL/mariaDB Scripting
+### PHP Environment Setup & MySQL/mariaDB Scripting
+
+<!-- ### PHP Programming and MySQL/mariaDB Scripting -->
 
 Programming in PHP is when setting things up can get tricky - you will now require a LAMP stack to run your PHP web applications.
 Luckily, there are software bundles that will get your LAMP stack ready and running.

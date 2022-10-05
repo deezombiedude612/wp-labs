@@ -137,6 +137,34 @@ However, all letters in constants are presented in upper case (e.g., `NUMBER_OF_
 
 ### Task 1
 
+The code below contains a function named `checkReadPageFunction` that will ask the user to confirm that the page has been read.
+
+Complete the JavaScript code by inserting extra code that will capture the click event and execute the function.
+
+```html linenums="1" hl_lines="14-16"
+<html>
+	<head>
+		<title>Check Read Page Exercise</title>
+	</head>
+	<body>
+		<p>Click on the button to confirm that you have read this page.</p>
+		<button id="button1">Click here</button>
+
+		<script type="text/javascript">
+			function checkReadPageFunction() {
+				alert("I have read this page.");
+			}
+
+			/* ---- INSERT CODE HERE ---- */
+
+			/* ---- END INSERT CODE ---- */
+		</script>
+	</body>
+</html>
+```
+
+### Task 2
+
 Create a HTML webpage with an empty paragraph element and a button with the text "Click Me!".
 When the button is clicked, the paragraph element should then contain the text "You clicked the button!".
 Create JavaScript code within `<script>` tags inside the webpage to enable this functionality.
@@ -145,7 +173,7 @@ Create JavaScript code within `<script>` tags inside the webpage to enable this 
 
 Modify the code such that it prints "You clicked the button!" in a new line in the browser window after each time after the button has been clicked on.
 
-### Task 2
+### Task 3
 
 Create a HTML webpage that displays a confirm box asking users: "Select OK to proceed or Cancel to return.".
 
@@ -156,10 +184,12 @@ After either alert box is dismissed, display a message on the HTML page.
 
 Create JavaScript code within `<script>` tags inside the webpage to enable this functionality.
 
-### Task 3
+### Task 4
 
 Create a HTML webpage that displays a prompt box that requests users to enter their name.
 Once entered, an alert box should follow up with a greeting that contains the entered name.
+
+#### Challenge
 
 Use a **separate JavaScript file** to contain the JavaScript code for this functionality.
 
@@ -174,7 +204,7 @@ Use a **separate JavaScript file** to contain the JavaScript code for this funct
     The given line looks for a JavaScript file named `script.js` to include together with your HTML file.
     All rules pertaining to locating JavaScript files in subfolders or the parent folders work the same way as how it is for CSS and image files.
 
-### Task 4
+### Task 5
 
 Create an empty HTML file containing the following in the `<body>` section:
 

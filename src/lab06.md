@@ -135,14 +135,14 @@ You may name your parameter(s) and/or function(s) as you please, but preferably 
         You can have the function read the HTML element's value from within the function, or get the user to enter it from a prompt box.
         In the earlier case, you don't need the year to be passed in as a parameter.
 
-## Tasks
+## Tasks: HTML DOM
 
 ### Task 1
 
 Drivers who are 16 years of age and older can apply for driving a license online.
 The government webpage code requires applicants to enter their age and then checks if they are old enough to apply.
 
-The following code captures the applicant’s age. When the applicant clicks the 'Check now' button the age is first checked to ensure that it is numeric.
+The following code captures the applicant's age. When the applicant clicks the 'Check now' button the age is first checked to ensure that it is numeric.
 The age is then checked to see if the applicant is old enough.
 Suitable messages are displayed as a result of the checks.
 
@@ -172,6 +172,10 @@ Suitable messages are displayed as a result of the checks.
 
 ### Task 2
 
+## Tasks: Functions
+
+### Task 1
+
 Create a HTML file that uses embedded JavaScript to carry out the following.
 
 Create a function called `arrayFromRange()` which creates an array of integers between and including the two numbers that are passed into the function.
@@ -185,16 +189,52 @@ arrayFromRange(-10, -4); // this should return [-10, -9, -8, -7, -6, -5, -4];
 
 After creating the function, add another line of JavaScript code at the very end of the `<script>` element to invoke the created function.
 
-### Task 3
+### Task 2
 
-Create a HTML file that uses embedded JavaScript to carry out the following. You are required to only use the browser's inspector console to generate outputs.
+Create a HTML file that uses embedded JavaScript to carry out the following.
+You are required to only use the **browser's inspector console** to generate outputs.
 
-**Part 1:** Create a function that takes two numbers and returns the maximum of the two. (**NOTE:** If the two numbers are the same, the function should return the same
+#### Part 1
+
+Create a function that takes two numbers and returns the maximum of the two. (**NOTE:** If the two numbers are the same, the function should return the same
 number.)
 
-**Part 2:** Create a function that takes in a circle's radius value and returns the area of the circle with that radius.
+#### Part 2
 
-### Task 4
+Create a function that takes in a circle's radius value and returns the area of the circle with that radius.
+
+### Task 3
+
+#### Part 1
+
+Create a HTML file using **external JavaScript** that has the following interface.
+Do **NOT** use the `<form>` element to encapsulate the `input` elements.
+
+![Calculator Page](./images/lab06_003.png)
+
+**_NOTE:_** You may assume A, B and C as the `id`s of the input fields.
+Do **NOT** put these letters as default values.
+Applying them as placeholder text is permissible.
+
+#### Part 2
+
+In the external JavaScript file, create a function called `multiply()` which will multiply the values of A and B (i.e., $A \times B$), and then display the return value at C once the `*` button is clicked.
+
+#### Part 3
+
+In the same external JavaScript file, create a function called `divide()` which will divide the values of A and B (i.e., $A \div B$), and then display the return value at C once the `/` button is clicked.
+
+#### Part 4
+
+In the same external JavaScript file, create a function called `modulo()` which will retrieve the **_remainder_** after dividing the values of A and B, and then display the return value at C once the `%` button is clicked.
+
+#### Part 5
+
+In the same external JavaScript file, create a function called `exp()` which will produce the value of $A^B$, and then display the return value at C once the `^` button is clicked.
+
+## Challenge Tasks
+
+### Challenge Task 1
 
 Create a HTML file that uses external JavaScript to carry out the following.
 
@@ -246,25 +286,7 @@ fizzBuzz(false);
 
     Use the `typeof` operator to check the variable's type.
 
-### Task 5
-
-Create a HTML file that uses external JavaScript to carry out the following. You are required to only use the browser's inspector console to generate outputs.
-
-**Part 1:** Create an object named `movie` which contains the following attributes:
-
-- title: "Big Hero 6"
-- releaseYear: 2014
-- rating: 7.8
-- director_1: "Don Hall"
-- director_2: "Chris Williams"
-
-**Part 2:** Use the for-in loop to iterate through the `movie` object's attributes, printing them each time.
-
-**Part 3:** In the same for-in loop, implement a check such that only the attributes containing string values are printed in the console.
-
-## Challenge Tasks
-
-### Challenge Task 1
+### Challenge Task 2
 
 Create a HTML file that uses embedded JavaScript to carry out the following.
 

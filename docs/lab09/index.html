@@ -15,7 +15,7 @@
     
     
       
-        <title>Practical 09: PHP Forms and Sessions - ITS30605 WP Labs</title>
+        <title>Practical 09: Introducing PHP into Forms - ITS30605 WP Labs</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practical-09-php-forms-and-sessions" class="md-skip">
+        <a href="#practical-09-introducing-php-into-forms" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Practical 09: PHP Forms and Sessions
+              Practical 09: Introducing PHP into Forms
             
           </span>
         </div>
@@ -430,6 +430,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-atom/" class="md-nav__link">
+        Atom
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -630,6 +644,123 @@
       <a href="../lab03/" class="md-nav__link">
         Practical 03: HTML Forms
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab04/" class="md-nav__link">
+        Practical 04: Introduction to JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab05/" class="md-nav__link">
+        Practical 05: JavaScript Program Control Structure & Arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab06/" class="md-nav__link">
+        Practical 06: JavaScript Functions & HTML DOM Manipulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Practical 07: Extra JavaScript Activities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Practical 07: Extra JavaScript Activities" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Practical 07: Extra JavaScript Activities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07/" class="md-nav__link">
+        Practical 07 Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07A/" class="md-nav__link">
+        Practical 07 (Activity 1): Multiplication Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab07B/" class="md-nav__link">
+        Practical 07 (Activity 2): Mark Demo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1610,12 +1741,16 @@
                 
 
 
-<h1 id="practical-09-php-forms-and-sessions">Practical 09: PHP Forms and Sessions</h1>
-<p>In this practical activity, we will be creating a dummy login system that utilizes sessions.
-This will not utilize database connectivity just yet, but you should be able to piece them together once the lessons on those start next week.</p>
-<h2 id="preparation">Preparation</h2>
-<p>CSS and JS files are to be kept in their own separate subfolders.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">css/style.css</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<h1 id="practical-09-introducing-php-into-forms">Practical 09: Introducing PHP into Forms</h1>
+<p>In this practical activity, we will be implementing an order form for Wendy's Bakery, a fictional bakery company.
+Right now, Wendy's HTML programmer has gotten as far as setting up an order for for the cakes Wendy sells.
+The order form is shown as in the figure below.
+This is a relatively simple order form, similar to many which you hve probably seen while surfing.
+The first thing Wendy would like to be able to do is to know what her customer ordered, work out the total of the customer's order, and how much sales tax is payable on the order.
+Part of the HTML for this is shown in Listing 1.
+In the form, we have set the form's action to be the name of the PHP script that will process the customer's order and also the name of the form fields.</p>
+<h3 id="listing-1">Listing 1</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1645,138 +1780,170 @@ This will not utilize database connectivity just yet, but you should be able to 
 <span class="normal"><a href="#__codelineno-0-28">28</a></span>
 <span class="normal"><a href="#__codelineno-0-29">29</a></span>
 <span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span>
-<span class="normal"><a href="#__codelineno-0-70">70</a></span>
-<span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap&quot;</span><span class="o">)</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nv">--form-size</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="nv">--normal-text-size</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Open Sans&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">beige</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="nt">button</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="nt">input</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--normal-text-size</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="p">#</span><span class="nn">container</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">bisque</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">dashed</span><span class="w"> </span><span class="kc">orangered</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">rem</span><span class="w"> </span><span class="kc">auto</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--form-size</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="nt">p</span><span class="p">#</span><span class="nn">error</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--normal-text-size</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="nt">input</span><span class="p">#</span><span class="nn">username</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">    </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--form-size</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="nt">button</span><span class="p">#</span><span class="nn">logout</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">],</span><span class="w"></span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;reset&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="nt">input</span><span class="p">#</span><span class="nn">username</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w"> </span><span class="kc">orange</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="kc">lightsalmon</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="nt">input</span><span class="p">#</span><span class="nn">username</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span><span class="w"></span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;reset&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w"> </span><span class="kc">orange</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="kc">lightsalmon</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="w"> </span><span class="kc">darkorange</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="nt">button</span><span class="p">#</span><span class="nn">logout</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w"> </span><span class="kc">red</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="kc">lightcoral</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="w"> </span><span class="kc">maroon</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="p">}</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;process-order.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Item<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Quantity<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cupcakes<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cupcakeqty&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Puffs<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;puffqty&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Muffins<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;muffinqty&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit Order&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><span class="filename">js/index.js</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#logout&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#logout&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Confirm logout?&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;logout.php&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">});</span><span class="w"></span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><span class="filename">credentials.php</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nv">$username</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nv">$pw</span> <span class="o">=</span> <span class="s2">&quot;Welovepasswords123&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cp">?&gt;</span><span class="x"></span>
-</code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.php</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<p><img alt="Lab 08-001" src="../images/lab08_001.png" /></p>
+<p>We'll proceed to create our PHP file surrounding this form element.</p>
+<!-- ## Tasks -->
+
+<h2 id="task-1-embedding-php-in-html">Task 1: Embedding PHP in HTML</h2>
+<p>To process the form, we'll need to create the script mentioned in the <code>action</code> attribute of the <code>&lt;form&gt;</code> tag called <code>process-order.php</code>.
+Prepare <code>process-order.php</code> starting off with the following HTML code:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">process-order.php</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Wendy&#39;s Bakery - Order Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">            </span><span class="p">.</span><span class="nc">font-bold</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">                </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="nt">th</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">                </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#cccccc</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">            </span><span class="nt">th</span><span class="o">,</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">            </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">                </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">            </span><span class="nt">form</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">                </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">            </span><span class="p">#</span><span class="nn">freight-table</span><span class="w"> </span><span class="nt">tbody</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">                </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">            </span><span class="p">#</span><span class="nn">order-details</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">                </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">        </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Wendy&#39;s Bakery<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a>        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Order Results<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="hll">        <span class="cm">&lt;!-- Listing 1 goes here --&gt;</span>
+</span><a id="__codelineno-1-40" name="__codelineno-1-40"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="task-2-conditional-display-of-information">Task 2: Conditional Display of Information</h2>
+<p>Modify <code>process-order.php</code> such that it displays the following when the order form is filled and the <strong>Submit</strong> button is clicked on.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>        <span class="sd">/**</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="sd">         * NOTE:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="sd">         * You can break through to HTML in the middle of a PHP block,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="sd">         * especially if you have a lot of HTML elements to display under</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="sd">         * set conditions.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="sd">         */</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    <span class="p">}</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="Lab 08-002" src="../images/lab08_002.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In place of where you immediately insert Listing 1, replace it with the given code snippet.
+This code snippet has a line where you insert Listing 1 in as well.</p>
+</div>
+<h2 id="task-3-adding-dynamic-content">Task 3: Adding Dynamic Content</h2>
+<p>Modify <code>process-order.php</code> to display the date and time when the form was submitted.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -1785,69 +1952,73 @@ This will not utilize database connectivity just yet, but you should be able to 
 <span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span>
-<span class="normal"><a href="#__codelineno-3-22">22</a></span>
-<span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span>
-<span class="normal"><a href="#__codelineno-3-25">25</a></span>
-<span class="normal"><a href="#__codelineno-3-26">26</a></span>
-<span class="normal"><a href="#__codelineno-3-27">27</a></span>
-<span class="normal"><a href="#__codelineno-3-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Login Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/style.css&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Login Page<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;off&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Username&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;off&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Password&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log In&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Reset&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/index.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="hll">        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed on &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;F jS Y, l, H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="Lab 09-001" src="../images/lab09_001.png" /></p>
-<h2 id="task-1-checking-credentials">Task 1: Checking Credentials</h2>
-<p>Our credentials are kept in a separate file named <code>credentials.php</code>.
-We can append it to <code>index.php</code> by introducing the following on top:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">require_once</span> <span class="s2">&quot;credentials.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">?&gt;</span><span class="x"></span>
-</code></pre></div>
-<p><code>require_once</code> is a command that appends contents of a HTML or PHP file to wherever it is called.
-In this case, <code>credentials.php</code> is appended at the beginning of the webpage.</p>
-<p>There are other variants of this command:</p>
-<ul>
-<li><code>include_once</code> is the same as <code>require_once</code>, but it does not halt the other webpage items from being loaded if the file doesn't exist.</li>
-<li><code>include</code> and <code>require</code> are different from <code>include_once</code> and <code>require_once</code> respectively in the sense of how many times they are allowed to be appended to the page.</li>
-</ul>
-<p>Now that we have our credentials appended at the top, we can now proceed to carry out form validation.</p>
+<p><img alt="Lab 08-003" src="../images/lab08_003.png" /></p>
+<details class="info">
+<summary>DateTime in PHP</summary>
+<p>Read more here: <a href="https://www.php.net/manual/en/datetime.format.php">PHP DateTime</a></p>
+</details>
+<h2 id="task-4-accessing-variables">Task 4: Accessing Variables</h2>
+<p>Within the same PHP script, add some lines to display the customer's order list.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed on &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;F jS Y, l, H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="hll">        <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="hll"><span class="x">        &lt;p class=&quot;font-bold&quot;&gt;Your order is as follows:&lt;/p&gt;</span>
+</span><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="hll">
+</span><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="hll"><span class="x">        &lt;p&gt;</span>
+</span><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="hll"><span class="x">            20 cupcakes&lt;br&gt;</span>
+</span><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="x">            10 puffs&lt;br&gt;</span>
+</span><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll"><span class="x">            15 muffins</span>
+</span><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="hll"><span class="x">        &lt;/p&gt;</span>
+</span><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="hll"><span class="x">        </span><span class="cp">&lt;?php</span>
+</span><a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="Lab 08-004" src="../images/lab08_004.png" /></p>
+<h2 id="task-5-assigning-values-to-variables">Task 5: Assigning Values to Variables</h2>
+<p>On Wendy's site, we want to work out the total number of items ordered and the total amount payable.</p>
+<p>Assume the prices of each item are as follows:</p>
+<p>Cupcake = $2.50
+Puff = $3.00
+Muffin = $4.00
+Sales Tax = 6% of the total amount</p>
+<p>Within the same script, add some lines to display the following additional output:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1863,29 +2034,46 @@ In this case, <code>credentials.php</code> is appended at the beginning of the w
 <span class="normal"><a href="#__codelineno-5-13">13</a></span>
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
 <span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">session_start</span><span class="p">();</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">require_once</span> <span class="s2">&quot;credentials.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1">// flag to indicate whether credentials match (i.e., false) or not (i.e., TRUE)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nv">$invalid_login</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="c1">// check credentials first</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$username</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$pw</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">];</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="p">}</span> <span class="k">else</span> <span class="nv">$invalid_login</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed on &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;F jS Y, l, H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="x">        &lt;p class=&quot;font-bold&quot;&gt;Your order is as follows:&lt;/p&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="x">        &lt;p&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="x">            20 cupcakes&lt;br&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="x">            10 puffs&lt;br&gt;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="x">            15 muffins</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="x">        &lt;/p&gt;</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1">// var_dump($_SESSION);</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="hll"><span class="x">        &lt;p&gt;</span>
+</span><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="hll"><span class="x">            Items Ordered: 3&lt;br&gt;</span>
+</span><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="hll"><span class="x">            Subtotal: $140.00&lt;br&gt;</span>
+</span><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="hll"><span class="x">            Total including tax: $148.40&lt;br&gt;</span>
+</span><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="hll"><span class="x">        &lt;/p&gt;</span>
+</span><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="p">}</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div></td></tr></table></div>
-<p><code>var_dump</code> is useful if you would like to test if your credential checking is working as intended or not based on your <code>$_POST</code> superglobal variables.
-Uncomment the <code>var_dump</code> line if you would like to carry out this checking, but its output should not be visible in the end result.</p>
-<p>We are adding the <code>sessions_start()</code> line on top to introduce session variables if the credentials match.
-This will be worked on more in the next task, but what's important now is that we create a new session variable called <code>$_SESSION["username"]</code> which will contain the username value entered into the form.</p>
-<p>As for when the credentials do not match, we have a flag variable named <code>$invalid_login</code> which indicates if the credentials match or not.
-We will utilize this to display a message in our <code>p#error</code> element in the form to alert users if the credentials do not match.</p>
+<p><img alt="Lab 08-005" src="../images/lab08_005.png" /></p>
+<h2 id="task-6-making-decisions-with-conditionals">Task 6: Making Decisions with Conditionals</h2>
+<p>Modify the script such that it alerts if the customer has not ordered anything from Wendy.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1901,28 +2089,59 @@ We will utilize this to display a message in our <code>p#error</code> element in
 <span class="normal"><a href="#__codelineno-6-13">13</a></span>
 <span class="normal"><a href="#__codelineno-6-14">14</a></span>
 <span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">&lt;form action=&quot;.&quot; method=&quot;post&quot; autocomplete=&quot;off&quot;&gt;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="hll"><span class="x">    &lt;p id=&quot;error&quot;&gt;</span>
-</span><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="hll"><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="nv">$invalid_login</span><span class="p">)</span> <span class="o">:</span>
-</span><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="hll">            <span class="cp">?&gt;</span><span class="x"></span>
-</span><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="hll"><span class="x">            Invalid credentials!</span>
-</span><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="hll"><span class="x">            </span><span class="cp">&lt;?php</span>
-</span><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="hll">        <span class="k">endif</span><span class="p">;</span>
-</span><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="hll">    <span class="cp">?&gt;</span><span class="x"></span>
-</span><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="hll"><span class="x">    &lt;/p&gt;</span>
-</span><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="x">    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot; autocomplete=&quot;off&quot; /&gt;&lt;br /&gt;</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="x">    &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;&lt;br /&gt;</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="x">    &lt;input type=&quot;submit&quot; value=&quot;Log In&quot; /&gt;</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="x">    &lt;input type=&quot;reset&quot; value=&quot;Reset&quot; /&gt;</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="x">&lt;/form&gt;</span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed on &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;F jS Y, l, H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="hll">        <span class="k">if</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;cupcakeqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;puffqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;muffinqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">:</span>
+</span><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="hll">            <span class="c1">// Display message if nothing has been ordered</span>
+</span><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="hll">            <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="hll"><span class="x">            &lt;p&gt;You did not order anything from the previous page!&lt;/p&gt;</span>
+</span><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="hll"><span class="x">            </span><span class="cp">&lt;?php</span>
+</span><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="hll">        <span class="k">else</span><span class="o">:</span>
+</span><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="hll">            <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="hll"><span class="x">            &lt;p class=&quot;font-bold&quot;&gt;Your order is as follows:&lt;/p&gt;</span>
+</span><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="hll">
+</span><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="hll"><span class="x">            &lt;p&gt;</span>
+</span><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="hll"><span class="x">                20 cupcakes&lt;br&gt;</span>
+</span><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="hll"><span class="x">                10 puffs&lt;br&gt;</span>
+</span><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="hll"><span class="x">                15 muffins</span>
+</span><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="hll"><span class="x">            &lt;/p&gt;</span>
+</span><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="hll">
+</span><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="hll"><span class="x">            &lt;p&gt;</span>
+</span><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="hll"><span class="x">                Items Ordered: 3&lt;br&gt;</span>
+</span><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="hll"><span class="x">                Subtotal: $140.00&lt;br&gt;</span>
+</span><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="hll"><span class="x">                Total including tax: $148.40&lt;br&gt;</span>
+</span><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="hll"><span class="x">            &lt;/p&gt;</span>
+</span><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="hll"><span class="x">            </span><span class="cp">&lt;?php</span>
+</span><a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="hll">        <span class="k">endif</span><span class="p">;</span>
+</span><a id="__codelineno-6-28" name="__codelineno-6-28"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a>    <span class="p">}</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div></td></tr></table></div>
-<p>The if statement syntax used here is different from that of most languages, but it works especially if you plan on printing large and/or complex lines of HTML.
-Your page should now display a paragraph containing the alert message like as follows:</p>
-<p><img alt="Lab 09-002" src="../images/lab09_002.png" /></p>
-<p>Now, let's replace the contents inside <code>section#container</code> to display something else if the credentials are correct (and consequently giving the illusion that you're logged in).
-We will carry this out through utilizing an if-else statement.</p>
+<p><img alt="Lab 08-006" src="../images/lab08_006.png" /></p>
+<p>Otherwise, the script should display the items the customer ordered from Wendy.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1955,74 +2174,127 @@ We will carry this out through utilizing an if-else statement.</p>
 <span class="normal"><a href="#__codelineno-7-30">30</a></span>
 <span class="normal"><a href="#__codelineno-7-31">31</a></span>
 <span class="normal"><a href="#__codelineno-7-32">32</a></span>
-<span class="normal"><a href="#__codelineno-7-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">&lt;section id=&quot;container&quot;&gt;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="hll"><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]))</span> <span class="o">:</span>
-</span><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="hll">        <span class="cp">?&gt;</span><span class="x"></span>
-</span><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="hll"><span class="x">    &lt;h1&gt;Hello, </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">!&lt;/h1&gt;</span>
-</span><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="hll">
-</span><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="hll"><span class="x">    &lt;p id=&quot;time&quot;&gt;&lt;/p&gt;</span>
-</span><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="hll">
-</span><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="hll"><span class="x">    &lt;button id=&quot;logout&quot;&gt;Log Out&lt;/button&gt;</span>
-</span><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="hll"><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="hll">        <span class="k">else</span> <span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
-</span><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="x">    &lt;h1&gt;Login Page&lt;/h1&gt;</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="x">    &lt;form action=&quot;.&quot; method=&quot;post&quot; autocomplete=&quot;off&quot;&gt;</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="x">        &lt;p id=&quot;error&quot;&gt;</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="x">            </span><span class="cp">&lt;?php</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$invalid_login</span><span class="p">)</span> <span class="o">:</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a>                <span class="cp">?&gt;</span><span class="x"></span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="x">                Invalid credentials!</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="x">                </span><span class="cp">&lt;?php</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a>                <span class="k">endif</span><span class="p">;</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22"></a>            <span class="cp">?&gt;</span><span class="x"></span>
-<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="x">        &lt;/p&gt;</span>
-<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="x">        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;Username&quot; autocomplete=&quot;off&quot;&gt;&lt;br&gt;</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="x">        &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot;&gt;&lt;br&gt;</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26"></a>
-<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="x">        &lt;input type=&quot;submit&quot; value=&quot;Log In&quot;&gt;</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="x">        &lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;</span>
-<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="x">    &lt;/form&gt;</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="hll"><span class="x">    </span><span class="cp">&lt;?php</span>
-</span><a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="hll">        <span class="k">endif</span><span class="p">;</span>
-</span><a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="hll">    <span class="cp">?&gt;</span><span class="x"></span>
-</span><a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="x">&lt;/section&gt;</span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span>
+<span class="normal"><a href="#__codelineno-7-35">35</a></span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span>
+<span class="normal"><a href="#__codelineno-7-37">37</a></span>
+<span class="normal"><a href="#__codelineno-7-38">38</a></span>
+<span class="normal"><a href="#__codelineno-7-39">39</a></span>
+<span class="normal"><a href="#__codelineno-7-40">40</a></span>
+<span class="normal"><a href="#__codelineno-7-41">41</a></span>
+<span class="normal"><a href="#__codelineno-7-42">42</a></span>
+<span class="normal"><a href="#__codelineno-7-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>        <span class="c1">// If a form with POST superglobal variable is sent, display this message</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>        <span class="k">echo</span> <span class="s2">&quot;&lt;p&gt;Order processed on &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;F jS Y, l, H:i:s&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;cupcakeqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;puffqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;muffinqty&quot;</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>            <span class="c1">// Display message if nothing has been ordered</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>            <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="x">            &lt;p&gt;You did not order anything from the previous page!&lt;/p&gt;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="x">            </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="hll">        <span class="k">else</span><span class="o">:</span>
+</span><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="hll">            <span class="nv">$qty</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="hll">            <span class="k">if</span> <span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;cupcakeqty&quot;</span><span class="p">]</span> <span class="o">!==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;cupcakeqty&quot;</span><span class="p">]);</span> <span class="c1">// cupcake quantity</span>
+</span><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="hll">            <span class="k">if</span> <span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;puffqty&quot;</span><span class="p">]</span> <span class="o">!==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;puff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;puffqty&quot;</span><span class="p">]);</span>  <span class="c1">// puff quantity</span>
+</span><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="hll">            <span class="k">if</span> <span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;muffinqty&quot;</span><span class="p">]</span> <span class="o">!==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;muffin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;muffinqty&quot;</span><span class="p">]);</span> <span class="c1">// muffin quantity</span>
+</span><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="hll">            <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="hll"><span class="x">            &lt;p class=&quot;font-bold&quot;&gt;Your order is as follows:&lt;/p&gt;</span>
+</span><a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="hll">
+</span><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="hll"><span class="x">            &lt;p&gt;</span>
+</span><a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="hll"><span class="x">                </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x"> cupcakes&lt;br&gt;</span>
+</span><a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="hll"><span class="x">                </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;puff&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x"> puffs&lt;br&gt;</span>
+</span><a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="hll"><span class="x">                </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;muffin&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x"> muffins</span>
+</span><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="hll"><span class="x">            &lt;/p&gt;</span>
+</span><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="hll">
+</span><a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="hll"><span class="x">            &lt;p&gt;</span>
+</span><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="hll"><span class="x">                Items Ordered: </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">sizeof</span><span class="p">(</span><span class="nv">$qty</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="hll"><span class="x">                </span><span class="cp">&lt;?php</span>
+</span><a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="hll">                    <span class="nv">$price</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cupcake&quot;</span> <span class="o">=&gt;</span> <span class="mf">2.50</span><span class="p">,</span> <span class="s2">&quot;puff&quot;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;muffin&quot;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">];</span>
+</span><a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="hll">
+</span><a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="hll">                    <span class="nv">$subtotal</span> <span class="o">=</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nv">$price</span><span class="p">[</span><span class="s2">&quot;cupcake&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;puff&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nv">$price</span><span class="p">[</span><span class="s2">&quot;puff&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nv">$qty</span><span class="p">[</span><span class="s2">&quot;muffin&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nv">$price</span><span class="p">[</span><span class="s2">&quot;muffin&quot;</span><span class="p">];</span>
+</span><a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="hll">                    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$subtotal</span> <span class="o">*</span> <span class="mf">1.06</span><span class="p">;</span>
+</span><a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="hll">                    <span class="cp">?&gt;</span><span class="x"></span>
+</span><a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="hll"><span class="x">                Subtotal: $</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$subtotal</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;br&gt;</span>
+</span><a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="hll"><span class="x">                Total including tax: $</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">number_format</span><span class="p">(</span><span class="nv">$total</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">&lt;br&gt;</span>
+</span><a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="hll"><span class="x">            &lt;/p&gt;</span>
+</span><a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="x">            </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37"></a>        <span class="k">endif</span><span class="p">;</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-7-40" name="__codelineno-7-40"></a><span class="x">        &lt;!-- Listing 1 goes here --&gt;</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42"></a>    <span class="p">}</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div></td></tr></table></div>
-<p>Depending on whether <code>$_SESSION["username"]</code> has been defined or not, either the form or the following gets displayed:</p>
-<p><img alt="Lab 09-003" src="../images/lab09_003.png" /></p>
-<p>Here, when the user is "logged in", we now have a greeting on display with the entered username.
-At the bottom of that greeting line, we also have a log out button.</p>
-<h2 id="task-2-implementing-logout-feature">Task 2: Implementing Logout Feature</h2>
-<p>Session variables get carried across multiple webpages, so long as they have the line <code>session_start()</code> on top of the page - this is compulsory.
-In the end, however, all good things have to come to an end - this also includes logged-in sessions.</p>
-<p>The logout button included has an <code>onclick</code> attribute which redirects the browser to another page called <code>logout.php</code>.
-<code>logout.php</code> will contain a simple script to log a user out.
-The contents of this script are as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">session_start</span><span class="p">();</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="nb">session_unset</span><span class="p">();</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="nb">session_destroy</span><span class="p">();</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: .&quot;</span><span class="p">);</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cp">?&gt;</span><span class="x"></span>
+<details class="info">
+<summary>Note</summary>
+<p>You may have noticed that there are some errors when you only fill up the form partially (to make it such that you only want some of the items, not all).
+Try to find a way to circumvent this issue (i.e., by placing an if statement, modifying the form input element, etc.).</p>
+<p>See if you can find any loopholes in the web application at this point and look to see if you can fix them as much as possible.</p>
+</details>
+<h2 id="task-7-elseif-statements">Task 7: <code>elseif</code> Statements</h2>
+<p>Wendy provides discounts for large orders of cupcakes.</p>
+<ul>
+<li><em>Less than 10 cupcakes: no discount</em></li>
+<li><em>10-49 cupcakes: 5% discount</em></li>
+<li><em>50-99 cupcakes: 10% discount</em></li>
+<li><em>≥100 cupcakes: 20% discount</em></li>
+</ul>
+<p>Modify <code>process-order.php</code> such that it calculates the discount using conditions and if-else and elseif statements.</p>
+<h2 id="task-8-switch-statements">Task 8: <code>switch</code> Statements</h2>
+<p>Wendy wants to know what forms of advertising are working for her.
+Insert a <code>&lt;select&gt;</code> element to the form to retrieve that information.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;find&quot;</span><span class="p">&gt;</span>How did you find Wendy&#39;s?<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;find&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;find&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">disabled</span> <span class="na">selected</span><span class="p">&gt;</span>Select option<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>I am a regular customer.<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">&gt;</span>TV Advertising<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="p">&gt;</span>Phone Directory<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;d&quot;</span><span class="p">&gt;</span>Word of Mouth<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>The simple logout process works in 3 steps:</p>
-<ol>
-<li>Start the session with <code>session_start()</code>.</li>
-<li>Unset all session variables with <code>session_unset()</code>.</li>
-<li>Destroy the session using <code>session_destroy()</code>.</li>
-</ol>
-<p>One main reason why <code>session_destroy()</code> does not settle everything without <code>session_unset()</code> is that it only destroys the session, but any session data is still kept around.
-Think of it as a job not completely done properly in such case.</p>
-<p>The fourth line (i.e., <code>header("Location: .");</code>) redirects the user immediately back to <code>index.php</code>.
-This can also be achieved if you were to type in <code>header("Location: index.php");</code>.
-Using a period punctuation here points to the current directory, and browsers will automatically search for any file named <code>index.php</code> or <code>index.html</code> by default.
-With this, you will find that you will immediately be sent back to <code>index.php</code> without viewing anything in <code>logout.php</code>.. not that it contains any visual content to be displayed in the browser to begin with.</p>
-<h2 id="extra-task-timeout">Extra Task: Timeout</h2>
-<p>Modify the web application such that it will log you out upon refreshing the page after 5 minutes of inactivity.</p>
+<p>Use the appropriate selection statements to handle the variables and display the information in <code>process-order.php</code>.</p>
+<h2 id="task-9-iteration-and-repeating-actions">Task 9: Iteration and Repeating Actions</h2>
+<p>Wendy wants a table displaying the freight cost that is to be added to the customer's order.
+With the courier Wendy's uses, the cost of freight depends on the distance the parcel is being shipped.
+We want our freight table to resemble the following:</p>
+<p>Generate the same freight table using loop structures.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="x">&lt;table id=&quot;freight-table&quot;&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">    &lt;thead&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">        &lt;tr&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">            &lt;th&gt;Distance&lt;/th&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">            &lt;th&gt;Cost&lt;/th&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="x">        &lt;/tr&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">    &lt;/thead&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="x">    &lt;tbody&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            <span class="nv">$freight</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>                <span class="p">[</span><span class="s2">&quot;distance&quot;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">],</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>                <span class="p">[</span><span class="s2">&quot;distance&quot;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">],</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>                <span class="p">[</span><span class="s2">&quot;distance&quot;</span> <span class="o">=&gt;</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span> <span class="o">=&gt;</span> <span class="mi">15</span><span class="p">],</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>                <span class="p">[</span><span class="s2">&quot;distance&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">],</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>                <span class="p">[</span><span class="s2">&quot;distance&quot;</span> <span class="o">=&gt;</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;cost&quot;</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">],</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            <span class="p">];</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            <span class="c1">// var_dump($freight);</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$freight</span> <span class="k">as</span> <span class="nv">$f</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="x">        &lt;tr&gt;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$f</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$f</span><span class="p">[</span><span class="s2">&quot;cost&quot;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="x">        &lt;/tr&gt;</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="x">        </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>            <span class="p">}</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        <span class="cp">?&gt;</span><span class="x"></span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="x">    &lt;/tbody&gt;</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="x">&lt;/table&gt;</span>
+</code></pre></div>
+<p><img alt="Lab 08-007" src="../images/lab08_007.png" /></p>
 
 
 

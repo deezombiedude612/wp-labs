@@ -60,6 +60,7 @@ nav:
       - List of Guides: guides.md
       - Code Editor:
           - VS Code: guide-vscode.md
+          - Atom: guide-atom.md
       - PHP Environment Setup:
           - XAMPP Installation: guide-xampp.md
           - Setting Up LAMP Stack in macOS (The Hard Way): lamp_macos.md
@@ -70,13 +71,13 @@ nav:
       - lab01.md
       - lab02.md
       - lab03.md
-      # - lab04.md
-      # - lab05.md
-      # - lab06.md
-      # - "Practical 07: Extra JavaScript Activities":
-      #     - lab07.md
-      #     - lab07A.md
-      #     - lab07B.md
+      - lab04.md
+      - lab05.md
+      - lab06.md
+      - "Practical 07: Extra JavaScript Activities":
+          - Practical 07 Menu: lab07.md
+          - lab07A.md
+          - lab07B.md
       # - lab08.md
       # - lab09.md
       # - lab10.md

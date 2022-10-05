@@ -4,10 +4,6 @@ template: base.html
 
 # Practical 07 (Activity 2): Mark Demo
 
-!!! question "The original Practical 7 has moved!"
-
-    _For instructions on installing XAMPP for the upcoming lessons, click [HERE](xampp.md)._
-
 ## Preparation
 
 You'll require the following font file to be kept in a subfolder called `fonts` in your project directory: [SF Pro Display](./props/lab07_font.zip)

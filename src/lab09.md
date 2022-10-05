@@ -2,296 +2,400 @@
 template: base.html
 ---
 
-# Practical 09: PHP Forms and Sessions
+# Practical 09: Introducing PHP into Forms
 
-In this practical activity, we will be creating a dummy login system that utilizes sessions.
-This will not utilize database connectivity just yet, but you should be able to piece them together once the lessons on those start next week.
+In this practical activity, we will be implementing an order form for Wendy's Bakery, a fictional bakery company.
+Right now, Wendy's HTML programmer has gotten as far as setting up an order for for the cakes Wendy sells.
+The order form is shown as in the figure below.
+This is a relatively simple order form, similar to many which you hve probably seen while surfing.
+The first thing Wendy would like to be able to do is to know what her customer ordered, work out the total of the customer's order, and how much sales tax is payable on the order.
+Part of the HTML for this is shown in Listing 1.
+In the form, we have set the form's action to be the name of the PHP script that will process the customer's order and also the name of the form fields.
 
-## Preparation
+### Listing 1
 
-CSS and JS files are to be kept in their own separate subfolders.
-
-```css linenums="1" title="css/style.css"
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-
-:root {
-	--form-size: 400px;
-	--normal-text-size: 20px;
-}
-
-* {
-	font-family: "Open Sans", sans-serif;
-}
-
-body {
-	background-color: beige;
-}
-
-button,
-input {
-	border: none;
-	font-size: var(--normal-text-size);
-	margin: 1rem 0;
-}
-
-#container {
-	background-color: bisque;
-	border: 2px dashed orangered;
-	border-radius: 2rem;
-	margin: 10rem auto 0;
-	max-width: 750px;
-	min-width: var(--form-size);
-	padding: 2rem;
-	text-align: center;
-}
-
-p#error {
-	color: red;
-	font-size: var(--normal-text-size);
-}
-
-input#username,
-input[type="password"] {
-	border-radius: 0.5rem;
-	max-width: 100%;
-	min-width: var(--form-size);
-	padding: 0.5rem;
-	text-align: center;
-	width: 75%;
-}
-
-button#logout,
-input[type="submit"],
-input[type="reset"] {
-	border-radius: 2rem;
-	padding: 0.5rem 1rem;
-}
-
-input#username:hover,
-input[type="password"]:hover {
-	box-shadow: 0 0 1rem orange, 0 0 2rem lightsalmon;
-}
-
-input#username:focus,
-input[type="password"]:focus,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-	box-shadow: 0 0 1rem orange, 0 0 2rem lightsalmon, 0 0 4rem darkorange;
-}
-
-button#logout:hover {
-	background-color: rgba(220, 20, 60, 0.75);
-	box-shadow: 0 0 1rem red, 0 0 2rem lightcoral, 0 0 4rem maroon;
-	color: white;
-	font-weight: bold;
-}
+```html linenums="1"
+<form action="process-order.php" method="post">
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Quantity</th>
+		</tr>
+		<tr>
+			<td>Cupcakes</td>
+			<td>
+				<input type="text" name="cupcakeqty" size="3" maxlength="3" />
+			</td>
+		</tr>
+		<tr>
+			<td>Puffs</td>
+			<td>
+				<input type="text" name="puffqty" size="3" maxlength="3" />
+			</td>
+		</tr>
+		<tr>
+			<td>Muffins</td>
+			<td>
+				<input type="text" name="muffinqty" size="3" maxlength="3" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Submit Order" />
+			</td>
+		</tr>
+	</table>
+</form>
 ```
 
-```js title="js/index.js"
-if (document.querySelector("#logout")) {
-	document.querySelector("#logout").addEventListener("click", () => {
-		const response = confirm("Confirm logout?");
+![Lab 08-001](./images/lab08_001.png)
 
-		if (response) window.location.href = "logout.php";
-	});
-}
-```
+We'll proceed to create our PHP file surrounding this form element.
 
-```php title="credentials.php"
-<?php
-	$username = "root";
-	$pw = "Welovepasswords123";
-?>
-```
+<!-- ## Tasks -->
 
-```html linenums="1" title="index.php"
+## Task 1: Embedding PHP in HTML
+
+To process the form, we'll need to create the script mentioned in the `action` attribute of the `<form>` tag called `process-order.php`.
+Prepare `process-order.php` starting off with the following HTML code:
+
+```html linenums="1" hl_lines="39" title="process-order.php"
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Login Example</title>
+		<title>Wendy's Bakery - Order Form</title>
 
-		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			.font-bold {
+				font-weight: bold;
+			}
+
+			th {
+				background-color: #cccccc;
+			}
+
+			th,
+			td {
+				padding: 0.5rem 1.5rem;
+			}
+
+			form td {
+				text-align: center;
+			}
+
+			#freight-table tbody td {
+				text-align: right;
+			}
+
+			#order-details {
+				margin-bottom: 1rem;
+			}
+		</style>
 	</head>
-
 	<body>
-		<section id="container">
-			<h1>Login Page</h1>
+		<h1>Wendy's Bakery</h1>
+		<h2>Order Results</h2>
 
-			<form action="." method="post" autocomplete="off">
-				<p id="error"></p>
-				<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" /><br />
-				<input type="password" name="password" id="password" placeholder="Password" /><br />
-
-				<input type="submit" value="Log In" />
-				<input type="reset" value="Reset" />
-			</form>
-		</section>
-
-		<script src="js/index.js"></script>
+		<!-- Listing 1 goes here -->
 	</body>
 </html>
 ```
 
-![Lab 09-001](./images/lab09_001.png)
+## Task 2: Conditional Display of Information
 
-## Task 1: Checking Credentials
-
-Our credentials are kept in a separate file named `credentials.php`.
-We can append it to `index.php` by introducing the following on top:
-
-```php
-<?php
-require_once "credentials.php";
-?>
-```
-
-`require_once` is a command that appends contents of a HTML or PHP file to wherever it is called.
-In this case, `credentials.php` is appended at the beginning of the webpage.
-
-There are other variants of this command:
-
-- `include_once` is the same as `require_once`, but it does not halt the other webpage items from being loaded if the file doesn't exist.
-- `include` and `require` are different from `include_once` and `require_once` respectively in the sense of how many times they are allowed to be appended to the page.
-
-Now that we have our credentials appended at the top, we can now proceed to carry out form validation.
+Modify `process-order.php` such that it displays the following when the order form is filled and the **Submit** button is clicked on.
 
 ```php linenums="1"
 <?php
-session_start();
-require_once "credentials.php";
-
-// flag to indicate whether credentials match (i.e., false) or not (i.e., TRUE)
-$invalid_login = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	// check credentials first
-	if ($_POST["username"] === $username && $_POST["password"] === $pw) {
-		$_SESSION["username"] = $_POST["username"];
-	} else $invalid_login = true;
-}
-
-// var_dump($_SESSION);
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed</p>";
+	} else {
+		/**
+		 * NOTE:
+		 * You can break through to HTML in the middle of a PHP block,
+		 * especially if you have a lot of HTML elements to display under
+		 * set conditions.
+		 */
+		?>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
 ?>
 ```
 
-`var_dump` is useful if you would like to test if your credential checking is working as intended or not based on your `$_POST` superglobal variables.
-Uncomment the `var_dump` line if you would like to carry out this checking, but its output should not be visible in the end result.
+![Lab 08-002](./images/lab08_002.png)
 
-We are adding the `sessions_start()` line on top to introduce session variables if the credentials match.
-This will be worked on more in the next task, but what's important now is that we create a new session variable called `$_SESSION["username"]` which will contain the username value entered into the form.
+!!! tip
 
-As for when the credentials do not match, we have a flag variable named `$invalid_login` which indicates if the credentials match or not.
-We will utilize this to display a message in our `p#error` element in the form to alert users if the credentials do not match.
+    In place of where you immediately insert Listing 1, replace it with the given code snippet.
+    This code snippet has a line where you insert Listing 1 in as well.
 
-```php linenums="1" hl_lines="2-10"
-<form action="." method="post" autocomplete="off">
-	<p id="error">
-	<?php
-		if ($invalid_login) :
-			?>
-			Invalid credentials!
-			<?php
-		endif;
-	?>
-	</p>
-	<input type="text" name="username" id="username" placeholder="Username" autocomplete="off" /><br />
-	<input type="password" name="password" id="password" placeholder="Password" /><br />
+## Task 3: Adding Dynamic Content
 
-	<input type="submit" value="Log In" />
-	<input type="reset" value="Reset" />
-</form>
-```
+Modify `process-order.php` to display the date and time when the form was submitted.
 
-The if statement syntax used here is different from that of most languages, but it works especially if you plan on printing large and/or complex lines of HTML.
-Your page should now display a paragraph containing the alert message like as follows:
-
-![Lab 09-002](./images/lab09_002.png)
-
-Now, let's replace the contents inside `section#container` to display something else if the credentials are correct (and consequently giving the illusion that you're logged in).
-We will carry this out through utilizing an if-else statement.
-
-```php linenums="1" hl_lines="2-11 30-32"
-<section id="container">
-	<?php
-		if (isset($_SESSION["username"])) :
+```php linenums="1" hl_lines="4"
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
+	} else {
 		?>
-	<h1>Hello, <?= $_SESSION["username"]; ?>!</h1>
-
-	<p id="time"></p>
-
-	<button id="logout">Log Out</button>
-	<?php
-		else : ?>
-	<h1>Login Page</h1>
-
-	<form action="." method="post" autocomplete="off">
-		<p id="error">
-			<?php
-			if ($invalid_login) :
-				?>
-				Invalid credentials!
-				<?php
-				endif;
-			?>
-		</p>
-		<input type="text" name="username" id="username" placeholder="Username" autocomplete="off"><br>
-		<input type="password" name="password" id="password" placeholder="Password"><br>
-
-		<input type="submit" value="Log In">
-		<input type="reset" value="Reset">
-	</form>
-	<?php
-		endif;
-	?>
-</section>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
+?>
 ```
 
-Depending on whether `$_SESSION["username"]` has been defined or not, either the form or the following gets displayed:
+![Lab 08-003](./images/lab08_003.png)
 
-![Lab 09-003](./images/lab09_003.png)
+??? info "DateTime in PHP"
 
-Here, when the user is "logged in", we now have a greeting on display with the entered username.
-At the bottom of that greeting line, we also have a log out button.
+    Read more here: [PHP DateTime](https://www.php.net/manual/en/datetime.format.php)
 
-## Task 2: Implementing Logout Feature
+## Task 4: Accessing Variables
 
-Session variables get carried across multiple webpages, so long as they have the line `session_start()` on top of the page - this is compulsory.
-In the end, however, all good things have to come to an end - this also includes logged-in sessions.
+Within the same PHP script, add some lines to display the customer's order list.
 
-The logout button included has an `onclick` attribute which redirects the browser to another page called `logout.php`.
-`logout.php` will contain a simple script to log a user out.
-The contents of this script are as follows:
+```php linenums="1" hl_lines="6-14"
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
+
+		?>
+		<p class="font-bold">Your order is as follows:</p>
+
+		<p>
+			20 cupcakes<br>
+			10 puffs<br>
+			15 muffins
+		</p>
+		<?php
+	} else {
+		?>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
+?>
+```
+
+![Lab 08-004](./images/lab08_004.png)
+
+## Task 5: Assigning Values to Variables
+
+On Wendy's site, we want to work out the total number of items ordered and the total amount payable.
+
+Assume the prices of each item are as follows:
+
+Cupcake = $2.50
+Puff = $3.00
+Muffin = $4.00
+Sales Tax = 6% of the total amount
+
+Within the same script, add some lines to display the following additional output:
+
+```php linenums="1" hl_lines="15-19"
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
+
+		?>
+		<p class="font-bold">Your order is as follows:</p>
+
+		<p>
+			20 cupcakes<br>
+			10 puffs<br>
+			15 muffins
+		</p>
+
+		<p>
+			Items Ordered: 3<br>
+			Subtotal: $140.00<br>
+			Total including tax: $148.40<br>
+		</p>
+		<?php
+	} else {
+		?>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
+?>
+```
+
+![Lab 08-005](./images/lab08_005.png)
+
+## Task 6: Making Decisions with Conditionals
+
+Modify the script such that it alerts if the customer has not ordered anything from Wendy.
+
+```php linenums="1" hl_lines="6-27"
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
+
+		if($_POST["cupcakeqty"] === "" && $_POST["puffqty"] === "" && $_POST["muffinqty"] === ""):
+			// Display message if nothing has been ordered
+			?>
+			<p>You did not order anything from the previous page!</p>
+			<?php
+		else:
+			?>
+			<p class="font-bold">Your order is as follows:</p>
+
+			<p>
+				20 cupcakes<br>
+				10 puffs<br>
+				15 muffins
+			</p>
+
+			<p>
+				Items Ordered: 3<br>
+				Subtotal: $140.00<br>
+				Total including tax: $148.40<br>
+			</p>
+			<?php
+		endif;
+	} else {
+		?>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
+?>
+```
+
+![Lab 08-006](./images/lab08_006.png)
+
+Otherwise, the script should display the items the customer ordered from Wendy.
+
+```php linenums="1" hl_lines="11-35"
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		// If a form with POST superglobal variable is sent, display this message
+		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
+
+		if($_POST["cupcakeqty"] === "" && $_POST["puffqty"] === "" && $_POST["muffinqty"] === ""):
+			// Display message if nothing has been ordered
+			?>
+			<p>You did not order anything from the previous page!</p>
+			<?php
+		else:
+			$qty = array();
+			if ($_POST["cupcakeqty"] !== "") $qty["cupcake"] = (int)($_POST["cupcakeqty"]);	// cupcake quantity
+			if ($_POST["puffqty"] !== "") $qty["puff"] = (int)($_POST["puffqty"]);	// puff quantity
+			if ($_POST["muffinqty"] !== "") $qty["muffin"] = (int)($_POST["muffinqty"]); // muffin quantity
+			?>
+			<p class="font-bold">Your order is as follows:</p>
+
+			<p>
+				<?= $qty["cupcake"]; ?> cupcakes<br>
+				<?= $qty["puff"]; ?> puffs<br>
+				<?= $qty["muffin"]; ?> muffins
+			</p>
+
+			<p>
+				Items Ordered: <?= sizeof($qty); ?>
+				<?php
+					$price = ["cupcake" => 2.50, "puff" => 3, "muffin" => 4];
+
+					$subtotal = $qty["cupcake"] * $price["cupcake"] + $qty["puff"] * $price["puff"] + $qty["muffin"] * $price["muffin"];
+					$total = $subtotal * 1.06;
+					?>
+				Subtotal: $<?= number_format($subtotal, 2); ?><br>
+				Total including tax: $<?= number_format($total, 2); ?><br>
+			</p>
+			<?php
+		endif;
+	} else {
+		?>
+		<!-- Listing 1 goes here -->
+		<?php
+	}
+?>
+```
+
+??? info "Note"
+
+    You may have noticed that there are some errors when you only fill up the form partially (to make it such that you only want some of the items, not all).
+    Try to find a way to circumvent this issue (i.e., by placing an if statement, modifying the form input element, etc.).
+
+    See if you can find any loopholes in the web application at this point and look to see if you can fix them as much as possible.
+
+## Task 7: `elseif` Statements
+
+Wendy provides discounts for large orders of cupcakes.
+
+- _Less than 10 cupcakes: no discount_
+- _10-49 cupcakes: 5% discount_
+- _50-99 cupcakes: 10% discount_
+- _≥100 cupcakes: 20% discount_
+
+Modify `process-order.php` such that it calculates the discount using conditions and if-else and elseif statements.
+
+## Task 8: `switch` Statements
+
+Wendy wants to know what forms of advertising are working for her.
+Insert a `<select>` element to the form to retrieve that information.
+
+```html
+<tr>
+	<td colspan="2">
+		<p><label for="find">How did you find Wendy's?</label></p>
+		<select name="find" id="find">
+			<option disabled selected>Select option</option>
+			<option value="a">I am a regular customer.</option>
+			<option value="b">TV Advertising</option>
+			<option value="c">Phone Directory</option>
+			<option value="d">Word of Mouth</option>
+		</select>
+	</td>
+</tr>
+```
+
+Use the appropriate selection statements to handle the variables and display the information in `process-order.php`.
+
+## Task 9: Iteration and Repeating Actions
+
+Wendy wants a table displaying the freight cost that is to be added to the customer's order.
+With the courier Wendy's uses, the cost of freight depends on the distance the parcel is being shipped.
+We want our freight table to resemble the following:
+
+Generate the same freight table using loop structures.
 
 ```php
-<?php
-	session_start();
-
-	session_unset();
-
-	session_destroy();
-
-	header("Location: .");
-?>
+<table id="freight-table">
+	<thead>
+		<tr>
+			<th>Distance</th>
+			<th>Cost</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+			$freight = [
+				["distance" => 50, "cost" => 5],
+				["distance" => 100, "cost" => 10],
+				["distance" => 150, "cost" => 15],
+				["distance" => 200, "cost" => 20],
+				["distance" => 250, "cost" => 25],
+			];
+			// var_dump($freight);
+			foreach ($freight as $f) {
+		?>
+		<tr>
+			<td><?= $f["distance"]; ?></td>
+			<td><?= $f["cost"]; ?></td>
+		</tr>
+		<?php
+			}
+		?>
+	</tbody>
+</table>
 ```
 
-The simple logout process works in 3 steps:
-
-1. Start the session with `session_start()`.
-2. Unset all session variables with `session_unset()`.
-3. Destroy the session using `session_destroy()`.
-
-One main reason why `session_destroy()` does not settle everything without `session_unset()` is that it only destroys the session, but any session data is still kept around.
-Think of it as a job not completely done properly in such case.
-
-The fourth line (i.e., `header("Location: .");`) redirects the user immediately back to `index.php`.
-This can also be achieved if you were to type in `header("Location: index.php");`.
-Using a period punctuation here points to the current directory, and browsers will automatically search for any file named `index.php` or `index.html` by default.
-With this, you will find that you will immediately be sent back to `index.php` without viewing anything in `logout.php`.. not that it contains any visual content to be displayed in the browser to begin with.
-
-## Extra Task: Timeout
-
-Modify the web application such that it will log you out upon refreshing the page after 5 minutes of inactivity.
+![Lab 08-007](./images/lab08_007.png)

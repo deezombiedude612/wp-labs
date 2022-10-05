@@ -4,10 +4,6 @@ template: base.html
 
 # Practical 07: Extra JavaScript Activities
 
-!!! question "The original Practical 7 has moved!"
-
-    _For instructions on installing XAMPP for the upcoming lessons, click [HERE](xampp.md)._
-
 This practical contains two intermediate-level activities that will hopefully help you strengthen your understanding with JavaScript.
 Don't worry, these two activities are merely code-alongs; you'll be guided every step of the way from preparations to the end.
 Similar to the format of your consequent practical sessions themed after PHP and Databases, you may be asked to prepare beforehand by having a few files on the ready.
