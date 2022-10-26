@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://deezombiedude612.github.io/wp-labs/archive/202108/lab10/">
       
       <link rel="icon" href="../../../assets/images/hhicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
     
     
       
@@ -2032,9 +2032,7 @@ The <code>IF NOT EXISTS</code> clause will make it such that the statement can b
 <p>Select the "Go" button to execute the SQL statement, and a message from the database server should be displayed like as shown below:</p>
 <p><img alt="Lab 10-003" src="../images/lab10_003.png" /></p>
 <p>By now, the database should now be available to use - the database name should appear on the left hand side of the window.</p>
-<details class="info">
-<summary>DROP DATABASES</summary>
-<p>The opposite act of creating a database is referred as dropping a database.
+<details class="info"><summary>DROP DATABASES</summary><p>The opposite act of creating a database is referred as dropping a database.
 If you wish to drop the database, you have to use the following command script:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">exercise_db</span><span class="o">`</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
@@ -2076,15 +2074,11 @@ Let's create a new table called <code>Student</code> that has the following colu
 </code></pre></div>
 <p>You can view the database table contents by selecting the table name from the left-hand side menu in the browser window.</p>
 <p><img alt="Lab 10-005" src="../images/lab10_005.png" /></p>
-<details class="info" open="open">
-<summary>Multiple Tables in Databases</summary>
-<p>Yes, you are allowed to have multiple tables in your database (unless it's a SQLite database).
+<details class="info" open="open"><summary>Multiple Tables in Databases</summary><p>Yes, you are allowed to have multiple tables in your database (unless it's a SQLite database).
 In fact, there are mechanisms to simplify tables so that they don't require so many columns (i.e., normalization) and/or so that tables are linked together with <strong>foreign keys</strong>.
 We will not cover them in this module, but feel free to look up on how they work if you are curious!</p>
 </details>
-<details class="info" open="open">
-<summary>Dropping Tables</summary>
-<p>Just like dropping databases, you can also drop a table if you want to recreate the table from scratch.</p>
+<details class="info" open="open"><summary>Dropping Tables</summary><p>Just like dropping databases, you can also drop a table if you want to recreate the table from scratch.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">Student</span><span class="o">`</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 </details>
@@ -2297,10 +2291,10 @@ Previously occupied <code>id</code> values that were used and deleted will not b
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
         <script src="../../../js/mathjax.js"></script>
       

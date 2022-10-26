@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://deezombiedude612.github.io/wp-labs/archive/202204/lab06/">
       
       <link rel="icon" href="../../../assets/images/hhicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
     
     
       
@@ -2056,9 +2056,7 @@ You may name your parameter(s) and/or function(s) as you please, but preferably 
 <ol>
 <li>
 <p>This function delivers a greeting based on a provided language from a list of available languages.</p>
-<details class="question">
-<summary>Model Answer</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greeting</span><span class="p">(</span><span class="nx">language</span><span class="p">)</span><span class="w"></span>
+<details class="question"><summary>Model Answer</summary><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greeting</span><span class="p">(</span><span class="nx">language</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>This can be interpreted in many ways - the language can be provided by being passed into the function (e.g., via a prompt box), or the function can have a mechanism in it that will obtain that language value from a drop-down list element, for instance.
 In the latter case, we can safely omit the <code>language</code> parameter from the function declaration.</p>
@@ -2069,36 +2067,28 @@ In the latter case, we can safely omit the <code>language</code> parameter from 
 <p>For testing purposes, you can use the common Maclaurin function:</p>
 <div class="arithmatex">\[ \frac{1}{1-x} = 1 + x + x^2 + x^3 + x^4 + ... \]</div>
 <p>Use <code>x = 1</code> to <code>x = 20</code> in this function.</p>
-<details class="question">
-<summary>Model Answer</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">printMaclaurin</span><span class="p">()</span><span class="w"></span>
+<details class="question"><summary>Model Answer</summary><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">printMaclaurin</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <p>The description states a preset number of terms to be printed (i.e., 20), so this value need not be put in as a parameter to the function.</p>
 </details>
 </li>
 <li>
 <p>This function gathers two strings to check if the first letter in each one match regardless of case.</p>
-<details class="question">
-<summary>Model Answer</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">firstLetterMatch</span><span class="p">(</span><span class="nx">string1</span><span class="p">,</span><span class="w"> </span><span class="nx">string2</span><span class="p">)</span><span class="w"></span>
+<details class="question"><summary>Model Answer</summary><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">firstLetterMatch</span><span class="p">(</span><span class="nx">string1</span><span class="p">,</span><span class="w"> </span><span class="nx">string2</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>Two strings are needed from the user, so it only seems right to have them provided as parameters in this case.</p>
 </details>
 </li>
 <li>
 <p>This function retrieves the user input from a HTML <code>&lt;input&gt;</code> field to prepare an array of distinct characters used in said input.</p>
-<details class="question">
-<summary>Model Answer</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">userInputToArray</span><span class="p">()</span><span class="w"></span>
+<details class="question"><summary>Model Answer</summary><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">userInputToArray</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <p>The description mentions that the user input is to be retrieved from a HTML <code>&lt;input&gt;</code> field, so there is no need to pass it in as a function parameter.</p>
 </details>
 </li>
 <li>
 <p>This function calculates the age of a person, place, or object by using its year of origin/date of birth/etc. and the current year during use.</p>
-<details class="question">
-<summary>Model Answer</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calculateAge</span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="w"></span>
+<details class="question"><summary>Model Answer</summary><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calculateAge</span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>Just like the first one, this description does not make clear of how the year of origin/date of birth/etc. is to be obtained from the user.
 You can have the function read the HTML element's value from within the function, or get the user to enter it from a prompt box.
@@ -2197,9 +2187,7 @@ This needs to be checked first before determining its divisibility.</p>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">fizzBuzz</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">);</span><span class="w"></span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nx">fizzBuzz</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-<details class="hint">
-<summary>Hint</summary>
-<p>Use the <code>typeof</code> operator to check the variable's type.</p>
+<details class="hint"><summary>Hint</summary><p>Use the <code>typeof</code> operator to check the variable's type.</p>
 </details>
 <h3 id="task-5">Task 5</h3>
 <p>Create a HTML file that uses external JavaScript to carry out the following. You are required to only use the browser's inspector console to generate outputs.</p>
@@ -2326,10 +2314,10 @@ This needs to be checked first before determining its divisibility.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
         <script src="../../../js/mathjax.js"></script>
       
