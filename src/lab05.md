@@ -53,6 +53,14 @@ for (init; condition; update) {
 }
 ```
 
+for-in Loop Syntax:
+
+```js
+for (let key in object) {
+	/* do something here */
+}
+```
+
 for-of Loop Syntax:
 
 ```js
@@ -112,10 +120,7 @@ Create an empty HTML file containing the following in the `<body>` section:
 	}
 
 	console.log("do-while looping..");
-	do {
-		console.log(num);
-		num++;
-	} while (num < 15);
+	// place do-while loop here
 </script>
 ```
 
@@ -171,12 +176,12 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 do {
 	// we start every iteration of the algorithm by making is_sorted true
 	is_sorted = true;
-} while (is_sorted);
+} while (!is_sorted); // or is_sorted == false
 
 console.log(`Sorted array:`, array);
 ```
@@ -195,7 +200,7 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 do {
 	// we start every iteration of the algorithm by making is_sorted true
@@ -204,7 +209,7 @@ do {
 	for (let j = 0; j < array.length; ++j) {
 		// we start comparing elements in here
 	}
-} while (is_sorted);
+} while (!is_sorted); // or is_sorted == false
 
 console.log(`Sorted array:`, array);
 ```
@@ -221,7 +226,7 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 do {
 	// we start every iteration of the algorithm by making is_sorted true
@@ -243,7 +248,7 @@ do {
 			array[j - 1] = temp;
 		}
 	}
-} while (is_sorted);
+} while (!is_sorted); // or is_sorted == false
 
 console.log(`Sorted array:`, array);
 ```
@@ -272,7 +277,7 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 for (let i = 0; i < array.length; ++i) {
 	// we start every iteration of the algorithm by making is_sorted true
@@ -311,7 +316,7 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 for (let i = 0; i < array.length; ++i) {
 	// we start every iteration of the algorithm by making is_sorted true
@@ -363,7 +368,7 @@ let is_sorted;
 
 /**
  * the bubble sort algorithm will continue running
- * as long as is_sorted is true AFTER each iteration
+ * as long as is_sorted is false AFTER each iteration
  */
 for (let i = 0; i < array.length; ++i) {
 	// we start every iteration of the algorithm by making is_sorted true
@@ -467,6 +472,9 @@ After entering the year, the browser window should display the Chinese zodiac an
 
 The Body Mass Index (BMI) is a measure of health on weight.
 A person's BMI is calculated by taking the person's weight (in kilograms) divided by the person's height squared (height in meters).
+
+$$ \text{BMI} = \frac{\text{weight}}{\text{height} \times \text{height}} $$
+
 Create a BMI script that takes in both a person's weight and height as values to interpret the person's BMI.
 The respective BMI interpretations are as follows:
 

@@ -136,7 +136,7 @@ if (document.querySelector("#logout")) {
 </html>
 ```
 
-![Lab 09-001](./images/lab09_001.png)
+![Lab 10-001](./images/lab10_001.png)
 
 ## Task 1: Checking Credentials
 
@@ -209,7 +209,7 @@ We will utilize this to display a message in our `p#error` element in the form t
 The if statement syntax used here is different from that of most languages, but it works especially if you plan on printing large and/or complex lines of HTML.
 Your page should now display a paragraph containing the alert message like as follows:
 
-![Lab 09-002](./images/lab09_002.png)
+![Lab 10-002](./images/lab10_002.png)
 
 Now, let's replace the contents inside `section#container` to display something else if the credentials are correct (and consequently giving the illusion that you're logged in).
 We will carry this out through utilizing an if-else statement.
@@ -252,7 +252,7 @@ We will carry this out through utilizing an if-else statement.
 
 Depending on whether `$_SESSION["username"]` has been defined or not, either the form or the following gets displayed:
 
-![Lab 09-003](./images/lab09_003.png)
+![Lab 10-003](./images/lab10_003.png)
 
 Here, when the user is "logged in", we now have a greeting on display with the entered username.
 At the bottom of that greeting line, we also have a log out button.

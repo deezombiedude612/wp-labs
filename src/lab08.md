@@ -2,400 +2,178 @@
 template: base.html
 ---
 
-# Practical 08: Introducing PHP into Forms
+# Practical 08: Introducing PHP into HTML
 
-In this practical activity, we will be implementing an order form for Wendy's Bakery, a fictional bakery company.
-Right now, Wendy's HTML programmer has gotten as far as setting up an order for for the cakes Wendy sells.
-The order form is shown as in the figure below.
-This is a relatively simple order form, similar to many which you hve probably seen while surfing.
-The first thing Wendy would like to be able to do is to know what her customer ordered, work out the total of the customer's order, and how much sales tax is payable on the order.
-Part of the HTML for this is shown in Listing 1.
-In the form, we have set the form's action to be the name of the PHP script that will process the customer's order and also the name of the form fields.
+In this practical activity, we will be utilizing different sets of data in PHP variables to modify how a webpage appears.
+We will only be dabbling with one PHP file, namely `index.php`.
+Additional styles are provided as embedded CSS here.
 
-### Listing 1
+???+ note
 
-```html linenums="1"
-<form action="process-order.php" method="post">
-	<table>
-		<tr>
-			<th>Item</th>
-			<th>Quantity</th>
-		</tr>
-		<tr>
-			<td>Cupcakes</td>
-			<td>
-				<input type="text" name="cupcakeqty" size="3" maxlength="3" />
-			</td>
-		</tr>
-		<tr>
-			<td>Puffs</td>
-			<td>
-				<input type="text" name="puffqty" size="3" maxlength="3" />
-			</td>
-		</tr>
-		<tr>
-			<td>Muffins</td>
-			<td>
-				<input type="text" name="muffinqty" size="3" maxlength="3" />
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="submit" value="Submit Order" />
-			</td>
-		</tr>
-	</table>
-</form>
-```
+    If you're not sure how to set up your machine for PHP development, or where to place your files and how to open the files from that location, I strongly advise you to check out [setting up XAMPP here](./guide-xampp.md).
+    You may need to look elsewhere if you have anything else other than XAMPP or MAMP.
 
-![Lab 08-001](./images/lab08_001.png)
+## Activity
 
-We'll proceed to create our PHP file surrounding this form element.
+Prepare `index.php` like as follows:
 
-<!-- ## Tasks -->
-
-## Task 1: Embedding PHP in HTML
-
-To process the form, we'll need to create the script mentioned in the `action` attribute of the `<form>` tag called `process-order.php`.
-Prepare `process-order.php` starting off with the following HTML code:
-
-```html linenums="1" hl_lines="39" title="process-order.php"
+```html linenums="1" title="index.php"
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Wendy's Bakery - Order Form</title>
+		<title>My PHP Page</title>
 
 		<style>
-			.font-bold {
-				font-weight: bold;
+			table,
+			th,
+			td {
+				border: 1px solid black;
 			}
 
-			th {
-				background-color: #cccccc;
+			table {
+				border-collapse: collapse;
 			}
 
 			th,
 			td {
-				padding: 0.5rem 1.5rem;
-			}
-
-			form td {
-				text-align: center;
-			}
-
-			#freight-table tbody td {
-				text-align: right;
-			}
-
-			#order-details {
-				margin-bottom: 1rem;
+				padding: 5px;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>Wendy's Bakery</h1>
-		<h2>Order Results</h2>
-
-		<!-- Listing 1 goes here -->
+		<table>
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Name</th>
+					<th>Class</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
 	</body>
 </html>
 ```
 
-## Task 2: Conditional Display of Information
+You should see the following output:
 
-Modify `process-order.php` such that it displays the following when the order form is filled and the **Submit** button is clicked on.
+![Lab 08-001](./images/lab08_001.png)
+
+Note that the table as shown here does not have any other rows displayed aside from the header row.
+
+We will now have PHP utilize the array values as stored in the following PHP code block to populate the table.
+Place the following PHP block on top of `index.php`:
 
 ```php linenums="1"
 <?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed</p>";
-	} else {
-		/**
-		 * NOTE:
-		 * You can break through to HTML in the middle of a PHP block,
-		 * especially if you have a lot of HTML elements to display under
-		 * set conditions.
-		 */
+	$students = ["Mamat", "Minah", "Joyah", "Adam"];
+	$ids = ["101A", "102B", "103C", "201F"];
+?>
+```
+
+Add the following code block in between the `<tbody></tbody>` tags:
+
+```php linenums="1" hl_lines="3-9"
+<?php
+	for ($i = 0; $i < sizeof($students); $i++) {
 		?>
-		<!-- Listing 1 goes here -->
+		<tr>
+			<th><?= $i + 1; ?></th>
+			<td><?= $students[$i]; ?></td>
+			<td><?= $ids[$i]; ?></td>
+		</tr>
 		<?php
 	}
 ?>
 ```
+
+The code block that's provided here makes use of a for loop to iterate over the elements in the array.
+The for loop as shown here makes it so that a new `<tr>` row element along with its `<th>` and `<td>` elements are created during each iteration.
+Since there are 4 items in the array, the for loop ends up creating 4 rows of data.
+
+The highlighted lines show that a PHP block can be prematurely broken to encapsulate HTML code as part of your program control structure's block.
+This will apply for all loop structures and conditional statements.
+
+You may also notice that in between lines 5 to 7, they make use of special expression tags that are purposed to print out the values of expressions and/or PHP variables.
+Let's see this in action again.
+
+### Task 1
+
+Create an empty `<h1></h1>` tag before the table in your HTML, and add the following variable in the top PHP block:
+
+```php linenums="1" hl_lines="2"
+<?php
+	$heading = "My First PHP Page";
+	$students = ["Mamat", "Minah", "Joyah", "Adam"];
+	$ids = ["101A", "102B", "103C", "201F"];
+?>
+```
+
+Hence or otherwise, add the value of `$heading` in the newly-created `<h1></h1>` element. You should now see something like as follows:
 
 ![Lab 08-002](./images/lab08_002.png)
 
-!!! tip
+??? success "Solution"
 
-    In place of where you immediately insert Listing 1, replace it with the given code snippet.
-    This code snippet has a line where you insert Listing 1 in as well.
+    ```php linenums="1"
+    <h1><?= $heading; ?></h1>
+    ```
 
-## Task 3: Adding Dynamic Content
+### Back to the Activity Narrative
 
-Modify `process-order.php` to display the date and time when the form was submitted.
+With PHP, you can also create different views with conditional statements.
+Add one more PHP variable in the top PHP block:
 
-```php linenums="1" hl_lines="4"
+```php linenums="1" hl_lines="2"
 <?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
-	} else {
-		?>
-		<!-- Listing 1 goes here -->
-		<?php
-	}
+	$forbidden = true;
+	$heading = "My First PHP Page";
+	$students = ["Mamat", "Minah", "Joyah", "Adam"];
+	$ids = ["101A", "102B", "103C", "201F"];
 ?>
 ```
+
+### Task 2
+
+Modify the webpage so that the heading and table only appear if `$forbidden` is `false`.
+Otherwise, the webpage should display this message in a single (and separate) `<h1>` element:
 
 ![Lab 08-003](./images/lab08_003.png)
 
-??? info "DateTime in PHP"
+??? success "Solution"
 
-    Read more here: [PHP DateTime](https://www.php.net/manual/en/datetime.format.php)
+    ```php linenums="1"
+    <?php if (!$forbidden) { ?>
+    	<h1><?= $heading; ?></h1>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>No.</th>
+    				<th>Name</th>
+    				<th>Class</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<?php
+    			for ($i = 0; $i < sizeof($students); $i++) {
+    			?>
+    			<tr>
+    				<th><?= $i + 1; ?></th>
+    				<td><?= $students[$i]; ?></td>
+    				<td><?= $ids[$i]; ?></td>
+    			</tr>
+    			<?php
+    			}
+    			?>
+    		</tbody>
+    	</table>
+    <?php } else { ?>
+    	<h1>You are unauthorized to view the data on this page.</h1>
+    <?php } ?>
+    ```
 
-## Task 4: Accessing Variables
-
-Within the same PHP script, add some lines to display the customer's order list.
-
-```php linenums="1" hl_lines="6-14"
-<?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
-
-		?>
-		<p class="font-bold">Your order is as follows:</p>
-
-		<p>
-			20 cupcakes<br>
-			10 puffs<br>
-			15 muffins
-		</p>
-		<?php
-	} else {
-		?>
-		<!-- Listing 1 goes here -->
-		<?php
-	}
-?>
-```
-
-![Lab 08-004](./images/lab08_004.png)
-
-## Task 5: Assigning Values to Variables
-
-On Wendy's site, we want to work out the total number of items ordered and the total amount payable.
-
-Assume the prices of each item are as follows:
-
-Cupcake = $2.50
-Puff = $3.00
-Muffin = $4.00
-Sales Tax = 6% of the total amount
-
-Within the same script, add some lines to display the following additional output:
-
-```php linenums="1" hl_lines="15-19"
-<?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
-
-		?>
-		<p class="font-bold">Your order is as follows:</p>
-
-		<p>
-			20 cupcakes<br>
-			10 puffs<br>
-			15 muffins
-		</p>
-
-		<p>
-			Items Ordered: 3<br>
-			Subtotal: $140.00<br>
-			Total including tax: $148.40<br>
-		</p>
-		<?php
-	} else {
-		?>
-		<!-- Listing 1 goes here -->
-		<?php
-	}
-?>
-```
-
-![Lab 08-005](./images/lab08_005.png)
-
-## Task 6: Making Decisions with Conditionals
-
-Modify the script such that it alerts if the customer has not ordered anything from Wendy.
-
-```php linenums="1" hl_lines="6-27"
-<?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
-
-		if($_POST["cupcakeqty"] === "" && $_POST["puffqty"] === "" && $_POST["muffinqty"] === ""):
-			// Display message if nothing has been ordered
-			?>
-			<p>You did not order anything from the previous page!</p>
-			<?php
-		else:
-			?>
-			<p class="font-bold">Your order is as follows:</p>
-
-			<p>
-				20 cupcakes<br>
-				10 puffs<br>
-				15 muffins
-			</p>
-
-			<p>
-				Items Ordered: 3<br>
-				Subtotal: $140.00<br>
-				Total including tax: $148.40<br>
-			</p>
-			<?php
-		endif;
-	} else {
-		?>
-		<!-- Listing 1 goes here -->
-		<?php
-	}
-?>
-```
-
-![Lab 08-006](./images/lab08_006.png)
-
-Otherwise, the script should display the items the customer ordered from Wendy.
-
-```php linenums="1" hl_lines="11-35"
-<?php
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		// If a form with POST superglobal variable is sent, display this message
-		echo "<p>Order processed on " . date("F jS Y, l, H:i:s") . "</p>";
-
-		if($_POST["cupcakeqty"] === "" && $_POST["puffqty"] === "" && $_POST["muffinqty"] === ""):
-			// Display message if nothing has been ordered
-			?>
-			<p>You did not order anything from the previous page!</p>
-			<?php
-		else:
-			$qty = array();
-			if ($_POST["cupcakeqty"] !== "") $qty["cupcake"] = (int)($_POST["cupcakeqty"]);	// cupcake quantity
-			if ($_POST["puffqty"] !== "") $qty["puff"] = (int)($_POST["puffqty"]);	// puff quantity
-			if ($_POST["muffinqty"] !== "") $qty["muffin"] = (int)($_POST["muffinqty"]); // muffin quantity
-			?>
-			<p class="font-bold">Your order is as follows:</p>
-
-			<p>
-				<?= $qty["cupcake"]; ?> cupcakes<br>
-				<?= $qty["puff"]; ?> puffs<br>
-				<?= $qty["muffin"]; ?> muffins
-			</p>
-
-			<p>
-				Items Ordered: <?= sizeof($qty); ?>
-				<?php
-					$price = ["cupcake" => 2.50, "puff" => 3, "muffin" => 4];
-
-					$subtotal = $qty["cupcake"] * $price["cupcake"] + $qty["puff"] * $price["puff"] + $qty["muffin"] * $price["muffin"];
-					$total = $subtotal * 1.06;
-					?>
-				Subtotal: $<?= number_format($subtotal, 2); ?><br>
-				Total including tax: $<?= number_format($total, 2); ?><br>
-			</p>
-			<?php
-		endif;
-	} else {
-		?>
-		<!-- Listing 1 goes here -->
-		<?php
-	}
-?>
-```
-
-??? info "Note"
-
-    You may have noticed that there are some errors when you only fill up the form partially (to make it such that you only want some of the items, not all).
-    Try to find a way to circumvent this issue (i.e., by placing an if statement, modifying the form input element, etc.).
-
-    See if you can find any loopholes in the web application at this point and look to see if you can fix them as much as possible.
-
-## Task 7: `elseif` Statements
-
-Wendy provides discounts for large orders of cupcakes.
-
-- _Less than 10 cupcakes: no discount_
-- _10-49 cupcakes: 5% discount_
-- _50-99 cupcakes: 10% discount_
-- _≥100 cupcakes: 20% discount_
-
-Modify `process-order.php` such that it calculates the discount using conditions and if-else and elseif statements.
-
-## Task 8: `switch` Statements
-
-Wendy wants to know what forms of advertising are working for her.
-Insert a `<select>` element to the form to retrieve that information.
-
-```html
-<tr>
-	<td colspan="2">
-		<p><label for="find">How did you find Wendy's?</label></p>
-		<select name="find" id="find">
-			<option disabled selected>Select option</option>
-			<option value="a">I am a regular customer.</option>
-			<option value="b">TV Advertising</option>
-			<option value="c">Phone Directory</option>
-			<option value="d">Word of Mouth</option>
-		</select>
-	</td>
-</tr>
-```
-
-Use the appropriate selection statements to handle the variables and display the information in `process-order.php`.
-
-## Task 9: Iteration and Repeating Actions
-
-Wendy wants a table displaying the freight cost that is to be added to the customer's order.
-With the courier Wendy's uses, the cost of freight depends on the distance the parcel is being shipped.
-We want our freight table to resemble the following:
-
-Generate the same freight table using loop structures.
-
-```php
-<table id="freight-table">
-	<thead>
-		<tr>
-			<th>Distance</th>
-			<th>Cost</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php
-			$freight = [
-				["distance" => 50, "cost" => 5],
-				["distance" => 100, "cost" => 10],
-				["distance" => 150, "cost" => 15],
-				["distance" => 200, "cost" => 20],
-				["distance" => 250, "cost" => 25],
-			];
-			// var_dump($freight);
-			foreach ($freight as $f) {
-		?>
-		<tr>
-			<td><?= $f["distance"]; ?></td>
-			<td><?= $f["cost"]; ?></td>
-		</tr>
-		<?php
-			}
-		?>
-	</tbody>
-</table>
-```
-
-![Lab 08-007](./images/lab08_007.png)
+We will use program control structures more extensively in the next practical exercise.
+By now, hopefully you understand how to leverage PHP to prepare different views based on conditions.

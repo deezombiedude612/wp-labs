@@ -48,7 +48,7 @@ In the form, we have set the form's action to be the name of the PHP script that
 </form>
 ```
 
-![Lab 08-001](./images/lab08_001.png)
+![Lab 09-001](./images/lab09_001.png)
 
 We'll proceed to create our PHP file surrounding this form element.
 
@@ -126,7 +126,7 @@ Modify `process-order.php` such that it displays the following when the order fo
 ?>
 ```
 
-![Lab 08-002](./images/lab08_002.png)
+![Lab 09-002](./images/lab09_002.png)
 
 !!! tip
 
@@ -150,7 +150,7 @@ Modify `process-order.php` to display the date and time when the form was submit
 ?>
 ```
 
-![Lab 08-003](./images/lab08_003.png)
+![Lab 09-003](./images/lab09_003.png)
 
 ??? info "DateTime in PHP"
 
@@ -183,7 +183,7 @@ Within the same PHP script, add some lines to display the customer's order list.
 ?>
 ```
 
-![Lab 08-004](./images/lab08_004.png)
+![Lab 09-004](./images/lab09_004.png)
 
 ## Task 5: Assigning Values to Variables
 
@@ -227,7 +227,7 @@ Within the same script, add some lines to display the following additional outpu
 ?>
 ```
 
-![Lab 08-005](./images/lab08_005.png)
+![Lab 09-005](./images/lab09_005.png)
 
 ## Task 6: Making Decisions with Conditionals
 
@@ -269,7 +269,7 @@ Modify the script such that it alerts if the customer has not ordered anything f
 ?>
 ```
 
-![Lab 08-006](./images/lab08_006.png)
+![Lab 09-006](./images/lab09_006.png)
 
 Otherwise, the script should display the items the customer ordered from Wendy.
 
@@ -398,4 +398,4 @@ Generate the same freight table using loop structures.
 </table>
 ```
 
-![Lab 08-007](./images/lab08_007.png)
+![Lab 09-007](./images/lab09_007.png)

@@ -15,12 +15,12 @@ To access phpMyAdmin, type in `localhost/phpmyadmin` in your web browser's addre
 
 ## Starting Out in phpMyAdmin
 
-![Lab 10-001](./images/lab10_001.png)
+![Lab 11-001](./images/lab11_001.png)
 
 On the top menu bar, select "SQL".
 You should see an interface like as follows:
 
-![Lab 10-002](./images/lab10_002.png)
+![Lab 11-002](./images/lab11_002.png)
 
 This will be where we will be typing in our SQL scripts for today's practical exercise.
 
@@ -47,7 +47,7 @@ The `IF NOT EXISTS` clause will make it such that the statement can be run multi
 
 Select the "Go" button to execute the SQL statement, and a message from the database server should be displayed like as shown below:
 
-![Lab 10-003](./images/lab10_003.png)
+![Lab 11-003](./images/lab11_003.png)
 
 By now, the database should now be available to use - the database name should appear on the left hand side of the window.
 
@@ -70,7 +70,7 @@ By now, the database should now be available to use - the database name should a
 
 ## Create a Table
 
-![Lab 10-004](./images/lab10_004.png)
+![Lab 11-004](./images/lab11_004.png)
 
 Right now, the database does not have any tables inside of it.
 Let's create a new table called `Student` that has the following columns:
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `Student` (
 
 You can view the database table contents by selecting the table name from the left-hand side menu in the browser window.
 
-![Lab 10-005](./images/lab10_005.png)
+![Lab 11-005](./images/lab11_005.png)
 
 ???+ info "Multiple Tables in Databases"
 
@@ -134,7 +134,7 @@ INSERT INTO `Student` (`first_name`, `last_name`, `age`, `email`, `active`) VALU
 
 After running the given command, you should see the table being populated like as follows:
 
-![Lab 10-006](./images/lab10_006.png)
+![Lab 11-006](./images/lab11_006.png)
 
 Take note that with `id` being set to `AUTO_INCREMENT`, there's no need to specify the `id` value when adding new records (it will automatically start from 1 by default).
 However, you are still allowed to put in a custom `id` value if you so desire.
@@ -175,7 +175,7 @@ Also, you can also have multiple conditions in your SQL script to further specif
 
 The table contents should now look like the following:
 
-![Lab 10-007](./images/lab10_007.png)
+![Lab 11-007](./images/lab11_007.png)
 
 ### Task
 

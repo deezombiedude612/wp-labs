@@ -78,13 +78,15 @@ nav:
           - Practical 07 Menu: lab07.md
           - lab07A.md
           - lab07B.md
-      # - lab08.md
-      # - lab09.md
-      # - lab10.md
-      # - "PHP Code-Along Series":
-      #     - lab11.md
-      #     - lab12.md
-      #     - lab13.md
+      - lab08.md
+      - lab09.md
+      - lab10.md
+      - lab11.md
+      # - lab12.md
+      - "PHP Code-Along Series":
+          - code-along-1.md
+          - code-along-2.md
+          - code-along-3.md
   - Asgn 3 Groups:
       - 2022 August: asgn3_202208.md
       - 2022 April: asgn3_202204.md

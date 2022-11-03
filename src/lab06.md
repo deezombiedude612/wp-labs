@@ -170,7 +170,7 @@ Suitable messages are displayed as a result of the checks.
 
 **Part 2:** Complete the code for `checkAgeFunction()` that checks the age entered by the applicant and displays an appropriate response.
 
-### Task 2
+<!-- ### Task 2 -->
 
 ## Tasks: Functions
 
