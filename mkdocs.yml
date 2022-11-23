@@ -82,7 +82,7 @@ nav:
       - lab09.md
       - lab10.md
       - lab11.md
-      # - lab12.md
+      - lab12.md
       - "PHP Code-Along Series":
           - code-along-1.md
           - code-along-2.md
