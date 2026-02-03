@@ -46,6 +46,6 @@ The schedule is subject to change.
 
 ## Assignment 3 Groupings
 
-<!-- Unavailable at the moment, please check back later! -->
+Unavailable at the moment, please check back later!
 
-- [Assignment 3 Groupings](asgn3_202208.md)
+<!-- - [Assignment 3 Groupings](asgn3_202208.md) -->
