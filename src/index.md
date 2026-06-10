@@ -1,13 +1,20 @@
 ---
-template: home.html
+hide:
+  - navigation
+  - toc
 ---
 
 <h1 class="text-center">
     ITS30605 Web Programming
 </h1>
 
+<p class="text-center">
+    <!-- This site hosts the practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College. -->
+    This site hosted the <span class="fw-bold">(now deprecated)</span> practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College up until the August 2022 semester. The material and guides hosted here are very likely to be outdated.
+</p>
+
 <p class="text-center fw-bold">
-    This site hosts the practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College.
+    If you'd like the latest set of lab activities by yours truly, please head over to my almanac's entry <a href="https://deezombiedude612.github.io/almanac/labs/webdev/">HERE</a>. Otherwise, please refer to the current official material offered by the current module instructor.
 </p>
 
 ## Aim
