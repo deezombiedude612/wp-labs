@@ -11,7 +11,7 @@ hide:
 <p class="text-center">
     <!-- This site hosts the practical lab work for ITS30605: Web Programming, offered by the School of Pre-University Studies at Taylor's College. -->
 
-    This site hosted the <span class="fw-bold">(now deprecated)</span> practical lab work for ITS30605, which may or may not be offered by the School of Pre-University Studies at Taylor's College up until the August 2022 semester. The material and guides hosted here are very likely to be outdated.
+    This site hosted the <span class="fw-bold">(now deprecated)</span> practical lab work for ITS30605 up until the August 2022 semester, which may or may not be offered by the School of Pre-University Studies at Taylor's College. The material and guides hosted here are very likely to be outdated.
 </p>
 
 <p class="text-center fw-bold">
