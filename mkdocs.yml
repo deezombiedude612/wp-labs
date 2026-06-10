@@ -8,16 +8,17 @@ theme:
   favicon: "assets/images/hhicon.png"
   logo: "assets/images/hhicon.png"
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: oscillo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+    - scheme: oscillo
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: oscillo
+    #   toggle:
+    #     icon: material/toggle-switch-off-outline
+    #     name: Switch to dark mode
+    # - media: "(prefers-color-scheme: dark)"
+    #   scheme: slate
+    #   toggle:
+    #     icon: material/toggle-switch
+    #     name: Switch to light mode
   features:
     - toc.integrate
     - navigation.instant
@@ -47,12 +48,13 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
   - css/extras.css
 
 extra_javascript:
-  - js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 nav:
   - Home: index.md
